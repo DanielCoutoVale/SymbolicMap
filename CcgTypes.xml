@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ======================================================================= -->
+<!-- FileName:    types.xml                                                  -->
+<!-- Copyright:   Copyright (c) 2013 SFB-TR 8. All rights reserved.          -->
+<!-- Licence:     This file is free software; you can redistribute it and/or -->
+<!--              modify it under the terms of the GNU Lesser General Public -->
+<!--              License as published by the Free Software Foundation;      -->
+<!--              either version 2.1, or (at your option) any later version. -->
+<!--                                                                         -->
+<!--              This file is distributed in the hope that it will be       -->
+<!--              useful, but  WITHOUT ANY WARRANTY; without even the        -->
+<!--              implied warranty of MERCHANTABILITY or FITNESS FOR A       -->
+<!--              PARTICULAR PURPOSE.  See the GNU Lesser General Public     -->
+<!--              License for more details.                                  -->
+<!--                                                                         -->
+<!--              You should have received a copy of the GNU Lesser General  -->
+<!--              Public License along with Agent Factory; see the file      -->
+<!--              COPYING. If not, write to the Free Software Foundation,    -->
+<!--              Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307,  -->
+<!--              USA.                                                       -->
+<!--                                                                         -->
+<!-- Author:      Nina Dethlefs                                              -->
+<!-- Author:      Daniel Couto Vale                                          -->
+<!-- Author:      Rumiya                                                     -->
+<!-- Author:      Elisa Vales                                                -->
+<!-- ======================================================================= -->
+
+<!-- ======================================================================= -->
+<!-- Auto-generated file from specific ontologies.                           -->
+<!--                                                                         -->
+<!-- Upper Models                                                            -->
+<!-- • de.unibremen.linguistics.document.GUM-4.owl (eum)                     -->
+<!-- • de.unibremen.linguistics.document.IUM.owl (ium)                       -->
+<!--                                                                         -->
+<!-- BuildingLM                                                              -->
+<!-- • de.unibremen.linguistics.document.BuildingLM (slm)                    -->
+<!--                                                                         -->
+<!-- ======================================================================= -->
+
+<types name="core" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../openccg/grammars/types.xsd">
+
+<type name="SThing" />
+<type name="House" parents="SThing" />
+<type name="Dog" parents="SThing" />
+<type name="Cat" parents="SThing" />
+
+<type name="Process" />
+<type name="TriadicProcess" parents="Process" />
+<type name="Giving" parents="TriadicProcess" />
+
+</types>

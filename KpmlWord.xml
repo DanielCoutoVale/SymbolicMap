@@ -1,0 +1,3597 @@
+<?xml version="1.0" encoding="UTF-8"?><Module>
+    <System id="WORD-TYPE-1" selector="WORD-TYPE-1-SELECTOR">
+        <Input>
+            <Class index="word"/>
+        </Input>
+        <Outputs>
+            <Class id="process" share="0.2"/>
+            <Class id="identifier" share="0.2"/>
+            <Class id="classifier" share="0.2"/>
+            <Class id="qualifier" share="0.2"/>
+            <Class id="mentioner" share="0.2"/>
+        </Outputs>
+    </System>
+    <AskOperator default-answer="process" id="WORD-TYPE-1-Q" java-method="" lisp-method="">
+        <Params>
+            <Slot index="WORD"/>
+        </Params>
+        <Answers>
+            <Class index="process"/>
+            <Class index="identifier"/>
+            <Class index="classifier"/>
+            <Class index="qualifier"/>
+            <Class index="mentioner"/>
+        </Answers>
+        <AnswerMap/>
+    </AskOperator>
+    <Selector date="" id="WORD-TYPE-1-SELECTOR">
+        <Ask>
+            <Inquiry inquiry-index="WORD-TYPE-1-Q">
+                <Param index="Onus"/>
+            </Inquiry>
+            <Class index="process">
+                <Select param1="process"/>
+            </Class>
+            <Class index="mentioner">
+                <Select param1="mentioner"/>
+            </Class>
+            <Class index="classifier">
+                <Select param1="classifier"/>
+            </Class>
+            <Class index="qualifier">
+                <Select param1="qualifier"/>
+            </Class>
+            <Class index="identifier">
+                <Select param1="identifier"/>
+            </Class>
+        </Ask>
+    </Selector>
+    <System id="WORD-TYPE-2" selector="WORD-TYPE-2-SELECTOR">
+        <Input>
+            <Class index="word"/>
+        </Input>
+        <Outputs>
+            <Class id="irregular" share="0.5"/>
+            <Class id="regular" share="0.5"/>
+        </Outputs>
+    </System>
+    <AskOperator default-answer="irregular" id="WORD-TYPE-2-Q" java-method="" lisp-method="">
+        <Params>
+            <Slot index="WORD"/>
+        </Params>
+        <Answers>
+            <Class index="irregular"/>
+            <Class index="regular"/>
+        </Answers>
+        <AnswerMap/>
+    </AskOperator>
+    <Selector date="" id="WORD-TYPE-2-SELECTOR">
+        <Ask>
+            <Inquiry inquiry-index="WORD-TYPE-2-Q">
+                <Param index="Onus"/>
+            </Inquiry>
+            <Class index="regular">
+                <Select param1="regular"/>
+            </Class>
+            <Class index="irregular">
+                <Select param1="irregular"/>
+            </Class>
+        </Ask>
+    </Selector>
+    <System id="WORD-TYPE-3" selector="WORD-TYPE-3-SELECTOR">
+        <Input>
+            <Class index="regular"/>
+        </Input>
+        <Outputs>
+            <Class id="endingwith-ø-es-ed-ing" share="0.125"/>
+            <Class id="endingwith-y-ies" share="0.125"/>
+            <Class id="endingwith-r-rs-rred-rring" share="0.125"/>
+            <Class id="endingwith-ø-s-ed-ing" share="0.125"/>
+            <Class id="endingwith-ø-es" share="0.125"/>
+            <Class id="endingwith-e-es-ed-ing" share="0.125"/>
+            <Class id="endingwith-y-ies-ied-ying" share="0.125"/>
+            <Class id="endingwith-ø-s" share="0.125"/>
+        </Outputs>
+    </System>
+    <AskOperator default-answer="endingwith-ø-es-ed-ing" id="WORD-TYPE-3-Q" java-method="" lisp-method="">
+        <Params>
+            <Slot index="WORD"/>
+        </Params>
+        <Answers>
+            <Class index="endingwith-ø-es-ed-ing"/>
+            <Class index="endingwith-y-ies"/>
+            <Class index="endingwith-r-rs-rred-rring"/>
+            <Class index="endingwith-ø-s-ed-ing"/>
+            <Class index="endingwith-ø-es"/>
+            <Class index="endingwith-e-es-ed-ing"/>
+            <Class index="endingwith-y-ies-ied-ying"/>
+            <Class index="endingwith-ø-s"/>
+        </Answers>
+        <AnswerMap/>
+    </AskOperator>
+    <Selector date="" id="WORD-TYPE-3-SELECTOR">
+        <Ask>
+            <Inquiry inquiry-index="WORD-TYPE-3-Q">
+                <Param index="Onus"/>
+            </Inquiry>
+            <Class index="endingwith-ø-es">
+                <Select param1="endingwith-ø-es"/>
+            </Class>
+            <Class index="endingwith-ø-s-ed-ing">
+                <Select param1="endingwith-ø-s-ed-ing"/>
+            </Class>
+            <Class index="endingwith-e-es-ed-ing">
+                <Select param1="endingwith-e-es-ed-ing"/>
+            </Class>
+            <Class index="endingwith-ø-s">
+                <Select param1="endingwith-ø-s"/>
+            </Class>
+            <Class index="endingwith-ø-es-ed-ing">
+                <Select param1="endingwith-ø-es-ed-ing"/>
+            </Class>
+            <Class index="endingwith-y-ies-ied-ying">
+                <Select param1="endingwith-y-ies-ied-ying"/>
+            </Class>
+            <Class index="endingwith-r-rs-rred-rring">
+                <Select param1="endingwith-r-rs-rred-rring"/>
+            </Class>
+            <Class index="endingwith-y-ies">
+                <Select param1="endingwith-y-ies"/>
+            </Class>
+        </Ask>
+    </Selector>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Class index="word"/>
+        </Input>
+        <Outputs>
+            <Class id="form" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-2">
+        <Input>
+            <Intersection>
+                <Class index="form"/>
+                <Class index="process"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="mode" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="FORM-TYPE-1" selector="FORM-TYPE-1-SELECTOR">
+        <Input>
+            <Class index="mode"/>
+        </Input>
+        <Outputs>
+            <Class id="mode5" share="0.16666666666666666"/>
+            <Class id="mode4" share="0.16666666666666666"/>
+            <Class id="mode3" share="0.16666666666666666"/>
+            <Class id="mode2" share="0.16666666666666666"/>
+            <Class id="mode6" share="0.16666666666666666"/>
+            <Class id="mode1" share="0.16666666666666666"/>
+        </Outputs>
+    </System>
+    <AskOperator default-answer="mode5" id="FORM-TYPE-1-Q" java-method="" lisp-method="">
+        <Params>
+            <Slot index="WORD"/>
+        </Params>
+        <Answers>
+            <Class index="mode5"/>
+            <Class index="mode4"/>
+            <Class index="mode3"/>
+            <Class index="mode2"/>
+            <Class index="mode6"/>
+            <Class index="mode1"/>
+        </Answers>
+        <AnswerMap>
+            <Answer index="mode4" value="mode4"/>
+            <Answer index="mode3" value="mode3"/>
+            <Answer index="mode6" value="mode6"/>
+            <Answer index="mode5" value="mode5"/>
+            <Answer index="mode1" value="mode1"/>
+            <Answer index="mode2" value="mode2"/>
+        </AnswerMap>
+    </AskOperator>
+    <Selector date="" id="FORM-TYPE-1-SELECTOR">
+        <Ask>
+            <Inquiry inquiry-index="FORM-TYPE-1-Q">
+                <Param index="Onus"/>
+            </Inquiry>
+            <Class index="mode4">
+                <Select param1="mode4"/>
+            </Class>
+            <Class index="mode3">
+                <Select param1="mode3"/>
+            </Class>
+            <Class index="mode6">
+                <Select param1="mode6"/>
+            </Class>
+            <Class index="mode5">
+                <Select param1="mode5"/>
+            </Class>
+            <Class index="mode1">
+                <Select param1="mode1"/>
+            </Class>
+            <Class index="mode2">
+                <Select param1="mode2"/>
+            </Class>
+        </Ask>
+    </Selector>
+    <System id="COPY-GATE-3">
+        <Input>
+            <Intersection>
+                <Class index="mode5"/>
+                <Class index="processform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform09" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-4">
+        <Input>
+            <Intersection>
+                <Class index="mode4"/>
+                <Class index="processform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform08" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-5">
+        <Input>
+            <Intersection>
+                <Class index="mode3"/>
+                <Class index="processform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform07" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-6">
+        <Input>
+            <Intersection>
+                <Class index="mode2"/>
+                <Class index="processform"/>
+                <Class index="withmention3"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform06" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-7">
+        <Input>
+            <Intersection>
+                <Class index="mode2"/>
+                <Class index="processform"/>
+                <Class index="withmention2"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform05" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-8">
+        <Input>
+            <Intersection>
+                <Class index="mode2"/>
+                <Class index="processform"/>
+                <Class index="withmention1"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform04" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-9">
+        <Input>
+            <Intersection>
+                <Class index="mode1"/>
+                <Class index="processform"/>
+                <Class index="withmention1"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform01" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-10">
+        <Input>
+            <Intersection>
+                <Class index="mode1"/>
+                <Class index="processform"/>
+                <Class index="withmention2"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform02" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-11">
+        <Input>
+            <Intersection>
+                <Class index="mode1"/>
+                <Class index="processform"/>
+                <Class index="withmention3"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform03" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-12">
+        <Input>
+            <Intersection>
+                <Class index="mode6"/>
+                <Class index="processform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform10" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-13">
+        <Input>
+            <Intersection>
+                <Class index="mode5"/>
+                <Class index="processform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform09" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-14">
+        <Input>
+            <Intersection>
+                <Class index="mode4"/>
+                <Class index="processform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform08" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-15">
+        <Input>
+            <Intersection>
+                <Class index="mode3"/>
+                <Class index="processform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform07" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-16">
+        <Input>
+            <Intersection>
+                <Class index="mode2"/>
+                <Class index="processform"/>
+                <Class index="withmention3"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform06" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-17">
+        <Input>
+            <Intersection>
+                <Class index="mode2"/>
+                <Class index="processform"/>
+                <Class index="withmention2"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform05" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-18">
+        <Input>
+            <Intersection>
+                <Class index="mode2"/>
+                <Class index="processform"/>
+                <Class index="withmention1"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform04" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-19">
+        <Input>
+            <Intersection>
+                <Class index="mode1"/>
+                <Class index="processform"/>
+                <Class index="withmention1"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform01" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-20">
+        <Input>
+            <Intersection>
+                <Class index="mode1"/>
+                <Class index="processform"/>
+                <Class index="withmention2"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform02" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-21">
+        <Input>
+            <Intersection>
+                <Class index="mode1"/>
+                <Class index="processform"/>
+                <Class index="withmention3"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform03" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-22">
+        <Input>
+            <Intersection>
+                <Class index="mode6"/>
+                <Class index="processform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform10" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-23">
+        <Input>
+            <Intersection>
+                <Class index="mode5"/>
+                <Class index="processform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform09" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-24">
+        <Input>
+            <Intersection>
+                <Class index="mode4"/>
+                <Class index="processform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform08" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-25">
+        <Input>
+            <Intersection>
+                <Class index="mode3"/>
+                <Class index="processform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform07" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-26">
+        <Input>
+            <Intersection>
+                <Class index="mode2"/>
+                <Class index="processform"/>
+                <Class index="withmention3"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform06" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-27">
+        <Input>
+            <Intersection>
+                <Class index="mode2"/>
+                <Class index="processform"/>
+                <Class index="withmention2"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform05" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-28">
+        <Input>
+            <Intersection>
+                <Class index="mode2"/>
+                <Class index="processform"/>
+                <Class index="withmention1"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform04" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-29">
+        <Input>
+            <Intersection>
+                <Class index="mode1"/>
+                <Class index="processform"/>
+                <Class index="withmention1"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform01" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-30">
+        <Input>
+            <Intersection>
+                <Class index="mode1"/>
+                <Class index="processform"/>
+                <Class index="withmention2"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform02" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-31">
+        <Input>
+            <Intersection>
+                <Class index="mode1"/>
+                <Class index="processform"/>
+                <Class index="withmention3"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform03" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-32">
+        <Input>
+            <Intersection>
+                <Class index="mode6"/>
+                <Class index="processform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform10" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-33">
+        <Input>
+            <Intersection>
+                <Class index="mode5"/>
+                <Class index="processform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform09" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-34">
+        <Input>
+            <Intersection>
+                <Class index="mode4"/>
+                <Class index="processform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform08" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-35">
+        <Input>
+            <Intersection>
+                <Class index="mode3"/>
+                <Class index="processform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform07" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-36">
+        <Input>
+            <Intersection>
+                <Class index="mode2"/>
+                <Class index="processform"/>
+                <Class index="withmention3"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform06" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-37">
+        <Input>
+            <Intersection>
+                <Class index="mode2"/>
+                <Class index="processform"/>
+                <Class index="withmention2"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform05" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-38">
+        <Input>
+            <Intersection>
+                <Class index="mode2"/>
+                <Class index="processform"/>
+                <Class index="withmention1"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform04" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-39">
+        <Input>
+            <Intersection>
+                <Class index="mode1"/>
+                <Class index="processform"/>
+                <Class index="withmention1"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform01" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-40">
+        <Input>
+            <Intersection>
+                <Class index="mode1"/>
+                <Class index="processform"/>
+                <Class index="withmention2"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform02" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-41">
+        <Input>
+            <Intersection>
+                <Class index="mode1"/>
+                <Class index="processform"/>
+                <Class index="withmention3"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform03" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-42">
+        <Input>
+            <Intersection>
+                <Class index="mode6"/>
+                <Class index="processform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform10" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-43">
+        <Input>
+            <Intersection>
+                <Class index="mode5"/>
+                <Class index="processform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform09" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-44">
+        <Input>
+            <Intersection>
+                <Class index="mode4"/>
+                <Class index="processform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform08" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-45">
+        <Input>
+            <Intersection>
+                <Class index="mode3"/>
+                <Class index="processform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform07" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-46">
+        <Input>
+            <Intersection>
+                <Class index="mode2"/>
+                <Class index="processform"/>
+                <Class index="withmention3"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform06" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-47">
+        <Input>
+            <Intersection>
+                <Class index="mode2"/>
+                <Class index="processform"/>
+                <Class index="withmention2"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform05" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-48">
+        <Input>
+            <Intersection>
+                <Class index="mode2"/>
+                <Class index="processform"/>
+                <Class index="withmention1"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform04" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-49">
+        <Input>
+            <Intersection>
+                <Class index="mode1"/>
+                <Class index="processform"/>
+                <Class index="withmention1"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform01" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-50">
+        <Input>
+            <Intersection>
+                <Class index="mode1"/>
+                <Class index="processform"/>
+                <Class index="withmention2"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform02" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-51">
+        <Input>
+            <Intersection>
+                <Class index="mode1"/>
+                <Class index="processform"/>
+                <Class index="withmention3"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform03" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-52">
+        <Input>
+            <Intersection>
+                <Class index="mode6"/>
+                <Class index="processform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform10" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-53">
+        <Input>
+            <Intersection>
+                <Class index="mode5"/>
+                <Class index="processform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform09" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-54">
+        <Input>
+            <Intersection>
+                <Class index="mode4"/>
+                <Class index="processform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform08" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-55">
+        <Input>
+            <Intersection>
+                <Class index="mode3"/>
+                <Class index="processform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform07" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-56">
+        <Input>
+            <Intersection>
+                <Class index="mode2"/>
+                <Class index="processform"/>
+                <Class index="withmention3"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform06" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-57">
+        <Input>
+            <Intersection>
+                <Class index="mode2"/>
+                <Class index="processform"/>
+                <Class index="withmention2"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform05" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-58">
+        <Input>
+            <Intersection>
+                <Class index="mode2"/>
+                <Class index="processform"/>
+                <Class index="withmention1"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform04" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-59">
+        <Input>
+            <Intersection>
+                <Class index="mode1"/>
+                <Class index="processform"/>
+                <Class index="withmention1"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform01" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-60">
+        <Input>
+            <Intersection>
+                <Class index="mode1"/>
+                <Class index="processform"/>
+                <Class index="withmention2"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform02" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-61">
+        <Input>
+            <Intersection>
+                <Class index="mode1"/>
+                <Class index="processform"/>
+                <Class index="withmention3"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform03" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-62">
+        <Input>
+            <Intersection>
+                <Class index="mode6"/>
+                <Class index="processform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform10" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-63">
+        <Input>
+            <Intersection>
+                <Class index="form"/>
+                <Class index="qualifier"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="withcomparator" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="FORM-TYPE-2" selector="FORM-TYPE-2-SELECTOR">
+        <Input>
+            <Class index="withcomparator"/>
+        </Input>
+        <Outputs>
+            <Class id="withcomparator3" share="0.3333333333333333"/>
+            <Class id="withcomparator2" share="0.3333333333333333"/>
+            <Class id="withcomparator1" share="0.3333333333333333"/>
+        </Outputs>
+    </System>
+    <AskOperator default-answer="withcomparator3" id="FORM-TYPE-2-Q" java-method="" lisp-method="">
+        <Params>
+            <Slot index="WORD"/>
+        </Params>
+        <Answers>
+            <Class index="withcomparator3"/>
+            <Class index="withcomparator2"/>
+            <Class index="withcomparator1"/>
+        </Answers>
+        <AnswerMap>
+            <Answer index="withcomparator3" value="withcomparator3"/>
+            <Answer index="withcomparator2" value="withcomparator2"/>
+            <Answer index="withcomparator1" value="withcomparator1"/>
+        </AnswerMap>
+    </AskOperator>
+    <Selector date="" id="FORM-TYPE-2-SELECTOR">
+        <Ask>
+            <Inquiry inquiry-index="FORM-TYPE-2-Q">
+                <Param index="Onus"/>
+            </Inquiry>
+            <Class index="withcomparator3">
+                <Select param1="withcomparator3"/>
+            </Class>
+            <Class index="withcomparator2">
+                <Select param1="withcomparator2"/>
+            </Class>
+            <Class index="withcomparator1">
+                <Select param1="withcomparator1"/>
+            </Class>
+        </Ask>
+    </Selector>
+    <System id="COPY-GATE-64">
+        <Input>
+            <Intersection>
+                <Class index="form"/>
+                <Class index="process"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-65">
+        <Input>
+            <Intersection>
+                <Class index="mode5"/>
+                <Class index="processform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform09" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-66">
+        <Input>
+            <Intersection>
+                <Class index="mode4"/>
+                <Class index="processform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform08" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-67">
+        <Input>
+            <Intersection>
+                <Class index="mode3"/>
+                <Class index="processform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform07" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-68">
+        <Input>
+            <Intersection>
+                <Class index="mode2"/>
+                <Class index="processform"/>
+                <Class index="withmention3"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform06" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-69">
+        <Input>
+            <Intersection>
+                <Class index="mode2"/>
+                <Class index="processform"/>
+                <Class index="withmention2"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform05" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-70">
+        <Input>
+            <Intersection>
+                <Class index="mode2"/>
+                <Class index="processform"/>
+                <Class index="withmention1"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform04" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-71">
+        <Input>
+            <Intersection>
+                <Class index="mode1"/>
+                <Class index="processform"/>
+                <Class index="withmention1"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform01" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-72">
+        <Input>
+            <Intersection>
+                <Class index="mode1"/>
+                <Class index="processform"/>
+                <Class index="withmention2"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform02" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-73">
+        <Input>
+            <Intersection>
+                <Class index="mode1"/>
+                <Class index="processform"/>
+                <Class index="withmention3"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform03" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-74">
+        <Input>
+            <Intersection>
+                <Class index="mode6"/>
+                <Class index="processform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform10" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-75">
+        <Input>
+            <Intersection>
+                <Class index="form"/>
+                <Class index="classifier"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="withquantification" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="FORM-TYPE-3" selector="FORM-TYPE-3-SELECTOR">
+        <Input>
+            <Class index="withquantification"/>
+        </Input>
+        <Outputs>
+            <Class id="withquantification1" share="0.5"/>
+            <Class id="withquantification2" share="0.5"/>
+        </Outputs>
+    </System>
+    <AskOperator default-answer="withquantification1" id="FORM-TYPE-3-Q" java-method="" lisp-method="">
+        <Params>
+            <Slot index="WORD"/>
+        </Params>
+        <Answers>
+            <Class index="withquantification1"/>
+            <Class index="withquantification2"/>
+        </Answers>
+        <AnswerMap>
+            <Answer index="withquantification1" value="withquantification1"/>
+            <Answer index="withquantification2" value="withquantification2"/>
+        </AnswerMap>
+    </AskOperator>
+    <Selector date="" id="FORM-TYPE-3-SELECTOR">
+        <Ask>
+            <Inquiry inquiry-index="FORM-TYPE-3-Q">
+                <Param index="Onus"/>
+            </Inquiry>
+            <Class index="withquantification1">
+                <Select param1="withquantification1"/>
+            </Class>
+            <Class index="withquantification2">
+                <Select param1="withquantification2"/>
+            </Class>
+        </Ask>
+    </Selector>
+    <System id="COPY-GATE-76">
+        <Input>
+            <Intersection>
+                <Class index="case1"/>
+                <Class index="classifierform"/>
+                <Class index="withquantification1"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform01" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-77">
+        <Input>
+            <Intersection>
+                <Class index="case2"/>
+                <Class index="classifierform"/>
+                <Class index="withquantification1"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform02" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-78">
+        <Input>
+            <Intersection>
+                <Class index="case3"/>
+                <Class index="classifierform"/>
+                <Class index="withquantification1"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform03" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-79">
+        <Input>
+            <Intersection>
+                <Class index="case4"/>
+                <Class index="classifierform"/>
+                <Class index="withquantification1"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform04" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-80">
+        <Input>
+            <Intersection>
+                <Class index="case1"/>
+                <Class index="classifierform"/>
+                <Class index="withquantification2"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform05" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-81">
+        <Input>
+            <Intersection>
+                <Class index="case2"/>
+                <Class index="classifierform"/>
+                <Class index="withquantification2"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform06" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-82">
+        <Input>
+            <Intersection>
+                <Class index="case3"/>
+                <Class index="classifierform"/>
+                <Class index="withquantification2"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform07" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-83">
+        <Input>
+            <Intersection>
+                <Class index="case4"/>
+                <Class index="classifierform"/>
+                <Class index="withquantification2"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform08" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-84">
+        <Input>
+            <Intersection>
+                <Class index="case1"/>
+                <Class index="classifierform"/>
+                <Class index="withquantification1"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform01" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-85">
+        <Input>
+            <Intersection>
+                <Class index="case2"/>
+                <Class index="classifierform"/>
+                <Class index="withquantification1"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform02" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-86">
+        <Input>
+            <Intersection>
+                <Class index="case3"/>
+                <Class index="classifierform"/>
+                <Class index="withquantification1"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform03" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-87">
+        <Input>
+            <Intersection>
+                <Class index="case4"/>
+                <Class index="classifierform"/>
+                <Class index="withquantification1"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform04" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-88">
+        <Input>
+            <Intersection>
+                <Class index="case1"/>
+                <Class index="classifierform"/>
+                <Class index="withquantification2"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform05" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-89">
+        <Input>
+            <Intersection>
+                <Class index="case2"/>
+                <Class index="classifierform"/>
+                <Class index="withquantification2"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform06" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-90">
+        <Input>
+            <Intersection>
+                <Class index="case3"/>
+                <Class index="classifierform"/>
+                <Class index="withquantification2"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform07" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-91">
+        <Input>
+            <Intersection>
+                <Class index="case4"/>
+                <Class index="classifierform"/>
+                <Class index="withquantification2"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform08" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-92">
+        <Input>
+            <Intersection>
+                <Class index="form"/>
+                <Class index="process"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="withmention" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="FORM-TYPE-4" selector="FORM-TYPE-4-SELECTOR">
+        <Input>
+            <Class index="withmention"/>
+        </Input>
+        <Outputs>
+            <Class id="withmention1" share="0.3333333333333333"/>
+            <Class id="withmention2" share="0.3333333333333333"/>
+            <Class id="withmention3" share="0.3333333333333333"/>
+        </Outputs>
+    </System>
+    <AskOperator default-answer="withmention1" id="FORM-TYPE-4-Q" java-method="" lisp-method="">
+        <Params>
+            <Slot index="WORD"/>
+        </Params>
+        <Answers>
+            <Class index="withmention1"/>
+            <Class index="withmention2"/>
+            <Class index="withmention3"/>
+        </Answers>
+        <AnswerMap>
+            <Answer index="withmention1" value="withmention1"/>
+            <Answer index="withmention2" value="withmention2"/>
+            <Answer index="withmention3" value="withmention3"/>
+        </AnswerMap>
+    </AskOperator>
+    <Selector date="" id="FORM-TYPE-4-SELECTOR">
+        <Ask>
+            <Inquiry inquiry-index="FORM-TYPE-4-Q">
+                <Param index="Onus"/>
+            </Inquiry>
+            <Class index="withmention1">
+                <Select param1="withmention1"/>
+            </Class>
+            <Class index="withmention2">
+                <Select param1="withmention2"/>
+            </Class>
+            <Class index="withmention3">
+                <Select param1="withmention3"/>
+            </Class>
+        </Ask>
+    </Selector>
+    <System id="COPY-GATE-93">
+        <Input>
+            <Intersection>
+                <Class index="mode5"/>
+                <Class index="processform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform09" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-94">
+        <Input>
+            <Intersection>
+                <Class index="mode4"/>
+                <Class index="processform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform08" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-95">
+        <Input>
+            <Intersection>
+                <Class index="mode3"/>
+                <Class index="processform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform07" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-96">
+        <Input>
+            <Intersection>
+                <Class index="mode2"/>
+                <Class index="processform"/>
+                <Class index="withmention3"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform06" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-97">
+        <Input>
+            <Intersection>
+                <Class index="mode2"/>
+                <Class index="processform"/>
+                <Class index="withmention2"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform05" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-98">
+        <Input>
+            <Intersection>
+                <Class index="mode2"/>
+                <Class index="processform"/>
+                <Class index="withmention1"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform04" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-99">
+        <Input>
+            <Intersection>
+                <Class index="mode1"/>
+                <Class index="processform"/>
+                <Class index="withmention1"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform01" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-100">
+        <Input>
+            <Intersection>
+                <Class index="mode1"/>
+                <Class index="processform"/>
+                <Class index="withmention2"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform02" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-101">
+        <Input>
+            <Intersection>
+                <Class index="mode1"/>
+                <Class index="processform"/>
+                <Class index="withmention3"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform03" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-102">
+        <Input>
+            <Intersection>
+                <Class index="mode6"/>
+                <Class index="processform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform10" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-103">
+        <Input>
+            <Intersection>
+                <Class index="mode5"/>
+                <Class index="processform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform09" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-104">
+        <Input>
+            <Intersection>
+                <Class index="mode4"/>
+                <Class index="processform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform08" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-105">
+        <Input>
+            <Intersection>
+                <Class index="mode3"/>
+                <Class index="processform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform07" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-106">
+        <Input>
+            <Intersection>
+                <Class index="mode2"/>
+                <Class index="processform"/>
+                <Class index="withmention3"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform06" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-107">
+        <Input>
+            <Intersection>
+                <Class index="mode2"/>
+                <Class index="processform"/>
+                <Class index="withmention2"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform05" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-108">
+        <Input>
+            <Intersection>
+                <Class index="mode2"/>
+                <Class index="processform"/>
+                <Class index="withmention1"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform04" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-109">
+        <Input>
+            <Intersection>
+                <Class index="mode1"/>
+                <Class index="processform"/>
+                <Class index="withmention1"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform01" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-110">
+        <Input>
+            <Intersection>
+                <Class index="mode1"/>
+                <Class index="processform"/>
+                <Class index="withmention2"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform02" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-111">
+        <Input>
+            <Intersection>
+                <Class index="mode1"/>
+                <Class index="processform"/>
+                <Class index="withmention3"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform03" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-112">
+        <Input>
+            <Intersection>
+                <Class index="mode6"/>
+                <Class index="processform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform10" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-113">
+        <Input>
+            <Intersection>
+                <Class index="mode5"/>
+                <Class index="processform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform09" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-114">
+        <Input>
+            <Intersection>
+                <Class index="mode4"/>
+                <Class index="processform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform08" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-115">
+        <Input>
+            <Intersection>
+                <Class index="mode3"/>
+                <Class index="processform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform07" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-116">
+        <Input>
+            <Intersection>
+                <Class index="mode2"/>
+                <Class index="processform"/>
+                <Class index="withmention3"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform06" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-117">
+        <Input>
+            <Intersection>
+                <Class index="mode2"/>
+                <Class index="processform"/>
+                <Class index="withmention2"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform05" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-118">
+        <Input>
+            <Intersection>
+                <Class index="mode2"/>
+                <Class index="processform"/>
+                <Class index="withmention1"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform04" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-119">
+        <Input>
+            <Intersection>
+                <Class index="mode1"/>
+                <Class index="processform"/>
+                <Class index="withmention1"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform01" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-120">
+        <Input>
+            <Intersection>
+                <Class index="mode1"/>
+                <Class index="processform"/>
+                <Class index="withmention2"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform02" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-121">
+        <Input>
+            <Intersection>
+                <Class index="mode1"/>
+                <Class index="processform"/>
+                <Class index="withmention3"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform03" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-122">
+        <Input>
+            <Intersection>
+                <Class index="mode6"/>
+                <Class index="processform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processform10" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-123">
+        <Input>
+            <Intersection>
+                <Class index="form"/>
+                <Class index="mentioner"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="mentionerform" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-124">
+        <Input>
+            <Intersection>
+                <Class index="case1"/>
+                <Class index="mentionerform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="mentionerform01" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-125">
+        <Input>
+            <Intersection>
+                <Class index="case3"/>
+                <Class index="mentionerform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="mentionerform03" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-126">
+        <Input>
+            <Intersection>
+                <Class index="case2"/>
+                <Class index="mentionerform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="mentionerform02" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-127">
+        <Input>
+            <Intersection>
+                <Class index="case4"/>
+                <Class index="mentionerform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="mentionerform04" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-128">
+        <Input>
+            <Intersection>
+                <Class index="form"/>
+                <Class index="identifier"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="identifierform" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-129">
+        <Input>
+            <Intersection>
+                <Class index="case1"/>
+                <Class index="identifierform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="identifierform01" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-130">
+        <Input>
+            <Intersection>
+                <Class index="case2"/>
+                <Class index="identifierform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="identifierform02" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-131">
+        <Input>
+            <Intersection>
+                <Class index="case3"/>
+                <Class index="identifierform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="identifierform03" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-132">
+        <Input>
+            <Intersection>
+                <Class index="case4"/>
+                <Class index="identifierform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="identifierform04" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-133">
+        <Input>
+            <Intersection>
+                <Class index="form"/>
+                <Union>
+                    <Class index="classifier"/>
+                    <Class index="identifier"/>
+                    <Class index="mentioner"/>
+                </Union>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="case" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="FORM-TYPE-5" selector="FORM-TYPE-5-SELECTOR">
+        <Input>
+            <Class index="case"/>
+        </Input>
+        <Outputs>
+            <Class id="case3" share="0.25"/>
+            <Class id="case4" share="0.25"/>
+            <Class id="case1" share="0.25"/>
+            <Class id="case2" share="0.25"/>
+        </Outputs>
+    </System>
+    <AskOperator default-answer="case3" id="FORM-TYPE-5-Q" java-method="" lisp-method="">
+        <Params>
+            <Slot index="WORD"/>
+        </Params>
+        <Answers>
+            <Class index="case3"/>
+            <Class index="case4"/>
+            <Class index="case1"/>
+            <Class index="case2"/>
+        </Answers>
+        <AnswerMap>
+            <Answer index="case3" value="case3"/>
+            <Answer index="case2" value="case2"/>
+            <Answer index="case1" value="case1"/>
+            <Answer index="case4" value="case4"/>
+        </AnswerMap>
+    </AskOperator>
+    <Selector date="" id="FORM-TYPE-5-SELECTOR">
+        <Ask>
+            <Inquiry inquiry-index="FORM-TYPE-5-Q">
+                <Param index="Onus"/>
+            </Inquiry>
+            <Class index="case3">
+                <Select param1="case3"/>
+            </Class>
+            <Class index="case2">
+                <Select param1="case2"/>
+            </Class>
+            <Class index="case1">
+                <Select param1="case1"/>
+            </Class>
+            <Class index="case4">
+                <Select param1="case4"/>
+            </Class>
+        </Ask>
+    </Selector>
+    <System id="COPY-GATE-134">
+        <Input>
+            <Intersection>
+                <Class index="case1"/>
+                <Class index="identifierform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="identifierform01" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-135">
+        <Input>
+            <Intersection>
+                <Class index="case2"/>
+                <Class index="identifierform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="identifierform02" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-136">
+        <Input>
+            <Intersection>
+                <Class index="case3"/>
+                <Class index="identifierform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="identifierform03" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-137">
+        <Input>
+            <Intersection>
+                <Class index="case4"/>
+                <Class index="identifierform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="identifierform04" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-138">
+        <Input>
+            <Intersection>
+                <Class index="case1"/>
+                <Class index="classifierform"/>
+                <Class index="withquantification1"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform01" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-139">
+        <Input>
+            <Intersection>
+                <Class index="case2"/>
+                <Class index="classifierform"/>
+                <Class index="withquantification1"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform02" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-140">
+        <Input>
+            <Intersection>
+                <Class index="case3"/>
+                <Class index="classifierform"/>
+                <Class index="withquantification1"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform03" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-141">
+        <Input>
+            <Intersection>
+                <Class index="case4"/>
+                <Class index="classifierform"/>
+                <Class index="withquantification1"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform04" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-142">
+        <Input>
+            <Intersection>
+                <Class index="case1"/>
+                <Class index="classifierform"/>
+                <Class index="withquantification2"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform05" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-143">
+        <Input>
+            <Intersection>
+                <Class index="case2"/>
+                <Class index="classifierform"/>
+                <Class index="withquantification2"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform06" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-144">
+        <Input>
+            <Intersection>
+                <Class index="case3"/>
+                <Class index="classifierform"/>
+                <Class index="withquantification2"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform07" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-145">
+        <Input>
+            <Intersection>
+                <Class index="case4"/>
+                <Class index="classifierform"/>
+                <Class index="withquantification2"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform08" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-146">
+        <Input>
+            <Intersection>
+                <Class index="case1"/>
+                <Class index="mentionerform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="mentionerform01" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-147">
+        <Input>
+            <Intersection>
+                <Class index="case3"/>
+                <Class index="mentionerform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="mentionerform03" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-148">
+        <Input>
+            <Intersection>
+                <Class index="case2"/>
+                <Class index="mentionerform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="mentionerform02" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-149">
+        <Input>
+            <Intersection>
+                <Class index="case4"/>
+                <Class index="mentionerform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="mentionerform04" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-150">
+        <Input>
+            <Intersection>
+                <Class index="case1"/>
+                <Class index="identifierform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="identifierform01" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-151">
+        <Input>
+            <Intersection>
+                <Class index="case2"/>
+                <Class index="identifierform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="identifierform02" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-152">
+        <Input>
+            <Intersection>
+                <Class index="case3"/>
+                <Class index="identifierform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="identifierform03" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-153">
+        <Input>
+            <Intersection>
+                <Class index="case4"/>
+                <Class index="identifierform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="identifierform04" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-154">
+        <Input>
+            <Intersection>
+                <Class index="case1"/>
+                <Class index="classifierform"/>
+                <Class index="withquantification1"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform01" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-155">
+        <Input>
+            <Intersection>
+                <Class index="case2"/>
+                <Class index="classifierform"/>
+                <Class index="withquantification1"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform02" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-156">
+        <Input>
+            <Intersection>
+                <Class index="case3"/>
+                <Class index="classifierform"/>
+                <Class index="withquantification1"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform03" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-157">
+        <Input>
+            <Intersection>
+                <Class index="case4"/>
+                <Class index="classifierform"/>
+                <Class index="withquantification1"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform04" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-158">
+        <Input>
+            <Intersection>
+                <Class index="case1"/>
+                <Class index="classifierform"/>
+                <Class index="withquantification2"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform05" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-159">
+        <Input>
+            <Intersection>
+                <Class index="case2"/>
+                <Class index="classifierform"/>
+                <Class index="withquantification2"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform06" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-160">
+        <Input>
+            <Intersection>
+                <Class index="case3"/>
+                <Class index="classifierform"/>
+                <Class index="withquantification2"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform07" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-161">
+        <Input>
+            <Intersection>
+                <Class index="case4"/>
+                <Class index="classifierform"/>
+                <Class index="withquantification2"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform08" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-162">
+        <Input>
+            <Intersection>
+                <Class index="case1"/>
+                <Class index="mentionerform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="mentionerform01" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-163">
+        <Input>
+            <Intersection>
+                <Class index="case3"/>
+                <Class index="mentionerform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="mentionerform03" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-164">
+        <Input>
+            <Intersection>
+                <Class index="case2"/>
+                <Class index="mentionerform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="mentionerform02" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-165">
+        <Input>
+            <Intersection>
+                <Class index="case4"/>
+                <Class index="mentionerform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="mentionerform04" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-166">
+        <Input>
+            <Intersection>
+                <Class index="case1"/>
+                <Class index="identifierform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="identifierform01" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-167">
+        <Input>
+            <Intersection>
+                <Class index="case2"/>
+                <Class index="identifierform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="identifierform02" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-168">
+        <Input>
+            <Intersection>
+                <Class index="case3"/>
+                <Class index="identifierform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="identifierform03" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-169">
+        <Input>
+            <Intersection>
+                <Class index="case4"/>
+                <Class index="identifierform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="identifierform04" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-170">
+        <Input>
+            <Intersection>
+                <Class index="case1"/>
+                <Class index="classifierform"/>
+                <Class index="withquantification1"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform01" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-171">
+        <Input>
+            <Intersection>
+                <Class index="case2"/>
+                <Class index="classifierform"/>
+                <Class index="withquantification1"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform02" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-172">
+        <Input>
+            <Intersection>
+                <Class index="case3"/>
+                <Class index="classifierform"/>
+                <Class index="withquantification1"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform03" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-173">
+        <Input>
+            <Intersection>
+                <Class index="case4"/>
+                <Class index="classifierform"/>
+                <Class index="withquantification1"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform04" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-174">
+        <Input>
+            <Intersection>
+                <Class index="case1"/>
+                <Class index="classifierform"/>
+                <Class index="withquantification2"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform05" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-175">
+        <Input>
+            <Intersection>
+                <Class index="case2"/>
+                <Class index="classifierform"/>
+                <Class index="withquantification2"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform06" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-176">
+        <Input>
+            <Intersection>
+                <Class index="case3"/>
+                <Class index="classifierform"/>
+                <Class index="withquantification2"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform07" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-177">
+        <Input>
+            <Intersection>
+                <Class index="case4"/>
+                <Class index="classifierform"/>
+                <Class index="withquantification2"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform08" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-178">
+        <Input>
+            <Intersection>
+                <Class index="case1"/>
+                <Class index="mentionerform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="mentionerform01" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-179">
+        <Input>
+            <Intersection>
+                <Class index="case3"/>
+                <Class index="mentionerform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="mentionerform03" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-180">
+        <Input>
+            <Intersection>
+                <Class index="case2"/>
+                <Class index="mentionerform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="mentionerform02" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-181">
+        <Input>
+            <Intersection>
+                <Class index="case4"/>
+                <Class index="mentionerform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="mentionerform04" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-182">
+        <Input>
+            <Intersection>
+                <Class index="case1"/>
+                <Class index="identifierform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="identifierform01" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-183">
+        <Input>
+            <Intersection>
+                <Class index="case2"/>
+                <Class index="identifierform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="identifierform02" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-184">
+        <Input>
+            <Intersection>
+                <Class index="case3"/>
+                <Class index="identifierform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="identifierform03" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-185">
+        <Input>
+            <Intersection>
+                <Class index="case4"/>
+                <Class index="identifierform"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="identifierform04" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-186">
+        <Input>
+            <Intersection>
+                <Class index="case1"/>
+                <Class index="classifierform"/>
+                <Class index="withquantification1"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform01" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-187">
+        <Input>
+            <Intersection>
+                <Class index="case2"/>
+                <Class index="classifierform"/>
+                <Class index="withquantification1"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform02" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-188">
+        <Input>
+            <Intersection>
+                <Class index="case3"/>
+                <Class index="classifierform"/>
+                <Class index="withquantification1"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform03" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-189">
+        <Input>
+            <Intersection>
+                <Class index="case4"/>
+                <Class index="classifierform"/>
+                <Class index="withquantification1"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform04" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-190">
+        <Input>
+            <Intersection>
+                <Class index="case1"/>
+                <Class index="classifierform"/>
+                <Class index="withquantification2"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform05" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-191">
+        <Input>
+            <Intersection>
+                <Class index="case2"/>
+                <Class index="classifierform"/>
+                <Class index="withquantification2"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform06" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-192">
+        <Input>
+            <Intersection>
+                <Class index="case3"/>
+                <Class index="classifierform"/>
+                <Class index="withquantification2"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform07" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-193">
+        <Input>
+            <Intersection>
+                <Class index="case4"/>
+                <Class index="classifierform"/>
+                <Class index="withquantification2"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform08" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-194">
+        <Input>
+            <Intersection>
+                <Class index="form"/>
+                <Class index="qualifier"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="qualifierform" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-195">
+        <Input>
+            <Intersection>
+                <Class index="qualifierform"/>
+                <Class index="withcomparator2"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="qualifierform02" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-196">
+        <Input>
+            <Intersection>
+                <Class index="qualifierform"/>
+                <Class index="withcomparator1"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="qualifierform01" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-197">
+        <Input>
+            <Intersection>
+                <Class index="qualifierform"/>
+                <Class index="withcomparator3"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="qualifierform03" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-198">
+        <Input>
+            <Intersection>
+                <Class index="form"/>
+                <Class index="classifier"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-199">
+        <Input>
+            <Intersection>
+                <Class index="case1"/>
+                <Class index="classifierform"/>
+                <Class index="withquantification1"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform01" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-200">
+        <Input>
+            <Intersection>
+                <Class index="case2"/>
+                <Class index="classifierform"/>
+                <Class index="withquantification1"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform02" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-201">
+        <Input>
+            <Intersection>
+                <Class index="case3"/>
+                <Class index="classifierform"/>
+                <Class index="withquantification1"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform03" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-202">
+        <Input>
+            <Intersection>
+                <Class index="case4"/>
+                <Class index="classifierform"/>
+                <Class index="withquantification1"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform04" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-203">
+        <Input>
+            <Intersection>
+                <Class index="case1"/>
+                <Class index="classifierform"/>
+                <Class index="withquantification2"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform05" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-204">
+        <Input>
+            <Intersection>
+                <Class index="case2"/>
+                <Class index="classifierform"/>
+                <Class index="withquantification2"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform06" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-205">
+        <Input>
+            <Intersection>
+                <Class index="case3"/>
+                <Class index="classifierform"/>
+                <Class index="withquantification2"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform07" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-206">
+        <Input>
+            <Intersection>
+                <Class index="case4"/>
+                <Class index="classifierform"/>
+                <Class index="withquantification2"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierform08" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Class index="form"/>
+        </Input>
+        <Outputs>
+            <Class id="copy" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="copy"/>
+                <Class index="mentionerform02"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="mentionercopy02" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="copy"/>
+                <Class index="mentionerform01"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="mentionercopy01" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="copy"/>
+                <Class index="processform01"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processcopy01" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="processcopy01"/>
+                <Class index="regular"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processcopy01stem" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="processcopy01"/>
+                <Class index="irregular"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processcopy01stem01" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="copy"/>
+                <Class index="processform02"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processcopy02" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="processcopy02"/>
+                <Class index="endingwith-y-ies-ied-ying"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processcopy02stem+changeytoi+suffixes" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="processcopy02"/>
+                <Union>
+                    <Class index="endingwith-e-es-ed-ing"/>
+                    <Class index="endingwith-r-rs-rred-rring"/>
+                    <Class index="endingwith-ø-s-ed-ing"/>
+                </Union>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processcopy02stem+suffixs" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="processcopy02"/>
+                <Class index="irregular"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processcopy02stem02" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="processcopy02"/>
+                <Class index="endingwith-ø-es-ed-ing"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processcopy02stem+suffixes" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="copy"/>
+                <Union>
+                    <Class index="identifierform01"/>
+                    <Class index="identifierform02"/>
+                    <Class index="identifierform04"/>
+                </Union>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="identifiercopy01" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="copy"/>
+                <Class index="identifierform03"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="identifiercopy02" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="copy"/>
+                <Class index="mentionerform04"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="mentionercopy04" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="copy"/>
+                <Class index="mentionerform03"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="mentionercopy03" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="copy"/>
+                <Union>
+                    <Class index="classifierform01"/>
+                    <Class index="classifierform02"/>
+                    <Class index="classifierform04"/>
+                </Union>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifiercopy01" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="copy"/>
+                <Class index="classifierform03"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifiercopy02" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="copy"/>
+                <Union>
+                    <Class index="classifierform05"/>
+                    <Class index="classifierform06"/>
+                    <Class index="classifierform08"/>
+                </Union>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifiercopy03" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="classifiercopy03"/>
+                <Class index="endingwith-ø-es"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierstem+suffixes" share="1.0">
+                <Pattern kind="insert" param1="Stem"/>
+                <Pattern kind="insert" param1="Suffix"/>
+                <Pattern kind="order" param1="Stem" param2="Suffix"/>
+                <Pattern kind="lexify" param1="Suffix" param2="ES"/>
+                <Pattern kind="fill-with-stem" param1="Stem"/>
+            </Class>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="classifiercopy03"/>
+                <Class index="endingwith-y-ies"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierstem+changeytoi+suffixes" share="1.0">
+                <Pattern kind="insert" param1="Stem"/>
+                <Pattern kind="insert" param1="Suffix"/>
+                <Pattern kind="lexify" param1="Suffix" param2="ES"/>
+                <Pattern kind="order" param1="Stem" param2="Suffix"/>
+                <Pattern kind="modify" param1="Stem" param2="by-replacing-last-y-with-i"/>
+                <Pattern kind="fill-with-stem" param1="Stem"/>
+            </Class>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="copy"/>
+                <Class index="classifierform07"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifiercopy04" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="classifiercopy04"/>
+                <Class index="endingwith-ø-es"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierstem+suffixes'" share="1.0">
+                <Pattern kind="lexify" param1="Suffix" param2="ES'"/>
+                <Pattern kind="insert" param1="Stem"/>
+                <Pattern kind="insert" param1="Suffix"/>
+                <Pattern kind="order" param1="Stem" param2="Suffix"/>
+                <Pattern kind="fill-with-stem" param1="Stem"/>
+            </Class>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="classifiercopy04"/>
+                <Class index="endingwith-y-ies"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="classifierstem+changeytoi+suffixes'" share="1.0">
+                <Pattern kind="lexify" param1="Suffix" param2="ES'"/>
+                <Pattern kind="insert" param1="Stem"/>
+                <Pattern kind="insert" param1="Suffix"/>
+                <Pattern kind="order" param1="Stem" param2="Suffix"/>
+                <Pattern kind="modify" param1="Stem" param2="by-replacing-last-y-with-i"/>
+                <Pattern kind="fill-with-stem" param1="Stem"/>
+            </Class>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="copy"/>
+                <Class index="qualifierform02"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="qualifiercopy02" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="qualifiercopy02"/>
+                <Class index="endingwith-e-er-est"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="qualifiercopy02stem+suffixr" share="1.0">
+                <Pattern kind="insert" param1="Stem"/>
+                <Pattern kind="insert" param1="Suffix"/>
+                <Pattern kind="order" param1="Stem" param2="Suffix"/>
+                <Pattern kind="fill-with-stem" param1="Stem"/>
+                <Pattern kind="lexify" param1="Suffix" param2="R"/>
+            </Class>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="qualifiercopy02"/>
+                <Class index="endingwith-ø-er-est"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="qualifiercopy02stem+suffixer" share="1.0">
+                <Pattern kind="insert" param1="Stem"/>
+                <Pattern kind="insert" param1="Suffix"/>
+                <Pattern kind="lexify" param1="Suffix" param2="ER"/>
+                <Pattern kind="order" param1="Stem" param2="Suffix"/>
+                <Pattern kind="fill-with-stem" param1="Stem"/>
+            </Class>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="qualifiercopy02"/>
+                <Class index="endingwith-r-rrer-rrest"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="qualifiercopy02stem+double+suffixer" share="1.0">
+                <Pattern kind="insert" param1="Stem"/>
+                <Pattern kind="insert" param1="Suffix"/>
+                <Pattern kind="modify" param1="Stem" param2="by-doubling-last-letter"/>
+                <Pattern kind="lexify" param1="Suffix" param2="ER"/>
+                <Pattern kind="order" param1="Stem" param2="Suffix"/>
+                <Pattern kind="fill-with-stem" param1="Stem"/>
+            </Class>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="qualifiercopy02"/>
+                <Class index="endingwith-y-ier-iest"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="qualifiercopy02stem+changeytoi+suffixer" share="1.0">
+                <Pattern kind="insert" param1="Stem"/>
+                <Pattern kind="insert" param1="Suffix"/>
+                <Pattern kind="lexify" param1="Suffix" param2="ER"/>
+                <Pattern kind="order" param1="Stem" param2="Suffix"/>
+                <Pattern kind="modify" param1="Stem" param2="by-replacing-last-y-with-i"/>
+                <Pattern kind="fill-with-stem" param1="Stem"/>
+            </Class>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="qualifiercopy02"/>
+                <Class index="startingwith-ø-more-most"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="qualifiercopy02stem+prefixmore" share="1.0">
+                <Pattern kind="order" param1="Prefix" param2="Stem"/>
+                <Pattern kind="insert" param1="Prefix"/>
+                <Pattern kind="insert" param1="Stem"/>
+                <Pattern kind="lexify" param1="Prefix" param2="MORE"/>
+                <Pattern kind="fill-with-stem" param1="Stem"/>
+            </Class>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="copy"/>
+                <Class index="qualifierform03"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="qualifiercopy03" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="qualifiercopy03"/>
+                <Class index="endingwith-y-ier-iest"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="qualifiercopy03stem+changeytoi+suffixest" share="1.0">
+                <Pattern kind="insert" param1="Stem"/>
+                <Pattern kind="insert" param1="Suffix"/>
+                <Pattern kind="order" param1="Stem" param2="Suffix"/>
+                <Pattern kind="lexify" param1="Suffix" param2="EST"/>
+                <Pattern kind="modify" param1="Stem" param2="by-replacing-last-y-with-i"/>
+                <Pattern kind="fill-with-stem" param1="Stem"/>
+            </Class>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="qualifiercopy03"/>
+                <Class index="endingwith-r-rrer-rrest"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="qualifiercopy03stem+double+suffixest" share="1.0">
+                <Pattern kind="insert" param1="Stem"/>
+                <Pattern kind="insert" param1="Suffix"/>
+                <Pattern kind="modify" param1="Stem" param2="by-doubling-last-letter"/>
+                <Pattern kind="order" param1="Stem" param2="Suffix"/>
+                <Pattern kind="lexify" param1="Suffix" param2="EST"/>
+                <Pattern kind="fill-with-stem" param1="Stem"/>
+            </Class>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="qualifiercopy03"/>
+                <Class index="endingwith-ø-er-est"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="qualifiercopy03stem+suffixest" share="1.0">
+                <Pattern kind="insert" param1="Stem"/>
+                <Pattern kind="insert" param1="Suffix"/>
+                <Pattern kind="order" param1="Stem" param2="Suffix"/>
+                <Pattern kind="lexify" param1="Suffix" param2="EST"/>
+                <Pattern kind="fill-with-stem" param1="Stem"/>
+            </Class>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="qualifiercopy03"/>
+                <Class index="startingwith-ø-more-most"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="qualifiercopy03stem+prefixmost" share="1.0">
+                <Pattern kind="insert" param1="Prefix"/>
+                <Pattern kind="order" param1="Prefix" param2="Stem"/>
+                <Pattern kind="insert" param1="Stem"/>
+                <Pattern kind="lexify" param1="Prefix" param2="MOST"/>
+                <Pattern kind="fill-with-stem" param1="Stem"/>
+            </Class>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="qualifiercopy03"/>
+                <Class index="endingwith-e-er-est"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="qualifiercopy03stem+suffixst" share="1.0">
+                <Pattern kind="lexify" param1="Suffix" param2="ST"/>
+                <Pattern kind="insert" param1="Stem"/>
+                <Pattern kind="insert" param1="Suffix"/>
+                <Pattern kind="order" param1="Stem" param2="Suffix"/>
+                <Pattern kind="fill-with-stem" param1="Stem"/>
+            </Class>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="copy"/>
+                <Class index="qualifierform01"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="qualifiercopy01" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="qualifiercopy01"/>
+                <Class index="regular"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="qualifiercopy01stem" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="copy"/>
+                <Union>
+                    <Class index="processform04"/>
+                    <Class index="processform05"/>
+                </Union>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processcopy04" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="processcopy04"/>
+                <Class index="endingwith-e-es-ed-ing"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processcopy04stem+suffixd" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="processcopy04"/>
+                <Class index="irregular"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processcopy04stem04" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="processcopy04"/>
+                <Class index="endingwith-y-ies-ied-ying"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processcopy04stem+changeytoi+suffixed" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="processcopy04"/>
+                <Union>
+                    <Class index="endingwith-ø-es-ed-ing"/>
+                    <Class index="endingwith-ø-s-ed-ing"/>
+                </Union>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processcopy04stem+suffixed" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="processcopy04"/>
+                <Class index="endingwith-r-rs-rred-rring"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processcopy04stem+double+suffixed" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="copy"/>
+                <Class index="processform03"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processcopy03" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="processcopy03"/>
+                <Class index="regular"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processcopy03stem" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="processcopy03"/>
+                <Class index="irregular"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processcopy03stem03" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="copy"/>
+                <Class index="processform08"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processcopy06" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="processcopy06"/>
+                <Class index="regular"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processcopy06stem" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="processcopy06"/>
+                <Class index="irregular"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processcopy06stem06" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="copy"/>
+                <Union>
+                    <Class index="processform06"/>
+                    <Class index="processform07"/>
+                </Union>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processcopy05" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="processcopy05"/>
+                <Class index="endingwith-y-ies-ied-ying"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processcopy05stem+changeytoi+suffixed" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="processcopy05"/>
+                <Union>
+                    <Class index="endingwith-ø-es-ed-ing"/>
+                    <Class index="endingwith-ø-s-ed-ing"/>
+                </Union>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processcopy05stem+suffixed" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="processcopy05"/>
+                <Class index="endingwith-e-es-ed-ing"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processcopy05stem+suffixd" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="processcopy05"/>
+                <Class index="endingwith-r-rs-rred-rring"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processcopy05stem+double+suffixed" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="processcopy05"/>
+                <Class index="irregular"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processcopy05stem05" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="copy"/>
+                <Class index="processform10"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processcopy08" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="processcopy08"/>
+                <Class index="endingwith-e-es-ed-ing"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processcopy08stem+chop+suffixing" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="processcopy08"/>
+                <Union>
+                    <Class index="endingwith-y-ies-ied-ying"/>
+                    <Class index="endingwith-ø-es-ed-ing"/>
+                    <Class index="endingwith-ø-s-ed-ing"/>
+                </Union>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processcopy08stem+suffixing" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="processcopy08"/>
+                <Class index="irregular"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processcopy08stem08" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="processcopy08"/>
+                <Class index="endingwith-r-rs-rred-rring"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processcopy08stem+double+suffixing" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="copy"/>
+                <Class index="processform09"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processcopy07" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="processcopy07"/>
+                <Class index="endingwith-e-es-ed-ing"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processcopy07stem+suffixd" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="processcopy07"/>
+                <Union>
+                    <Class index="endingwith-ø-es-ed-ing"/>
+                    <Class index="endingwith-ø-s-ed-ing"/>
+                </Union>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processcopy-07stem+suffixed" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="processcopy07"/>
+                <Class index="endingwith-r-rs-rred-rring"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processcopy07stem+double+suffixed" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="processcopy07"/>
+                <Class index="endingwith-y-ies-ied-ying"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processcopy07stem+changeytoi+suffixed" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="processcopy07"/>
+                <Class index="irregular"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="processcopy07stem07" share="1.0"/>
+        </Outputs>
+    </System>
+</Module>

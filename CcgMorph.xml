@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?><morph xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="English" xsi:noNamespaceSchemaLocation="../../../openccg/grammars/morph.xsd">
+    <!--Word The-->
+    <entry pos="TheWord" word="the"/>
+    <entry pos="TheWord" word="my"/>
+    <entry pos="AnWord" word="an"/>
+    <entry pos="BeWord" word="was"/>
+    <entry pos="ToWord" word="to"/>
+    <entry pos="ByWord" word="by"/>
+    <!--Word Aunt with sense Aunt-->
+    <entry class="Aunt" macros="@WithQuantification2 @Case2" pos="ClassifierForm" stem="Aunt" word="aunts"/>
+    <entry class="Aunt" macros="@Case4 @WithQuantification1" pos="ClassifierForm" stem="Aunt" word="aunt"/>
+    <entry class="Aunt" macros="@WithQuantification1 @Case3" pos="ClassifierForm" stem="Aunt" word="aunt's"/>
+    <entry class="Aunt" macros="@WithQuantification2 @Case1" pos="ClassifierForm" stem="Aunt" word="aunts"/>
+    <entry class="Aunt" macros="@WithQuantification1 @Case2" pos="ClassifierForm" stem="Aunt" word="aunt"/>
+    <entry class="Aunt" macros="@WithQuantification1 @Case1" pos="ClassifierForm" stem="Aunt" word="aunt"/>
+    <entry class="Aunt" macros="@Case4 @WithQuantification2" pos="ClassifierForm" stem="Aunt" word="aunts"/>
+    <entry class="Aunt" macros="@WithQuantification2 @Case3" pos="ClassifierForm" stem="Aunt" word="aunts'"/>
+    <!--Word Teapot with sense Teapot-->
+    <entry class="Teapot" macros="@Case4 @WithQuantification1" pos="ClassifierForm" stem="Teapot" word="teapot"/>
+    <entry class="Teapot" macros="@WithQuantification2 @Case2" pos="ClassifierForm" stem="Teapot" word="teapots"/>
+    <entry class="Teapot" macros="@WithQuantification2 @Case1" pos="ClassifierForm" stem="Teapot" word="teapots"/>
+    <entry class="Teapot" macros="@Case4 @WithQuantification2" pos="ClassifierForm" stem="Teapot" word="teapots"/>
+    <entry class="Teapot" macros="@WithQuantification1 @Case1" pos="ClassifierForm" stem="Teapot" word="teapot"/>
+    <entry class="Teapot" macros="@WithQuantification1 @Case3" pos="ClassifierForm" stem="Teapot" word="teapot's"/>
+    <entry class="Teapot" macros="@WithQuantification2 @Case3" pos="ClassifierForm" stem="Teapot" word="teapots'"/>
+    <entry class="Teapot" macros="@WithQuantification1 @Case2" pos="ClassifierForm" stem="Teapot" word="teapot"/>
+    <!--Word Duke with sense Duke-->
+    <entry class="Duke" macros="@Case4 @WithQuantification1" pos="ClassifierForm" stem="Duke" word="duke"/>
+    <entry class="Duke" macros="@WithQuantification1 @Case3" pos="ClassifierForm" stem="Duke" word="duke's"/>
+    <entry class="Duke" macros="@WithQuantification1 @Case1" pos="ClassifierForm" stem="Duke" word="duke"/>
+    <entry class="Duke" macros="@WithQuantification2 @Case2" pos="ClassifierForm" stem="Duke" word="dukes"/>
+    <entry class="Duke" macros="@WithQuantification2 @Case1" pos="ClassifierForm" stem="Duke" word="dukes"/>
+    <entry class="Duke" macros="@Case4 @WithQuantification2" pos="ClassifierForm" stem="Duke" word="dukes"/>
+    <entry class="Duke" macros="@WithQuantification1 @Case2" pos="ClassifierForm" stem="Duke" word="duke"/>
+    <entry class="Duke" macros="@WithQuantification2 @Case3" pos="ClassifierForm" stem="Duke" word="dukes'"/>
+    <!--Word House with sense House-->
+    <entry class="House" macros="@WithQuantification2 @Case2" pos="ClassifierForm" stem="House" word="houses"/>
+    <entry class="House" macros="@Case4 @WithQuantification1" pos="ClassifierForm" stem="House" word="house"/>
+    <entry class="House" macros="@WithQuantification1 @Case3" pos="ClassifierForm" stem="House" word="house's"/>
+    <entry class="House" macros="@WithQuantification2 @Case1" pos="ClassifierForm" stem="House" word="houses"/>
+    <entry class="House" macros="@WithQuantification1 @Case2" pos="ClassifierForm" stem="House" word="house"/>
+    <entry class="House" macros="@WithQuantification1 @Case1" pos="ClassifierForm" stem="House" word="house"/>
+    <entry class="House" macros="@Case4 @WithQuantification2" pos="ClassifierForm" stem="House" word="houses"/>
+    <entry class="House" macros="@WithQuantification2 @Case3" pos="ClassifierForm" stem="House" word="houses'"/>
+    <!--Word Cat with sense Cat-->
+    <entry class="Cat" macros="@Case4 @WithQuantification1" pos="ClassifierForm" stem="Cat" word="cat"/>
+    <entry class="Cat" macros="@WithQuantification2 @Case2" pos="ClassifierForm" stem="Cat" word="cats"/>
+    <entry class="Cat" macros="@Case4 @WithQuantification2" pos="ClassifierForm" stem="Cat" word="cats"/>
+    <entry class="Cat" macros="@WithQuantification2 @Case3" pos="ClassifierForm" stem="Cat" word="cats'"/>
+    <entry class="Cat" macros="@WithQuantification1 @Case2" pos="ClassifierForm" stem="Cat" word="cat"/>
+    <entry class="Cat" macros="@WithQuantification1 @Case1" pos="ClassifierForm" stem="Cat" word="cat"/>
+    <entry class="Cat" macros="@WithQuantification1 @Case3" pos="ClassifierForm" stem="Cat" word="cat's"/>
+    <entry class="Cat" macros="@WithQuantification2 @Case1" pos="ClassifierForm" stem="Cat" word="cats"/>
+    <!--Word Dog with sense Dog-->
+    <entry class="Dog" macros="@WithQuantification2 @Case3" pos="ClassifierForm" stem="Dog" word="dogs'"/>
+    <entry class="Dog" macros="@Case4 @WithQuantification2" pos="ClassifierForm" stem="Dog" word="dogs"/>
+    <entry class="Dog" macros="@WithQuantification1 @Case1" pos="ClassifierForm" stem="Dog" word="dog"/>
+    <entry class="Dog" macros="@WithQuantification1 @Case2" pos="ClassifierForm" stem="Dog" word="dog"/>
+    <entry class="Dog" macros="@WithQuantification2 @Case1" pos="ClassifierForm" stem="Dog" word="dogs"/>
+    <entry class="Dog" macros="@WithQuantification1 @Case3" pos="ClassifierForm" stem="Dog" word="dog's"/>
+    <entry class="Dog" macros="@Case4 @WithQuantification1" pos="ClassifierForm" stem="Dog" word="dog"/>
+    <entry class="Dog" macros="@WithQuantification2 @Case2" pos="ClassifierForm" stem="Dog" word="dogs"/>
+    <!--Word Nice with sense Nice-->
+    <entry class="Nice" macros="@WithComparator1" pos="QualifierForm" stem="Nice" word="nice"/>
+    <entry class="Nice" macros="@WithComparator2" pos="QualifierForm" stem="Nice" word="nicer"/>
+    <entry class="Nice" macros="@WithComparator3" pos="QualifierForm" stem="Nice" word="nicest"/>
+    <!--Word Fuitful with sense Fuitful-->
+    <entry class="Fuitful" macros="@WithComparator1" pos="QualifierForm" stem="Fuitful" word="fuitful"/>
+    <entry class="Fuitful" macros="@WithComparator2" pos="QualifierForm" stem="Fuitful" word="more-fuitful"/>
+    <entry class="Fuitful" macros="@WithComparator3" pos="QualifierForm" stem="Fuitful" word="most-fuitful"/>
+    <!--Word Giving with sense Giving-->
+    <entry class="Giving" macros="@Mode5" pos="ProcessForm" stem="Giving" word="given"/>
+    <entry class="Giving" macros="@WithMention1 @Mode1" pos="ProcessForm" stem="Giving" word="give"/>
+    <entry class="Giving" macros="@Mode4" pos="ProcessForm" stem="Giving" word="give"/>
+    <entry class="Giving" macros="@Mode3" pos="ProcessForm" stem="Giving" word="gave"/>
+    <entry class="Giving" macros="@WithMention3 @Mode1" pos="ProcessForm" stem="Giving" word="give"/>
+    <entry class="Giving" macros="@WithMention2 @Mode2" pos="ProcessForm" stem="Giving" word="gave"/>
+    <entry class="Giving" macros="@WithMention3 @Mode2" pos="ProcessForm" stem="Giving" word="gave"/>
+    <entry class="Giving" macros="@Mode6" pos="ProcessForm" stem="Giving" word="giving"/>
+    <entry class="Giving" macros="@WithMention2 @Mode1" pos="ProcessForm" stem="Giving" word="gives"/>
+    <entry class="Giving" macros="@WithMention1 @Mode2" pos="ProcessForm" stem="Giving" word="gave"/>
+    <!--Word Driving with sense Driving-->
+    <entry class="Driving" macros="@WithMention1 @Mode2" pos="ProcessForm" stem="Driving" word="drove"/>
+    <entry class="Driving" macros="@Mode6" pos="ProcessForm" stem="Driving" word="driving"/>
+    <entry class="Driving" macros="@WithMention2 @Mode2" pos="ProcessForm" stem="Driving" word="drove"/>
+    <entry class="Driving" macros="@WithMention3 @Mode2" pos="ProcessForm" stem="Driving" word="drove"/>
+    <entry class="Driving" macros="@WithMention2 @Mode1" pos="ProcessForm" stem="Driving" word="drives"/>
+    <entry class="Driving" macros="@Mode3" pos="ProcessForm" stem="Driving" word="drove"/>
+    <entry class="Driving" macros="@WithMention3 @Mode1" pos="ProcessForm" stem="Driving" word="drive"/>
+    <entry class="Driving" macros="@WithMention1 @Mode1" pos="ProcessForm" stem="Driving" word="drive"/>
+    <entry class="Driving" macros="@Mode4" pos="ProcessForm" stem="Driving" word="drive"/>
+    <entry class="Driving" macros="@Mode5" pos="ProcessForm" stem="Driving" word="driven"/>
+    <!--Word Blurring with sense Blurring-->
+    <entry class="Blurring" macros="@WithMention1 @Mode2" pos="ProcessForm" stem="Blurring" word="blurred"/>
+    <entry class="Blurring" macros="@Mode6" pos="ProcessForm" stem="Blurring" word=""/>
+    <entry class="Blurring" macros="@WithMention1 @Mode1" pos="ProcessForm" stem="Blurring" word="blur"/>
+    <entry class="Blurring" macros="@Mode4" pos="ProcessForm" stem="Blurring" word="blur"/>
+    <entry class="Blurring" macros="@Mode5" pos="ProcessForm" stem="Blurring" word="blurred"/>
+    <entry class="Blurring" macros="@WithMention2 @Mode1" pos="ProcessForm" stem="Blurring" word="blurs"/>
+    <entry class="Blurring" macros="@WithMention2 @Mode2" pos="ProcessForm" stem="Blurring" word="blurred"/>
+    <entry class="Blurring" macros="@WithMention3 @Mode2" pos="ProcessForm" stem="Blurring" word="blurred"/>
+    <entry class="Blurring" macros="@Mode3" pos="ProcessForm" stem="Blurring" word="blurred"/>
+    <entry class="Blurring" macros="@WithMention3 @Mode1" pos="ProcessForm" stem="Blurring" word="blur"/>
+    <!--Word Playing with sense Playing-->
+    <entry class="Playing" macros="@WithMention2 @Mode1" pos="ProcessForm" stem="Playing" word="plays"/>
+    <entry class="Playing" macros="@WithMention1 @Mode2" pos="ProcessForm" stem="Playing" word="played"/>
+    <entry class="Playing" macros="@Mode6" pos="ProcessForm" stem="Playing" word=""/>
+    <entry class="Playing" macros="@WithMention3 @Mode2" pos="ProcessForm" stem="Playing" word="played"/>
+    <entry class="Playing" macros="@WithMention2 @Mode2" pos="ProcessForm" stem="Playing" word="played"/>
+    <entry class="Playing" macros="@WithMention3 @Mode1" pos="ProcessForm" stem="Playing" word="play"/>
+    <entry class="Playing" macros="@Mode3" pos="ProcessForm" stem="Playing" word="played"/>
+    <entry class="Playing" macros="@Mode4" pos="ProcessForm" stem="Playing" word="play"/>
+    <entry class="Playing" macros="@WithMention1 @Mode1" pos="ProcessForm" stem="Playing" word="play"/>
+    <entry class="Playing" macros="@Mode5" pos="ProcessForm" stem="Playing" word="played"/>
+    <!--Word Being with sense Being-->
+    <entry class="Being" macros="@WithMention2 @Mode1" pos="ProcessForm" stem="Being" word="is"/>
+    <entry class="Being" macros="@Mode6" pos="ProcessForm" stem="Being" word="being"/>
+    <entry class="Being" macros="@WithMention1 @Mode2" pos="ProcessForm" stem="Being" word="was"/>
+    <entry class="Being" macros="@Mode3" pos="ProcessForm" stem="Being" word="were"/>
+    <entry class="Being" macros="@WithMention3 @Mode1" pos="ProcessForm" stem="Being" word="are"/>
+    <entry class="Being" macros="@WithMention2 @Mode2" pos="ProcessForm" stem="Being" word="was"/>
+    <entry class="Being" macros="@WithMention3 @Mode2" pos="ProcessForm" stem="Being" word="were"/>
+    <entry class="Being" macros="@Mode5" pos="ProcessForm" stem="Being" word="been"/>
+    <entry class="Being" macros="@WithMention1 @Mode1" pos="ProcessForm" stem="Being" word="am"/>
+    <entry class="Being" macros="@Mode4" pos="ProcessForm" stem="Being" word="be"/>
+    <!--Macros-->
+    <macro name="@WithComparator3">
+        <fs attr="WithComparator" id="1" val="WithComparator3"/>
+    </macro>
+    <macro name="@Case3">
+        <fs attr="Case" id="1" val="Case3"/>
+    </macro>
+    <macro name="@Case4">
+        <fs attr="Case" id="1" val="Case4"/>
+    </macro>
+    <macro name="@Case1">
+        <fs attr="Case" id="1" val="Case1"/>
+    </macro>
+    <macro name="@Case2">
+        <fs attr="Case" id="1" val="Case2"/>
+    </macro>
+    <macro name="@WithQuantification1">
+        <fs attr="WithQuantification" id="1" val="WithQuantification1"/>
+    </macro>
+    <macro name="@Mode5">
+        <fs attr="Mode" id="1" val="Mode5"/>
+    </macro>
+    <macro name="@WithMention1">
+        <fs attr="WithMention" id="1" val="WithMention1"/>
+    </macro>
+    <macro name="@WithMention2">
+        <fs attr="WithMention" id="1" val="WithMention2"/>
+    </macro>
+    <macro name="@Mode4">
+        <fs attr="Mode" id="1" val="Mode4"/>
+    </macro>
+    <macro name="@Mode3">
+        <fs attr="Mode" id="1" val="Mode3"/>
+    </macro>
+    <macro name="@Mode2">
+        <fs attr="Mode" id="1" val="Mode2"/>
+    </macro>
+    <macro name="@WithQuantification2">
+        <fs attr="WithQuantification" id="1" val="WithQuantification2"/>
+    </macro>
+    <macro name="@Mode6">
+        <fs attr="Mode" id="1" val="Mode6"/>
+    </macro>
+    <macro name="@WithComparator2">
+        <fs attr="WithComparator" id="1" val="WithComparator2"/>
+    </macro>
+    <macro name="@WithComparator1">
+        <fs attr="WithComparator" id="1" val="WithComparator1"/>
+    </macro>
+    <macro name="@Mode1">
+        <fs attr="Mode" id="1" val="Mode1"/>
+    </macro>
+    <macro name="@WithMention3">
+        <fs attr="WithMention" id="1" val="WithMention3"/>
+    </macro>
+</morph>

@@ -1,0 +1,2863 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.uppermodel.org/WordingEng"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     ontologyIRI="http://www.uppermodel.org/WordingEng">
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Import>http://www.uppermodel.org/Wording</Import>
+    <Declaration>
+        <Class IRI="#(Clause:Onus&apos;BP&apos;Mention:Subject)&apos;FP&apos;(Clause:Onus&apos;BP&apos;Mention:Subject)"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#(Clause:Onus&apos;BP&apos;Mention:Subject)=(Clause:Onus&apos;BP&apos;Mention:Subject)"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AgentCulminating"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AgentExcluding"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AgentIncluding"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AgentReceptive"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AsActor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AsAgent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AsBeneficiary"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AsGoal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AsMedium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AsRecipient"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AsSubject"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BeneficiaryCulminating"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BeneficiaryExcluding"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BeneficiaryIncluding"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BeneficiaryReceptive"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Case"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Case1"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Case2"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Case3"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Case4"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CaseBy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CaseTo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Circumstance"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Clause"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Clause:Onus&apos;BP&apos;Mention:Subject&apos;FP&apos;Mention:Direct&apos;FP&apos;Process:Process"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Clause:Onus&apos;BP&apos;Mention:Subject&apos;FP&apos;Mention:Indirect&apos;FP&apos;Mention:Direct&apos;FP&apos;Process:Process"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Clause:Onus&apos;BP&apos;Mention:Subject&apos;FP&apos;Process:Process"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ClauseComplex"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ClauseSimplex"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ClauseSimplexPattern"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ClauseWithMedium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ClauseWithMediumAgent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ClauseWithMediumAgentBeneficiary"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Deictic:Onus.CaseTail=Mention:Onus.Case"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Deictic:Onus.Deictic&apos;FP&apos;Classifier:Onus.DeicticTail"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DiadicProcess"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Element"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Figure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Group"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Identifiable"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MajorDepiction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MediumCulminating"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MediumIncluding"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MediumReceptive"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Mention"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Mention:Onus.Case&apos;FP&apos;Deictic:Onus.CaseTail"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MentionInCase-1"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MentionInCase-2"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MentionInCase-By"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MentionInCase-To"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MentionOfIdentifiableThing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MentionOfNonIdentifiableThing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MentionPattern"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MinorDepiction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Modality"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Mode"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Mode0"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Mode1"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Mode2"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Mode3"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Mode4"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Mode5"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Mode6"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MonadicProcess"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MyAuntWasGivenByTheDukeTheTeapot"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MyAuntWasGivenTheTeapotByTheDuke"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NonIdentifiable"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Phrase"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Process"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Process:Process=Clause:Onus&apos;BP&apos;Mention:Subject"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Process:Process=Clause:Onus&apos;BP&apos;Mention:Subject&apos;FP&apos;Mention:Direct"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Process:Process=Clause:Onus&apos;BP&apos;Mention:Subject&apos;FP&apos;Mention:Indirect&apos;FP&apos;Mention:Direct"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Qualification"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Quality"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Quantification"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Quantity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SThing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sequence"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SimpleAction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SimpleAffectingAction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SimpleTransfer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TheDukeBoughtTheTeapot"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TheDukeGaveMyAuntTheTeapot"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TheDukeGaveTheTeapotToMyAunt"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TheTeapotBroke"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TheTeapotWasBoughtByTheDuke"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TheTeapotWasGivenByTheDukeToMyAunt"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TheTeapotWasGivenMyAuntByTheDuke"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TriadicProcess"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#agree_Deictic_DeicticTail_Case"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#conflate_CaseTail_Deictic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#conflate_Case_CaseTail"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#conflate_DeicticTail_Classifier"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#conflate_Deictic_DeicticTail"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#conflate_Frame_Process"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#conflate_TenseTail_Voice"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#conflate_Tense_Voice"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#identify_Direct_(AgentId_Onus)"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#identify_Direct_(BeneficiaryId_Onus)"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#identify_Direct_(MediumId_Onus)"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#identify_Indirect_(AgentId_Onus)"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#identify_Indirect_(BeneficiaryId_Onus)"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#identify_Indirect_(MediumId_Onus)"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#identify_PlaceAdjunct_(PlaceId_Onus)"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#identify_Process_(ProcessId_Onus)"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#identify_Subject_(AgentId_Onus)"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#identify_Subject_(BeneficiaryId_Onus)"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#identify_Subject_(MediumId_Onus)"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#identify_TimeAdjunct_(TimeId_Onus)"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#insert_Case"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#insert_CaseTail"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#insert_Deictic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#insert_DeiticTail"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#insert_Direct"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#insert_Frame"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#insert_Indirect"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#insert_Process"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#insert_Subject"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#lexify_Case_ByWord"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#lexify_Case_ToWord"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#lexify_Deictic_AnWord"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#lexify_Deictic_TheWord"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#lexify_Frame_BeWord"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#order_Case_CaseTail"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#order_Deictic_DeicticTail"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#order_Frame_Process"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#partition_Direct_Indirect"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#partition_Frame_Direct"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#partition_Subject_Frame"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#preselect_CaseTail_Case1"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#preselect_CaseTail_Case2"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#preselect_DeicticTail_SThing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#preselect_Direct_Case2"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#preselect_Direct_CaseBy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#preselect_Direct_SThing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#preselect_Indirect_Case2"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#preselect_Indirect_CaseBy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#preselect_Indirect_CaseTo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#preselect_Indirect_SThing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#preselect_Process_DiadicProcess"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#preselect_Process_Mode5"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#preselect_Process_MonadicProcess"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#preselect_Process_TriadicProcess"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#preselect_Subject_Case1"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#preselect_Subject_SThing"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasActor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasAgent"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasBeneficiary"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCulminant"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasFigurePlace"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasFigureTime"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasGoal"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasMedium"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasParticipant"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPattern"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPlace"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasProcess"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasRecipient"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasRepresentativePattern"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSubject"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTense"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasThingPlace"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasThingTime"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTime"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isActorOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isAgentOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isBeneficiaryOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isCulminantOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isGoalOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isMediumOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isParticipantOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPatternOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPlaceOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPlaceOfFigure"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPlaceOfThing"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isProcessOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isRecipientOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isRepresentativePatternOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isRepresentedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isSubjectOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isTimeOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isTimeOfFigure"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isTimeOfThing"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#represents"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Figure01"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Figure01Actor"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Figure01Goal"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Figure01Pattern"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Figure01Recipient"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Figure01Representation"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#AgentCulminating"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasCulminant"/>
+            <Class IRI="#AsAgent"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#AgentExcluding"/>
+        <Class IRI="#SimpleAction"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#AgentIncluding"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.uppermodel.org/Wording#hasParticipant"/>
+            <Class IRI="#AsAgent"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#AgentReceptive"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasSubject"/>
+            <Class IRI="#AsAgent"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#AsActor"/>
+        <ObjectUnionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isAgentOf"/>
+                <Class IRI="#SimpleAffectingAction"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isAgentOf"/>
+                <Class IRI="#SimpleTransfer"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isMediumOf"/>
+                <Class IRI="#SimpleAction"/>
+            </ObjectSomeValuesFrom>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#AsAgent"/>
+        <ObjectUnionOf>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty IRI="http://www.uppermodel.org/Wording#isActorOf"/>
+                <Class IRI="#SimpleAffectingAction"/>
+            </ObjectExactCardinality>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty IRI="http://www.uppermodel.org/Wording#isActorOf"/>
+                <Class IRI="#SimpleTransfer"/>
+            </ObjectExactCardinality>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#AsBeneficiary"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isRecipientOf"/>
+            <Class IRI="#SimpleTransfer"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#AsGoal"/>
+        <ObjectUnionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isMediumOf"/>
+                <Class IRI="#SimpleAffectingAction"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isMediumOf"/>
+                <Class IRI="#SimpleTransfer"/>
+            </ObjectSomeValuesFrom>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#AsMedium"/>
+        <ObjectUnionOf>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty IRI="http://www.uppermodel.org/Wording#isActorOf"/>
+                <Class IRI="#SimpleAction"/>
+            </ObjectExactCardinality>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty IRI="http://www.uppermodel.org/Wording#isGoalOf"/>
+                <Class IRI="#SimpleAffectingAction"/>
+            </ObjectExactCardinality>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty IRI="http://www.uppermodel.org/Wording#isGoalOf"/>
+                <Class IRI="#SimpleTransfer"/>
+            </ObjectExactCardinality>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#AsRecipient"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isBeneficiaryOf"/>
+            <Class IRI="#SimpleTransfer"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#AsSubject"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#isSubjectOf"/>
+            <Class IRI="#Figure"/>
+        </ObjectExactCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#BeneficiaryCulminating"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasCulminant"/>
+            <Class IRI="#AsBeneficiary"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#BeneficiaryExcluding"/>
+        <ObjectUnionOf>
+            <Class IRI="#SimpleAction"/>
+            <Class IRI="#SimpleAffectingAction"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#BeneficiaryIncluding"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.uppermodel.org/Wording#hasParticipant"/>
+            <Class IRI="#AsBeneficiary"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#BeneficiaryReceptive"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasSubject"/>
+            <Class IRI="#AsBeneficiary"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Case"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#represents"/>
+            <Class IRI="#SThing"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Clause"/>
+        <ObjectIntersectionOf>
+            <Class IRI="http://www.uppermodel.org/Wording#WordingAsBrick"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#represents"/>
+                <ObjectUnionOf>
+                    <Class IRI="#Figure"/>
+                    <Class IRI="#Sequence"/>
+                </ObjectUnionOf>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#ClauseComplex"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Clause"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#represents"/>
+                <Class IRI="#Sequence"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#ClauseSimplex"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Clause"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#represents"/>
+                <Class IRI="#Figure"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#ClauseSimplexPattern"/>
+        <ObjectIntersectionOf>
+            <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isPatternOf"/>
+                <Class IRI="#ClauseSimplex"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#ClauseWithMedium"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isRepresentativePatternOf"/>
+            <ObjectIntersectionOf>
+                <Class IRI="#AgentExcluding"/>
+                <Class IRI="#BeneficiaryExcluding"/>
+                <Class IRI="#MediumIncluding"/>
+            </ObjectIntersectionOf>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#ClauseWithMediumAgent"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isRepresentativePatternOf"/>
+            <ObjectIntersectionOf>
+                <Class IRI="#AgentIncluding"/>
+                <Class IRI="#BeneficiaryExcluding"/>
+                <Class IRI="#MediumIncluding"/>
+            </ObjectIntersectionOf>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#ClauseWithMediumAgentBeneficiary"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isRepresentativePatternOf"/>
+            <ObjectIntersectionOf>
+                <Class IRI="#AgentIncluding"/>
+                <Class IRI="#BeneficiaryIncluding"/>
+                <Class IRI="#MediumIncluding"/>
+            </ObjectIntersectionOf>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#DiadicProcess"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isProcessOf"/>
+            <ObjectIntersectionOf>
+                <Class IRI="#AgentIncluding"/>
+                <Class IRI="#BeneficiaryExcluding"/>
+                <Class IRI="#MediumIncluding"/>
+            </ObjectIntersectionOf>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Group"/>
+        <ObjectIntersectionOf>
+            <Class IRI="http://www.uppermodel.org/Wording#WordingAsBrick"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#represents"/>
+                <Class IRI="#Element"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#MajorDepiction"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Group"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#represents"/>
+                <Class IRI="#Process"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#MediumCulminating"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasCulminant"/>
+            <Class IRI="#AsMedium"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#MediumIncluding"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.uppermodel.org/Wording#hasParticipant"/>
+            <Class IRI="#AsMedium"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#MediumReceptive"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasSubject"/>
+            <Class IRI="#AsMedium"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Mention"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Group"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#represents"/>
+                <Class IRI="#SThing"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#MentionInCase-1"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#MentionPattern"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isPatternOf"/>
+                <ObjectIntersectionOf>
+                    <Class IRI="#Case1"/>
+                    <Class IRI="#Mention"/>
+                </ObjectIntersectionOf>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#MentionInCase-2"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#MentionPattern"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isPatternOf"/>
+                <ObjectIntersectionOf>
+                    <Class IRI="#Case2"/>
+                    <Class IRI="#Mention"/>
+                </ObjectIntersectionOf>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#MentionInCase-By"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#MentionPattern"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isPatternOf"/>
+                <ObjectIntersectionOf>
+                    <Class IRI="#CaseBy"/>
+                    <Class IRI="#Mention"/>
+                </ObjectIntersectionOf>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#MentionInCase-To"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#MentionPattern"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isPatternOf"/>
+                <ObjectIntersectionOf>
+                    <Class IRI="#CaseTo"/>
+                    <Class IRI="#Mention"/>
+                </ObjectIntersectionOf>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#MentionOfIdentifiableThing"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#MentionPattern"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isRepresentativePatternOf"/>
+                <Class IRI="#Identifiable"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#MentionOfNonIdentifiableThing"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#MentionPattern"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isRepresentativePatternOf"/>
+                <Class IRI="#NonIdentifiable"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#MentionPattern"/>
+        <ObjectIntersectionOf>
+            <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isPatternOf"/>
+                <Class IRI="#Mention"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#MinorDepiction"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Group"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#represents"/>
+                <Class IRI="#Modality"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Mode"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#represents"/>
+            <ObjectUnionOf>
+                <Class IRI="#Figure"/>
+                <Class IRI="#Process"/>
+            </ObjectUnionOf>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#MonadicProcess"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isProcessOf"/>
+            <ObjectIntersectionOf>
+                <Class IRI="#AgentExcluding"/>
+                <Class IRI="#BeneficiaryExcluding"/>
+                <Class IRI="#MediumIncluding"/>
+            </ObjectIntersectionOf>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#MyAuntWasGivenByTheDukeTheTeapot"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#ClauseWithMediumAgentBeneficiary"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isRepresentativePatternOf"/>
+                <ObjectIntersectionOf>
+                    <Class IRI="#AgentCulminating"/>
+                    <Class IRI="#BeneficiaryReceptive"/>
+                </ObjectIntersectionOf>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#MyAuntWasGivenTheTeapotByTheDuke"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#ClauseWithMediumAgentBeneficiary"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isRepresentativePatternOf"/>
+                <ObjectIntersectionOf>
+                    <Class IRI="#BeneficiaryReceptive"/>
+                    <Class IRI="#MediumCulminating"/>
+                </ObjectIntersectionOf>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Phrase"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Group"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#represents"/>
+                <Class IRI="#Circumstance"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Qualification"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Group"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#represents"/>
+                <Class IRI="#Quality"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Quantification"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Group"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#represents"/>
+                <Class IRI="#Quantity"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#TheDukeBoughtTheTeapot"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#ClauseWithMediumAgent"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isRepresentativePatternOf"/>
+                <Class IRI="#AgentReceptive"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#TheDukeGaveMyAuntTheTeapot"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#ClauseWithMediumAgentBeneficiary"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isRepresentativePatternOf"/>
+                <ObjectIntersectionOf>
+                    <Class IRI="#AgentReceptive"/>
+                    <Class IRI="#BeneficiaryCulminating"/>
+                </ObjectIntersectionOf>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#TheDukeGaveTheTeapotToMyAunt"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#ClauseWithMediumAgentBeneficiary"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isRepresentativePatternOf"/>
+                <ObjectIntersectionOf>
+                    <Class IRI="#AgentReceptive"/>
+                    <Class IRI="#MediumCulminating"/>
+                </ObjectIntersectionOf>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#TheTeapotBroke"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#ClauseWithMedium"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isRepresentativePatternOf"/>
+                <Class IRI="#MediumReceptive"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#TheTeapotWasBoughtByTheDuke"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#ClauseWithMediumAgent"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isRepresentativePatternOf"/>
+                <Class IRI="#MediumReceptive"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#TheTeapotWasGivenByTheDukeToMyAunt"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#ClauseWithMediumAgentBeneficiary"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isRepresentativePatternOf"/>
+                <ObjectIntersectionOf>
+                    <Class IRI="#AgentCulminating"/>
+                    <Class IRI="#MediumReceptive"/>
+                </ObjectIntersectionOf>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#TheTeapotWasGivenMyAuntByTheDuke"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#ClauseWithMediumAgentBeneficiary"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isRepresentativePatternOf"/>
+                <ObjectIntersectionOf>
+                    <Class IRI="#BeneficiaryCulminating"/>
+                    <Class IRI="#MediumReceptive"/>
+                </ObjectIntersectionOf>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#TriadicProcess"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isProcessOf"/>
+            <ObjectIntersectionOf>
+                <Class IRI="#AgentIncluding"/>
+                <Class IRI="#BeneficiaryIncluding"/>
+                <Class IRI="#MediumIncluding"/>
+            </ObjectIntersectionOf>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="http://www.uppermodel.org/Wording#AsRecipient"/>
+        <Class IRI="#SThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.uppermodel.org/Wording#AsRecipient"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="http://www.uppermodel.org/Wording#isRecipientOf"/>
+            <Class IRI="#Figure"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#(Clause:Onus&apos;BP&apos;Mention:Subject)&apos;FP&apos;(Clause:Onus&apos;BP&apos;Mention:Subject)"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#(Clause:Onus&apos;BP&apos;Mention:Subject)=(Clause:Onus&apos;BP&apos;Mention:Subject)"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AgentCulminating"/>
+        <Class IRI="#Figure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AgentExcluding"/>
+        <Class IRI="#Figure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AgentIncluding"/>
+        <Class IRI="#Figure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AgentReceptive"/>
+        <Class IRI="#Figure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AsActor"/>
+        <Class IRI="#SThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AsActor"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#isActorOf"/>
+            <Class IRI="#Figure"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AsAgent"/>
+        <Class IRI="#SThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AsAgent"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="http://www.uppermodel.org/Wording#isAgentOf"/>
+            <Class IRI="#Figure"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AsBeneficiary"/>
+        <Class IRI="#SThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AsBeneficiary"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="http://www.uppermodel.org/Wording#isBeneficiaryOf"/>
+            <Class IRI="#Figure"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AsGoal"/>
+        <Class IRI="#SThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AsGoal"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#isGoalOf"/>
+            <Class IRI="#Figure"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AsMedium"/>
+        <Class IRI="#SThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AsMedium"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="http://www.uppermodel.org/Wording#isMediumOf"/>
+            <Class IRI="#Figure"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AsRecipient"/>
+        <Class IRI="#SThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AsSubject"/>
+        <Class IRI="#SThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BeneficiaryCulminating"/>
+        <Class IRI="#Figure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BeneficiaryExcluding"/>
+        <Class IRI="#Figure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BeneficiaryIncluding"/>
+        <Class IRI="#Figure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BeneficiaryReceptive"/>
+        <Class IRI="#Figure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Case"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsBrick"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Case1"/>
+        <Class IRI="#Case"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Case2"/>
+        <Class IRI="#Case"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Case3"/>
+        <Class IRI="#Case"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Case4"/>
+        <Class IRI="#Case"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CaseBy"/>
+        <Class IRI="#Case"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CaseTo"/>
+        <Class IRI="#Case"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Circumstance"/>
+        <Class IRI="#Element"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Clause"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsBrick"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Clause:Onus&apos;BP&apos;Mention:Subject&apos;FP&apos;Mention:Direct&apos;FP&apos;Process:Process"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Clause:Onus&apos;BP&apos;Mention:Subject&apos;FP&apos;Mention:Indirect&apos;FP&apos;Mention:Direct&apos;FP&apos;Process:Process"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Clause:Onus&apos;BP&apos;Mention:Subject&apos;FP&apos;Process:Process"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ClauseComplex"/>
+        <Class IRI="#Clause"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ClauseSimplex"/>
+        <Class IRI="#Clause"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ClauseSimplexPattern"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ClauseWithMedium"/>
+        <Class IRI="#ClauseSimplexPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ClauseWithMedium"/>
+        <Class IRI="#Process:Process=Clause:Onus&apos;BP&apos;Mention:Subject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ClauseWithMedium"/>
+        <Class IRI="#identify_Process_(ProcessId_Onus)"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ClauseWithMedium"/>
+        <Class IRI="#insert_Frame"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ClauseWithMedium"/>
+        <Class IRI="#insert_Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ClauseWithMedium"/>
+        <Class IRI="#insert_Subject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ClauseWithMedium"/>
+        <Class IRI="#preselect_Process_MonadicProcess"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ClauseWithMedium"/>
+        <Class IRI="#preselect_Subject_SThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ClauseWithMediumAgent"/>
+        <Class IRI="#ClauseSimplexPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ClauseWithMediumAgent"/>
+        <Class IRI="#identify_Process_(ProcessId_Onus)"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ClauseWithMediumAgent"/>
+        <Class IRI="#insert_Direct"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ClauseWithMediumAgent"/>
+        <Class IRI="#insert_Frame"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ClauseWithMediumAgent"/>
+        <Class IRI="#insert_Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ClauseWithMediumAgent"/>
+        <Class IRI="#insert_Subject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ClauseWithMediumAgent"/>
+        <Class IRI="#preselect_Direct_SThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ClauseWithMediumAgent"/>
+        <Class IRI="#preselect_Process_DiadicProcess"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ClauseWithMediumAgent"/>
+        <Class IRI="#preselect_Subject_SThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ClauseWithMediumAgentBeneficiary"/>
+        <Class IRI="#ClauseSimplexPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ClauseWithMediumAgentBeneficiary"/>
+        <Class IRI="#identify_Process_(ProcessId_Onus)"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ClauseWithMediumAgentBeneficiary"/>
+        <Class IRI="#insert_Direct"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ClauseWithMediumAgentBeneficiary"/>
+        <Class IRI="#insert_Frame"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ClauseWithMediumAgentBeneficiary"/>
+        <Class IRI="#insert_Indirect"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ClauseWithMediumAgentBeneficiary"/>
+        <Class IRI="#insert_Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ClauseWithMediumAgentBeneficiary"/>
+        <Class IRI="#insert_Subject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ClauseWithMediumAgentBeneficiary"/>
+        <Class IRI="#preselect_Direct_SThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ClauseWithMediumAgentBeneficiary"/>
+        <Class IRI="#preselect_Indirect_SThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ClauseWithMediumAgentBeneficiary"/>
+        <Class IRI="#preselect_Process_TriadicProcess"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ClauseWithMediumAgentBeneficiary"/>
+        <Class IRI="#preselect_Subject_SThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Deictic:Onus.CaseTail=Mention:Onus.Case"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Deictic:Onus.Deictic&apos;FP&apos;Classifier:Onus.DeicticTail"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DiadicProcess"/>
+        <Class IRI="#Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DiadicProcess"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isProcessOf"/>
+            <ObjectIntersectionOf>
+                <Class IRI="#AgentIncluding"/>
+                <Class IRI="#BeneficiaryExcluding"/>
+                <Class IRI="#MediumIncluding"/>
+            </ObjectIntersectionOf>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Element"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsDevice"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Figure"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsDevice"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Group"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsBrick"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Identifiable"/>
+        <Class IRI="#SThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MajorDepiction"/>
+        <Class IRI="#Group"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MediumCulminating"/>
+        <Class IRI="#Figure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MediumIncluding"/>
+        <Class IRI="#Figure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MediumReceptive"/>
+        <Class IRI="#Figure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Mention"/>
+        <Class IRI="#Group"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Mention:Onus.Case&apos;FP&apos;Deictic:Onus.CaseTail"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MentionInCase-1"/>
+        <Class IRI="#Deictic:Onus.CaseTail=Mention:Onus.Case"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MentionInCase-1"/>
+        <Class IRI="#MentionPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MentionInCase-1"/>
+        <Class IRI="#conflate_CaseTail_Deictic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MentionInCase-1"/>
+        <Class IRI="#conflate_Case_CaseTail"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MentionInCase-1"/>
+        <Class IRI="#insert_Case"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MentionInCase-1"/>
+        <Class IRI="#insert_CaseTail"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MentionInCase-1"/>
+        <Class IRI="#preselect_CaseTail_Case1"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MentionInCase-1"/>
+        <Class IRI="#preselect_DeicticTail_SThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MentionInCase-2"/>
+        <Class IRI="#Deictic:Onus.CaseTail=Mention:Onus.Case"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MentionInCase-2"/>
+        <Class IRI="#MentionPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MentionInCase-2"/>
+        <Class IRI="#conflate_CaseTail_Deictic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MentionInCase-2"/>
+        <Class IRI="#conflate_Case_CaseTail"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MentionInCase-2"/>
+        <Class IRI="#insert_Case"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MentionInCase-2"/>
+        <Class IRI="#insert_CaseTail"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MentionInCase-2"/>
+        <Class IRI="#preselect_CaseTail_Case2"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MentionInCase-2"/>
+        <Class IRI="#preselect_DeicticTail_SThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MentionInCase-By"/>
+        <Class IRI="#Mention:Onus.Case&apos;FP&apos;Deictic:Onus.CaseTail"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MentionInCase-By"/>
+        <Class IRI="#MentionPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MentionInCase-By"/>
+        <Class IRI="#conflate_CaseTail_Deictic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MentionInCase-By"/>
+        <Class IRI="#insert_Case"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MentionInCase-By"/>
+        <Class IRI="#insert_CaseTail"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MentionInCase-By"/>
+        <Class IRI="#lexify_Case_ByWord"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MentionInCase-By"/>
+        <Class IRI="#order_Case_CaseTail"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MentionInCase-By"/>
+        <Class IRI="#preselect_CaseTail_Case2"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MentionInCase-By"/>
+        <Class IRI="#preselect_DeicticTail_SThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MentionInCase-To"/>
+        <Class IRI="#Mention:Onus.Case&apos;FP&apos;Deictic:Onus.CaseTail"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MentionInCase-To"/>
+        <Class IRI="#MentionPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MentionInCase-To"/>
+        <Class IRI="#conflate_CaseTail_Deictic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MentionInCase-To"/>
+        <Class IRI="#insert_Case"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MentionInCase-To"/>
+        <Class IRI="#insert_CaseTail"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MentionInCase-To"/>
+        <Class IRI="#lexify_Case_ToWord"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MentionInCase-To"/>
+        <Class IRI="#order_Case_CaseTail"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MentionInCase-To"/>
+        <Class IRI="#preselect_CaseTail_Case2"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MentionInCase-To"/>
+        <Class IRI="#preselect_DeicticTail_SThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MentionOfIdentifiableThing"/>
+        <Class IRI="#Deictic:Onus.Deictic&apos;FP&apos;Classifier:Onus.DeicticTail"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MentionOfIdentifiableThing"/>
+        <Class IRI="#MentionPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MentionOfIdentifiableThing"/>
+        <Class IRI="#agree_Deictic_DeicticTail_Case"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MentionOfIdentifiableThing"/>
+        <Class IRI="#conflate_DeicticTail_Classifier"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MentionOfIdentifiableThing"/>
+        <Class IRI="#insert_Deictic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MentionOfIdentifiableThing"/>
+        <Class IRI="#insert_DeiticTail"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MentionOfIdentifiableThing"/>
+        <Class IRI="#lexify_Deictic_TheWord"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MentionOfIdentifiableThing"/>
+        <Class IRI="#order_Deictic_DeicticTail"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MentionOfIdentifiableThing"/>
+        <Class IRI="#preselect_DeicticTail_SThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MentionOfNonIdentifiableThing"/>
+        <Class IRI="#Deictic:Onus.Deictic&apos;FP&apos;Classifier:Onus.DeicticTail"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MentionOfNonIdentifiableThing"/>
+        <Class IRI="#MentionPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MentionOfNonIdentifiableThing"/>
+        <Class IRI="#agree_Deictic_DeicticTail_Case"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MentionOfNonIdentifiableThing"/>
+        <Class IRI="#conflate_DeicticTail_Classifier"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MentionOfNonIdentifiableThing"/>
+        <Class IRI="#insert_Deictic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MentionOfNonIdentifiableThing"/>
+        <Class IRI="#insert_DeiticTail"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MentionOfNonIdentifiableThing"/>
+        <Class IRI="#lexify_Deictic_AnWord"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MentionOfNonIdentifiableThing"/>
+        <Class IRI="#order_Deictic_DeicticTail"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MentionOfNonIdentifiableThing"/>
+        <Class IRI="#preselect_DeicticTail_SThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MentionPattern"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MinorDepiction"/>
+        <Class IRI="#Group"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Modality"/>
+        <Class IRI="#Element"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Mode"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsBrick"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Mode0"/>
+        <Class IRI="#Mode"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Mode1"/>
+        <Class IRI="#Mode"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Mode2"/>
+        <Class IRI="#Mode"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Mode3"/>
+        <Class IRI="#Mode"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Mode4"/>
+        <Class IRI="#Mode"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Mode5"/>
+        <Class IRI="#Mode"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Mode6"/>
+        <Class IRI="#Mode"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MonadicProcess"/>
+        <Class IRI="#Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MonadicProcess"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isProcessOf"/>
+            <ObjectIntersectionOf>
+                <Class IRI="#AgentExcluding"/>
+                <Class IRI="#BeneficiaryExcluding"/>
+                <Class IRI="#MediumIncluding"/>
+            </ObjectIntersectionOf>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MyAuntWasGivenByTheDukeTheTeapot"/>
+        <Class IRI="#Clause:Onus&apos;BP&apos;Mention:Subject&apos;FP&apos;Mention:Indirect&apos;FP&apos;Mention:Direct&apos;FP&apos;Process:Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MyAuntWasGivenByTheDukeTheTeapot"/>
+        <Class IRI="#ClauseWithMediumAgentBeneficiary"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MyAuntWasGivenByTheDukeTheTeapot"/>
+        <Class IRI="#identify_Direct_(AgentId_Onus)"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MyAuntWasGivenByTheDukeTheTeapot"/>
+        <Class IRI="#identify_Indirect_(MediumId_Onus)"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MyAuntWasGivenByTheDukeTheTeapot"/>
+        <Class IRI="#identify_Subject_(BeneficiaryId_Onus)"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MyAuntWasGivenByTheDukeTheTeapot"/>
+        <Class IRI="#lexify_Frame_BeWord"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MyAuntWasGivenByTheDukeTheTeapot"/>
+        <Class IRI="#order_Frame_Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MyAuntWasGivenByTheDukeTheTeapot"/>
+        <Class IRI="#preselect_Direct_CaseBy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MyAuntWasGivenByTheDukeTheTeapot"/>
+        <Class IRI="#preselect_Indirect_Case2"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MyAuntWasGivenByTheDukeTheTeapot"/>
+        <Class IRI="#preselect_Process_Mode5"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MyAuntWasGivenByTheDukeTheTeapot"/>
+        <Class IRI="#preselect_Subject_Case1"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MyAuntWasGivenTheTeapotByTheDuke"/>
+        <Class IRI="#Clause:Onus&apos;BP&apos;Mention:Subject&apos;FP&apos;Mention:Indirect&apos;FP&apos;Mention:Direct&apos;FP&apos;Process:Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MyAuntWasGivenTheTeapotByTheDuke"/>
+        <Class IRI="#ClauseWithMediumAgentBeneficiary"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MyAuntWasGivenTheTeapotByTheDuke"/>
+        <Class IRI="#identify_Direct_(MediumId_Onus)"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MyAuntWasGivenTheTeapotByTheDuke"/>
+        <Class IRI="#identify_Indirect_(BeneficiaryId_Onus)"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MyAuntWasGivenTheTeapotByTheDuke"/>
+        <Class IRI="#identify_Subject_(BeneficiaryId_Onus)"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MyAuntWasGivenTheTeapotByTheDuke"/>
+        <Class IRI="#lexify_Frame_BeWord"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MyAuntWasGivenTheTeapotByTheDuke"/>
+        <Class IRI="#order_Frame_Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MyAuntWasGivenTheTeapotByTheDuke"/>
+        <Class IRI="#preselect_Direct_Case2"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MyAuntWasGivenTheTeapotByTheDuke"/>
+        <Class IRI="#preselect_Indirect_CaseBy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MyAuntWasGivenTheTeapotByTheDuke"/>
+        <Class IRI="#preselect_Process_Mode5"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MyAuntWasGivenTheTeapotByTheDuke"/>
+        <Class IRI="#preselect_Subject_Case1"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NonIdentifiable"/>
+        <Class IRI="#SThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Phrase"/>
+        <Class IRI="#Group"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Process"/>
+        <Class IRI="#Element"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Process:Process=Clause:Onus&apos;BP&apos;Mention:Subject"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Process:Process=Clause:Onus&apos;BP&apos;Mention:Subject&apos;FP&apos;Mention:Direct"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Process:Process=Clause:Onus&apos;BP&apos;Mention:Subject&apos;FP&apos;Mention:Indirect&apos;FP&apos;Mention:Direct"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Qualification"/>
+        <Class IRI="#Group"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Quality"/>
+        <Class IRI="#Element"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Quantification"/>
+        <Class IRI="#Group"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Quantity"/>
+        <Class IRI="#Element"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SThing"/>
+        <Class IRI="#Element"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SThing"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="http://www.uppermodel.org/Wording#isParticipantOf"/>
+            <Class IRI="#Figure"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sequence"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsDevice"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SimpleAction"/>
+        <Class IRI="#Figure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SimpleAction"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasActor"/>
+            <Class IRI="#SThing"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SimpleAffectingAction"/>
+        <Class IRI="#Figure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SimpleAffectingAction"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasActor"/>
+            <Class IRI="#SThing"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SimpleAffectingAction"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasGoal"/>
+            <Class IRI="#SThing"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SimpleTransfer"/>
+        <Class IRI="#Figure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SimpleTransfer"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasActor"/>
+            <Class IRI="#SThing"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SimpleTransfer"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasGoal"/>
+            <Class IRI="#SThing"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SimpleTransfer"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasRecipient"/>
+            <Class IRI="#SThing"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheDukeBoughtTheTeapot"/>
+        <Class IRI="#ClauseWithMediumAgent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheDukeBoughtTheTeapot"/>
+        <Class IRI="#Process:Process=Clause:Onus&apos;BP&apos;Mention:Subject&apos;FP&apos;Mention:Direct"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheDukeBoughtTheTeapot"/>
+        <Class IRI="#conflate_Frame_Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheDukeBoughtTheTeapot"/>
+        <Class IRI="#identify_Direct_(MediumId_Onus)"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheDukeBoughtTheTeapot"/>
+        <Class IRI="#identify_Subject_(AgentId_Onus)"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheDukeBoughtTheTeapot"/>
+        <Class IRI="#preselect_Direct_Case2"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheDukeBoughtTheTeapot"/>
+        <Class IRI="#preselect_Subject_Case1"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheDukeGaveMyAuntTheTeapot"/>
+        <Class IRI="#ClauseWithMediumAgentBeneficiary"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheDukeGaveMyAuntTheTeapot"/>
+        <Class IRI="#Process:Process=Clause:Onus&apos;BP&apos;Mention:Subject&apos;FP&apos;Mention:Indirect&apos;FP&apos;Mention:Direct"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheDukeGaveMyAuntTheTeapot"/>
+        <Class IRI="#conflate_Frame_Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheDukeGaveMyAuntTheTeapot"/>
+        <Class IRI="#identify_Direct_(BeneficiaryId_Onus)"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheDukeGaveMyAuntTheTeapot"/>
+        <Class IRI="#identify_Indirect_(MediumId_Onus)"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheDukeGaveMyAuntTheTeapot"/>
+        <Class IRI="#identify_Subject_(AgentId_Onus)"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheDukeGaveMyAuntTheTeapot"/>
+        <Class IRI="#preselect_Direct_Case2"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheDukeGaveMyAuntTheTeapot"/>
+        <Class IRI="#preselect_Indirect_Case2"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheDukeGaveMyAuntTheTeapot"/>
+        <Class IRI="#preselect_Subject_Case1"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheDukeGaveTheTeapotToMyAunt"/>
+        <Class IRI="#ClauseWithMediumAgentBeneficiary"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheDukeGaveTheTeapotToMyAunt"/>
+        <Class IRI="#Process:Process=Clause:Onus&apos;BP&apos;Mention:Subject&apos;FP&apos;Mention:Indirect&apos;FP&apos;Mention:Direct"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheDukeGaveTheTeapotToMyAunt"/>
+        <Class IRI="#conflate_Frame_Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheDukeGaveTheTeapotToMyAunt"/>
+        <Class IRI="#identify_Direct_(MediumId_Onus)"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheDukeGaveTheTeapotToMyAunt"/>
+        <Class IRI="#identify_Indirect_(BeneficiaryId_Onus)"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheDukeGaveTheTeapotToMyAunt"/>
+        <Class IRI="#identify_Subject_(AgentId_Onus)"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheDukeGaveTheTeapotToMyAunt"/>
+        <Class IRI="#preselect_Direct_Case2"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheDukeGaveTheTeapotToMyAunt"/>
+        <Class IRI="#preselect_Indirect_CaseTo"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheDukeGaveTheTeapotToMyAunt"/>
+        <Class IRI="#preselect_Subject_Case1"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheTeapotBroke"/>
+        <Class IRI="#ClauseWithMedium"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheTeapotBroke"/>
+        <Class IRI="#conflate_Frame_Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheTeapotBroke"/>
+        <Class IRI="#identify_Subject_(MediumId_Onus)"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheTeapotBroke"/>
+        <Class IRI="#preselect_Subject_Case1"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheTeapotWasBoughtByTheDuke"/>
+        <Class IRI="#Clause:Onus&apos;BP&apos;Mention:Subject&apos;FP&apos;Mention:Direct&apos;FP&apos;Process:Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheTeapotWasBoughtByTheDuke"/>
+        <Class IRI="#ClauseWithMediumAgent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheTeapotWasBoughtByTheDuke"/>
+        <Class IRI="#identify_Direct_(AgentId_Onus)"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheTeapotWasBoughtByTheDuke"/>
+        <Class IRI="#identify_Subject_(MediumId_Onus)"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheTeapotWasBoughtByTheDuke"/>
+        <Class IRI="#lexify_Frame_BeWord"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheTeapotWasBoughtByTheDuke"/>
+        <Class IRI="#order_Frame_Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheTeapotWasBoughtByTheDuke"/>
+        <Class IRI="#preselect_Direct_CaseBy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheTeapotWasBoughtByTheDuke"/>
+        <Class IRI="#preselect_Process_Mode5"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheTeapotWasBoughtByTheDuke"/>
+        <Class IRI="#preselect_Subject_Case1"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheTeapotWasGivenByTheDukeToMyAunt"/>
+        <Class IRI="#Clause:Onus&apos;BP&apos;Mention:Subject&apos;FP&apos;Mention:Indirect&apos;FP&apos;Mention:Direct&apos;FP&apos;Process:Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheTeapotWasGivenByTheDukeToMyAunt"/>
+        <Class IRI="#ClauseWithMediumAgentBeneficiary"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheTeapotWasGivenByTheDukeToMyAunt"/>
+        <Class IRI="#identify_Direct_(AgentId_Onus)"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheTeapotWasGivenByTheDukeToMyAunt"/>
+        <Class IRI="#identify_Indirect_(BeneficiaryId_Onus)"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheTeapotWasGivenByTheDukeToMyAunt"/>
+        <Class IRI="#identify_Subject_(MediumId_Onus)"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheTeapotWasGivenByTheDukeToMyAunt"/>
+        <Class IRI="#lexify_Frame_BeWord"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheTeapotWasGivenByTheDukeToMyAunt"/>
+        <Class IRI="#order_Frame_Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheTeapotWasGivenByTheDukeToMyAunt"/>
+        <Class IRI="#preselect_Direct_CaseBy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheTeapotWasGivenByTheDukeToMyAunt"/>
+        <Class IRI="#preselect_Indirect_CaseTo"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheTeapotWasGivenByTheDukeToMyAunt"/>
+        <Class IRI="#preselect_Process_Mode5"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheTeapotWasGivenByTheDukeToMyAunt"/>
+        <Class IRI="#preselect_Subject_Case1"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheTeapotWasGivenMyAuntByTheDuke"/>
+        <Class IRI="#Clause:Onus&apos;BP&apos;Mention:Subject&apos;FP&apos;Mention:Indirect&apos;FP&apos;Mention:Direct&apos;FP&apos;Process:Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheTeapotWasGivenMyAuntByTheDuke"/>
+        <Class IRI="#ClauseWithMediumAgentBeneficiary"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheTeapotWasGivenMyAuntByTheDuke"/>
+        <Class IRI="#identify_Direct_(BeneficiaryId_Onus)"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheTeapotWasGivenMyAuntByTheDuke"/>
+        <Class IRI="#identify_Indirect_(AgentId_Onus)"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheTeapotWasGivenMyAuntByTheDuke"/>
+        <Class IRI="#identify_Subject_(MediumId_Onus)"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheTeapotWasGivenMyAuntByTheDuke"/>
+        <Class IRI="#lexify_Frame_BeWord"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheTeapotWasGivenMyAuntByTheDuke"/>
+        <Class IRI="#order_Frame_Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheTeapotWasGivenMyAuntByTheDuke"/>
+        <Class IRI="#preselect_Direct_Case2"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheTeapotWasGivenMyAuntByTheDuke"/>
+        <Class IRI="#preselect_Indirect_CaseBy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheTeapotWasGivenMyAuntByTheDuke"/>
+        <Class IRI="#preselect_Process_Mode5"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TheTeapotWasGivenMyAuntByTheDuke"/>
+        <Class IRI="#preselect_Subject_Case1"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TriadicProcess"/>
+        <Class IRI="#Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TriadicProcess"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isProcessOf"/>
+            <ObjectIntersectionOf>
+                <Class IRI="#AgentIncluding"/>
+                <Class IRI="#BeneficiaryIncluding"/>
+                <Class IRI="#MediumIncluding"/>
+            </ObjectIntersectionOf>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#agree_Deictic_DeicticTail_Case"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#conflate_CaseTail_Deictic"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#conflate_Case_CaseTail"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#conflate_DeicticTail_Classifier"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#conflate_Deictic_DeicticTail"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#conflate_Frame_Process"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#conflate_TenseTail_Voice"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#conflate_Tense_Voice"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#identify_Direct_(AgentId_Onus)"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#identify_Direct_(BeneficiaryId_Onus)"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#identify_Direct_(MediumId_Onus)"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#identify_Indirect_(AgentId_Onus)"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#identify_Indirect_(BeneficiaryId_Onus)"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#identify_Indirect_(MediumId_Onus)"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#identify_PlaceAdjunct_(PlaceId_Onus)"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#identify_Process_(ProcessId_Onus)"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#identify_Subject_(AgentId_Onus)"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#identify_Subject_(BeneficiaryId_Onus)"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#identify_Subject_(MediumId_Onus)"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#identify_TimeAdjunct_(TimeId_Onus)"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#insert_Case"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#insert_CaseTail"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#insert_Deictic"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#insert_DeiticTail"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#insert_Direct"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#insert_Frame"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#insert_Indirect"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#insert_Process"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#insert_Subject"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#lexify_Case_ByWord"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#lexify_Case_ToWord"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#lexify_Deictic_AnWord"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#lexify_Deictic_TheWord"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#lexify_Frame_BeWord"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#order_Case_CaseTail"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#order_Deictic_DeicticTail"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#order_Frame_Process"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#partition_Direct_Indirect"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#partition_Frame_Direct"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#partition_Subject_Frame"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#preselect_CaseTail_Case1"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#preselect_CaseTail_Case2"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#preselect_DeicticTail_SThing"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#preselect_Direct_Case2"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#preselect_Direct_CaseBy"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#preselect_Direct_SThing"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#preselect_Indirect_Case2"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#preselect_Indirect_CaseBy"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#preselect_Indirect_CaseTo"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#preselect_Indirect_SThing"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#preselect_Process_DiadicProcess"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#preselect_Process_Mode5"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#preselect_Process_MonadicProcess"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#preselect_Process_TriadicProcess"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#preselect_Subject_Case1"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#preselect_Subject_SThing"/>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsPattern"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Case1"/>
+        <Class IRI="#Case2"/>
+        <Class IRI="#Case3"/>
+        <Class IRI="#Case4"/>
+        <Class IRI="#CaseBy"/>
+        <Class IRI="#CaseTo"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Mode0"/>
+        <Class IRI="#Mode1"/>
+        <Class IRI="#Mode2"/>
+        <Class IRI="#Mode3"/>
+        <Class IRI="#Mode4"/>
+        <Class IRI="#Mode5"/>
+        <Class IRI="#Mode6"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#SimpleAction"/>
+        <Class IRI="#SimpleAffectingAction"/>
+        <Class IRI="#SimpleTransfer"/>
+    </DisjointClasses>
+    <DisjointUnion>
+        <Class IRI="http://www.uppermodel.org/Wording#WordingAsDevice"/>
+        <Class IRI="#Element"/>
+        <Class IRI="#Figure"/>
+        <Class IRI="#Sequence"/>
+    </DisjointUnion>
+    <DisjointUnion>
+        <Class IRI="#Case"/>
+        <Class IRI="#Case1"/>
+        <Class IRI="#Case2"/>
+        <Class IRI="#Case3"/>
+        <Class IRI="#Case4"/>
+        <Class IRI="#CaseBy"/>
+        <Class IRI="#CaseTo"/>
+    </DisjointUnion>
+    <DisjointUnion>
+        <Class IRI="#Element"/>
+        <Class IRI="#Circumstance"/>
+        <Class IRI="#Modality"/>
+        <Class IRI="#Process"/>
+        <Class IRI="#Quality"/>
+        <Class IRI="#Quantity"/>
+        <Class IRI="#SThing"/>
+    </DisjointUnion>
+    <DisjointUnion>
+        <Class IRI="#Figure"/>
+        <Class IRI="#SimpleAction"/>
+        <Class IRI="#SimpleAffectingAction"/>
+        <Class IRI="#SimpleTransfer"/>
+    </DisjointUnion>
+    <DisjointUnion>
+        <Class IRI="#Mode"/>
+        <Class IRI="#Mode0"/>
+        <Class IRI="#Mode1"/>
+        <Class IRI="#Mode2"/>
+        <Class IRI="#Mode3"/>
+        <Class IRI="#Mode4"/>
+        <Class IRI="#Mode5"/>
+        <Class IRI="#Mode6"/>
+    </DisjointUnion>
+    <ClassAssertion>
+        <Class IRI="#SimpleTransfer"/>
+        <NamedIndividual IRI="#Figure01"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SThing"/>
+        <NamedIndividual IRI="#Figure01Actor"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SThing"/>
+        <NamedIndividual IRI="#Figure01Goal"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SThing"/>
+        <NamedIndividual IRI="#Figure01Recipient"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.uppermodel.org/Wording#hasActor"/>
+        <NamedIndividual IRI="#Figure01"/>
+        <NamedIndividual IRI="#Figure01Actor"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.uppermodel.org/Wording#hasGoal"/>
+        <NamedIndividual IRI="#Figure01"/>
+        <NamedIndividual IRI="#Figure01Goal"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.uppermodel.org/Wording#hasRecipient"/>
+        <NamedIndividual IRI="#Figure01"/>
+        <NamedIndividual IRI="#Figure01Recipient"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCulminant"/>
+        <NamedIndividual IRI="#Figure01"/>
+        <NamedIndividual IRI="#Figure01Recipient"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSubject"/>
+        <NamedIndividual IRI="#Figure01"/>
+        <NamedIndividual IRI="#Figure01Actor"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasPattern"/>
+        <NamedIndividual IRI="#Figure01Representation"/>
+        <NamedIndividual IRI="#Figure01Pattern"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#represents"/>
+        <NamedIndividual IRI="#Figure01Representation"/>
+        <NamedIndividual IRI="#Figure01"/>
+    </ObjectPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasActor"/>
+        <ObjectProperty IRI="#hasParticipant"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasAgent"/>
+        <ObjectProperty IRI="#hasParticipant"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasBeneficiary"/>
+        <ObjectProperty IRI="#hasParticipant"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasCulminant"/>
+        <ObjectProperty IRI="http://www.uppermodel.org/Wording#hasParticipant"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasFigurePlace"/>
+        <ObjectProperty IRI="#hasPlace"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasFigureTime"/>
+        <ObjectProperty IRI="#hasTime"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasGoal"/>
+        <ObjectProperty IRI="#hasParticipant"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasMedium"/>
+        <ObjectProperty IRI="#hasParticipant"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasRecipient"/>
+        <ObjectProperty IRI="#hasParticipant"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasRepresentativePattern"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasSubject"/>
+        <ObjectProperty IRI="http://www.uppermodel.org/Wording#hasParticipant"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasThingPlace"/>
+        <ObjectProperty IRI="#hasPlace"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasThingTime"/>
+        <ObjectProperty IRI="#hasTime"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTime"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isActorOf"/>
+        <ObjectProperty IRI="#isParticipantOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isAgentOf"/>
+        <ObjectProperty IRI="#isParticipantOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isBeneficiaryOf"/>
+        <ObjectProperty IRI="#isParticipantOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isCulminantOf"/>
+        <ObjectProperty IRI="http://www.uppermodel.org/Wording#isParticipantOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isGoalOf"/>
+        <ObjectProperty IRI="#isParticipantOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isMediumOf"/>
+        <ObjectProperty IRI="#isParticipantOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isPlaceOfFigure"/>
+        <ObjectProperty IRI="#isPlaceOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isPlaceOfThing"/>
+        <ObjectProperty IRI="#isPlaceOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isRecipientOf"/>
+        <ObjectProperty IRI="#isParticipantOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isRepresentedBy"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isSubjectOf"/>
+        <ObjectProperty IRI="http://www.uppermodel.org/Wording#isParticipantOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isTimeOfFigure"/>
+        <ObjectProperty IRI="#isTimeOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isTimeOfThing"/>
+        <ObjectProperty IRI="#isTimeOf"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isActorOf"/>
+        <ObjectProperty IRI="#hasActor"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasAgent"/>
+        <ObjectProperty IRI="#isAgentOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasBeneficiary"/>
+        <ObjectProperty IRI="#isBeneficiaryOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasCulminant"/>
+        <ObjectProperty IRI="#isCulminantOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isPlaceOfFigure"/>
+        <ObjectProperty IRI="#hasFigurePlace"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isTimeOfFigure"/>
+        <ObjectProperty IRI="#hasFigureTime"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasGoal"/>
+        <ObjectProperty IRI="#isGoalOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasMedium"/>
+        <ObjectProperty IRI="#isMediumOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasPattern"/>
+        <ObjectProperty IRI="#isPatternOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isPlaceOf"/>
+        <ObjectProperty IRI="#hasPlace"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasProcess"/>
+        <ObjectProperty IRI="#isProcessOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isRecipientOf"/>
+        <ObjectProperty IRI="#hasRecipient"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isRepresentativePatternOf"/>
+        <ObjectProperty IRI="#hasRepresentativePattern"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isSubjectOf"/>
+        <ObjectProperty IRI="#hasSubject"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isPlaceOfThing"/>
+        <ObjectProperty IRI="#hasThingPlace"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isTimeOfThing"/>
+        <ObjectProperty IRI="#hasThingTime"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isTimeOf"/>
+        <ObjectProperty IRI="#hasTime"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isRepresentedBy"/>
+        <ObjectProperty IRI="#represents"/>
+    </InverseObjectProperties>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasFigurePlace"/>
+        <Class IRI="#Figure"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasFigureTime"/>
+        <Class IRI="#Figure"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasThingPlace"/>
+        <Class IRI="#SThing"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasThingTime"/>
+        <Class IRI="#SThing"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isPlaceOfFigure"/>
+        <Class IRI="#Figure"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isPlaceOfThing"/>
+        <Class IRI="#SThing"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isTimeOfFigure"/>
+        <Class IRI="#Figure"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isTimeOfThing"/>
+        <Class IRI="#SThing"/>
+    </ObjectPropertyRange>
+    <DisjointObjectProperties>
+        <ObjectProperty IRI="http://www.uppermodel.org/Wording#hasParticipant"/>
+        <ObjectProperty IRI="http://www.uppermodel.org/Wording#isParticipantOf"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty IRI="#hasActor"/>
+        <ObjectProperty IRI="#hasGoal"/>
+        <ObjectProperty IRI="#hasRecipient"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty IRI="#hasAgent"/>
+        <ObjectProperty IRI="#hasBeneficiary"/>
+        <ObjectProperty IRI="#hasMedium"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty IRI="#hasCulminant"/>
+        <ObjectProperty IRI="#hasSubject"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty IRI="#hasCulminant"/>
+        <ObjectProperty IRI="#isSubjectOf"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty IRI="#hasFigurePlace"/>
+        <ObjectProperty IRI="#hasThingPlace"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty IRI="#hasFigureTime"/>
+        <ObjectProperty IRI="#hasThingTime"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty IRI="#hasPlace"/>
+        <ObjectProperty IRI="#isPlaceOf"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty IRI="#isActorOf"/>
+        <ObjectProperty IRI="#isGoalOf"/>
+        <ObjectProperty IRI="#isRecipientOf"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty IRI="#isAgentOf"/>
+        <ObjectProperty IRI="#isBeneficiaryOf"/>
+        <ObjectProperty IRI="#isMediumOf"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty IRI="#isPlaceOfFigure"/>
+        <ObjectProperty IRI="#isPlaceOfThing"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty IRI="#isTimeOfFigure"/>
+        <ObjectProperty IRI="#isTimeOfThing"/>
+    </DisjointObjectProperties>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty IRI="#isPatternOf"/>
+            <ObjectProperty IRI="#represents"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="#isRepresentativePatternOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty IRI="#isRepresentedBy"/>
+            <ObjectProperty IRI="#hasPattern"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="#hasRepresentativePattern"/>
+    </SubObjectPropertyOf>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Mention</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Mentions are called NounGroups in Nigel and Ns in typical implementations of OpenCCG. However, many researchers in NLP have used the term NP (noun phrase) for text chunks that have the structure &quot;the&quot; + a text token tagged as noun or that matches a closed list of patterns such as &quot;it&quot;, &quot;he&quot;, &quot;she&quot;, &quot;it&quot;. They have been using the term Mention for an NP that corresponds to a non-empty semantics such as &quot;it&quot; in &quot;it&apos;s raining&quot;. For this reason, as a way to communicate the intended level of detail among different research groups, I also adopt the tem Mention here.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MinorDepiction</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">In KPML, words that occupy the function of MinorProcess belong either to the word class of Adjuncts or of Prepositions. Adjuncts are the words used as MinorProcess that can be used with a complement or without one. Prepositions are the words that can be used as MinorProcess only with a complement. Words classified as adjuncts such as BY and prepositions such as TO may also be selected by their ids (lexify) for marking participation roles.
+
+However, when using a mapping approach, because the mapping must be bi-directional, such an approach of multiple readings is not possible. We need, instead, multiple hypothesis of text analysis to work in parallel. We must provide two mappings, one for lexical and another for grammatical word selection. Another solution must be given for the differentiation among adverbs, adjuncts, and prepositions: this distinction can be done at the semantic level in the same way as the subkinds of processes.
+
+Moreover, at the brick level, there is no name for a MinorProcess. They have been conceived in Nigel as being realised as words. For parsing, this notion needs revision. We propose the name MinorDepiction provisorily.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#insert_Direct</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">&quot;the teapot&quot; in &quot;the duke gave my aunt the teapot&quot;
+&quot;the teapot&quot; in &quot;the duke gave the teapot to my aunt&quot;
+&quot;it&quot; in &quot;the duke gave it to my aunt&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#insert_Indirect</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">&quot;my aunt&quot; in &quot;the duke gave my aunt the teapot&quot;
+&quot;her&quot; in &quot;the duke gave her the teapot&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#insert_Subject</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">&quot;the duke&quot; in &quot;the duke gave my aunt the teapot&quot;
+&quot;he&quot; in &quot;he gave my aunt the teapot&quot;</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

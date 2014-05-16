@@ -1,0 +1,192 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY Word "http://www.uppermodel.org/Word#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.uppermodel.org/English/Word/"
+     xml:base="http://www.uppermodel.org/English/Word/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:Word="http://www.uppermodel.org/Word#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://www.uppermodel.org/Word"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.uppermodel.org/Word#hasCopy -->
+
+    <owl:ObjectProperty rdf:about="&Word;hasCopy">
+        <rdfs:range rdf:resource="&Word;Copy"/>
+        <rdfs:domain rdf:resource="&Word;Form"/>
+        <owl:inverseOf rdf:resource="&Word;isCopyOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.uppermodel.org/Word#hasForm -->
+
+    <owl:ObjectProperty rdf:about="&Word;hasForm">
+        <rdfs:range rdf:resource="&Word;Form"/>
+        <rdfs:domain rdf:resource="&Word;Word"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.uppermodel.org/Word#hasFormCopy -->
+
+    <owl:ObjectProperty rdf:about="&Word;hasFormCopy">
+        <rdfs:range rdf:resource="&Word;Copy"/>
+        <rdfs:domain rdf:resource="&Word;Word"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="&Word;hasForm"/>
+            <rdf:Description rdf:about="&Word;hasCopy"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.uppermodel.org/Word#isCopyOf -->
+
+    <owl:ObjectProperty rdf:about="&Word;isCopyOf">
+        <rdfs:domain rdf:resource="&Word;Copy"/>
+        <rdfs:range rdf:resource="&Word;Form"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.uppermodel.org/Word#isFormCopyOf -->
+
+    <owl:ObjectProperty rdf:about="&Word;isFormCopyOf">
+        <rdfs:domain rdf:resource="&Word;Copy"/>
+        <rdfs:range rdf:resource="&Word;Word"/>
+        <owl:inverseOf rdf:resource="&Word;hasFormCopy"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="&Word;isCopyOf"/>
+            <rdf:Description rdf:about="&Word;isFormOf"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.uppermodel.org/Word#isFormOf -->
+
+    <owl:ObjectProperty rdf:about="&Word;isFormOf">
+        <rdfs:domain rdf:resource="&Word;Form"/>
+        <rdfs:range rdf:resource="&Word;Word"/>
+        <owl:inverseOf rdf:resource="&Word;hasForm"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.uppermodel.org/Word#Copy -->
+
+    <owl:Class rdf:about="&Word;Copy">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Word;isCopyOf"/>
+                <owl:someValuesFrom rdf:resource="&Word;Form"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Word;isCopyOf"/>
+                <owl:onClass rdf:resource="&Word;Form"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/Word#Form -->
+
+    <owl:Class rdf:about="&Word;Form">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Word;isFormOf"/>
+                <owl:someValuesFrom rdf:resource="&Word;Word"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Word;isFormOf"/>
+                <owl:onClass rdf:resource="&Word;Word"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Word;hasCopy"/>
+                <owl:someValuesFrom rdf:resource="&Word;Copy"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/Word#Word -->
+
+    <owl:Class rdf:about="&Word;Word">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Word;hasForm"/>
+                <owl:someValuesFrom rdf:resource="&Word;Form"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&Word;Copy"/>
+            <rdf:Description rdf:about="&Word;Form"/>
+            <rdf:Description rdf:about="&Word;Word"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

@@ -1,0 +1,3563 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY Word "http://www.uppermodel.org/Word#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY WordEng "http://www.uppermodel.org/WordEng#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.uppermodel.org/English/Word/"
+     xml:base="http://www.uppermodel.org/English/Word/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:Word="http://www.uppermodel.org/Word#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:WordEng="http://www.uppermodel.org/WordEng#">
+    <owl:Ontology rdf:about="http://www.uppermodel.org/WordEng">
+        <owl:imports rdf:resource="http://www.uppermodel.org/Word"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.uppermodel.org/Word#Word -->
+
+    <owl:Class rdf:about="&Word;Word">
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="&WordEng;Classifier"/>
+            <rdf:Description rdf:about="&WordEng;Identifier"/>
+            <rdf:Description rdf:about="&WordEng;Mentioner"/>
+            <rdf:Description rdf:about="&WordEng;Process"/>
+            <rdf:Description rdf:about="&WordEng;Qualifier"/>
+        </owl:disjointUnionOf>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="&WordEng;Irregular"/>
+            <rdf:Description rdf:about="&WordEng;Regular"/>
+        </owl:disjointUnionOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#Case -->
+
+    <owl:Class rdf:about="&WordEng;Case">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&Word;Form"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormOf"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&WordEng;Classifier"/>
+                                    <rdf:Description rdf:about="&WordEng;Identifier"/>
+                                    <rdf:Description rdf:about="&WordEng;Mentioner"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&Word;Form"/>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="&WordEng;Case1"/>
+            <rdf:Description rdf:about="&WordEng;Case2"/>
+            <rdf:Description rdf:about="&WordEng;Case3"/>
+            <rdf:Description rdf:about="&WordEng;Case4"/>
+        </owl:disjointUnionOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#Case1 -->
+
+    <owl:Class rdf:about="&WordEng;Case1">
+        <rdfs:subClassOf rdf:resource="&WordEng;Case"/>
+        <rdfs:comment>I
+John
+the dog</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#Case2 -->
+
+    <owl:Class rdf:about="&WordEng;Case2">
+        <rdfs:subClassOf rdf:resource="&WordEng;Case"/>
+        <rdfs:comment>me
+John
+the dog</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#Case3 -->
+
+    <owl:Class rdf:about="&WordEng;Case3">
+        <rdfs:subClassOf rdf:resource="&WordEng;Case"/>
+        <rdfs:comment>my
+John&apos;s
+the dog&apos;s</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#Case4 -->
+
+    <owl:Class rdf:about="&WordEng;Case4">
+        <rdfs:subClassOf rdf:resource="&WordEng;Case"/>
+        <rdfs:comment>of mine
+of John
+of the dog</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#Classifier -->
+
+    <owl:Class rdf:about="&WordEng;Classifier">
+        <rdfs:subClassOf rdf:resource="&Word;Word"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Word;hasForm"/>
+                <owl:someValuesFrom rdf:resource="&WordEng;ClassifierForm06"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Word;hasForm"/>
+                <owl:someValuesFrom rdf:resource="&WordEng;ClassifierForm02"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Word;hasForm"/>
+                <owl:someValuesFrom rdf:resource="&WordEng;ClassifierForm08"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Word;hasForm"/>
+                <owl:someValuesFrom rdf:resource="&WordEng;ClassifierForm01"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Word;hasForm"/>
+                <owl:someValuesFrom rdf:resource="&WordEng;ClassifierForm07"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Word;hasForm"/>
+                <owl:someValuesFrom rdf:resource="&WordEng;ClassifierForm05"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Word;hasForm"/>
+                <owl:someValuesFrom rdf:resource="&WordEng;ClassifierForm03"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Word;hasForm"/>
+                <owl:someValuesFrom rdf:resource="&WordEng;ClassifierForm04"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="&xsd;string">FormSet</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ClassifierCopy01 -->
+
+    <owl:Class rdf:about="&WordEng;ClassifierCopy01">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&Word;Copy"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&Word;isCopyOf"/>
+                                <owl:someValuesFrom rdf:resource="&WordEng;ClassifierForm01"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&Word;isCopyOf"/>
+                                <owl:someValuesFrom rdf:resource="&WordEng;ClassifierForm02"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&Word;isCopyOf"/>
+                                <owl:someValuesFrom rdf:resource="&WordEng;ClassifierForm04"/>
+                            </owl:Restriction>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+        <rdfs:comment>- dog</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ClassifierCopy02 -->
+
+    <owl:Class rdf:about="&WordEng;ClassifierCopy02">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&Word;Copy"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;ClassifierForm03"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+        <rdfs:comment>- dog&apos;s</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ClassifierCopy03 -->
+
+    <owl:Class rdf:about="&WordEng;ClassifierCopy03">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&Word;Copy"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&Word;isCopyOf"/>
+                                <owl:someValuesFrom rdf:resource="&WordEng;ClassifierForm05"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&Word;isCopyOf"/>
+                                <owl:someValuesFrom rdf:resource="&WordEng;ClassifierForm06"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&Word;isCopyOf"/>
+                                <owl:someValuesFrom rdf:resource="&WordEng;ClassifierForm08"/>
+                            </owl:Restriction>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+        <rdfs:comment>- dogs</rdfs:comment>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="&WordEng;ClassifierStem+ChangeYtoI+SuffixEs"/>
+            <rdf:Description rdf:about="&WordEng;ClassifierStem+SuffixEs"/>
+            <rdf:Description rdf:about="&WordEng;ClassifierStem+SuffixS"/>
+        </owl:disjointUnionOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ClassifierCopy04 -->
+
+    <owl:Class rdf:about="&WordEng;ClassifierCopy04">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&Word;Copy"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;ClassifierForm07"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+        <rdfs:comment>- dogs&apos;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ClassifierForm -->
+
+    <owl:Class rdf:about="&WordEng;ClassifierForm">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&Word;Form"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;Classifier"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&Word;Form"/>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="&WordEng;ClassifierForm01"/>
+            <rdf:Description rdf:about="&WordEng;ClassifierForm02"/>
+            <rdf:Description rdf:about="&WordEng;ClassifierForm03"/>
+            <rdf:Description rdf:about="&WordEng;ClassifierForm04"/>
+            <rdf:Description rdf:about="&WordEng;ClassifierForm05"/>
+            <rdf:Description rdf:about="&WordEng;ClassifierForm06"/>
+            <rdf:Description rdf:about="&WordEng;ClassifierForm07"/>
+            <rdf:Description rdf:about="&WordEng;ClassifierForm08"/>
+        </owl:disjointUnionOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ClassifierForm01 -->
+
+    <owl:Class rdf:about="&WordEng;ClassifierForm01">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;Case1"/>
+                    <rdf:Description rdf:about="&WordEng;ClassifierForm"/>
+                    <rdf:Description rdf:about="&WordEng;WithQuantification1"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;Case1"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;ClassifierForm"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;WithQuantification1"/>
+        <rdfs:comment>&quot;dog&quot; in &quot;the dog&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ClassifierForm02 -->
+
+    <owl:Class rdf:about="&WordEng;ClassifierForm02">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;Case2"/>
+                    <rdf:Description rdf:about="&WordEng;ClassifierForm"/>
+                    <rdf:Description rdf:about="&WordEng;WithQuantification1"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;Case2"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;ClassifierForm"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;WithQuantification1"/>
+        <rdfs:comment>&quot;dog&apos;s&quot; in &quot;the dog&apos;s house&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ClassifierForm03 -->
+
+    <owl:Class rdf:about="&WordEng;ClassifierForm03">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;Case3"/>
+                    <rdf:Description rdf:about="&WordEng;ClassifierForm"/>
+                    <rdf:Description rdf:about="&WordEng;WithQuantification1"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;Case3"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;ClassifierForm"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;WithQuantification1"/>
+        <rdfs:comment>&quot;dogs&quot; in &quot;the dogs&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ClassifierForm04 -->
+
+    <owl:Class rdf:about="&WordEng;ClassifierForm04">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;Case4"/>
+                    <rdf:Description rdf:about="&WordEng;ClassifierForm"/>
+                    <rdf:Description rdf:about="&WordEng;WithQuantification1"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;Case4"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;ClassifierForm"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;WithQuantification1"/>
+        <rdfs:comment>&quot;dogs&apos;&quot; in &quot;the dogs&apos; house&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ClassifierForm05 -->
+
+    <owl:Class rdf:about="&WordEng;ClassifierForm05">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;Case1"/>
+                    <rdf:Description rdf:about="&WordEng;ClassifierForm"/>
+                    <rdf:Description rdf:about="&WordEng;WithQuantification2"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;Case1"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;ClassifierForm"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;WithQuantification2"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ClassifierForm06 -->
+
+    <owl:Class rdf:about="&WordEng;ClassifierForm06">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;Case2"/>
+                    <rdf:Description rdf:about="&WordEng;ClassifierForm"/>
+                    <rdf:Description rdf:about="&WordEng;WithQuantification2"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;Case2"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;ClassifierForm"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;WithQuantification2"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ClassifierForm07 -->
+
+    <owl:Class rdf:about="&WordEng;ClassifierForm07">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;Case3"/>
+                    <rdf:Description rdf:about="&WordEng;ClassifierForm"/>
+                    <rdf:Description rdf:about="&WordEng;WithQuantification2"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;Case3"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;ClassifierForm"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;WithQuantification2"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ClassifierForm08 -->
+
+    <owl:Class rdf:about="&WordEng;ClassifierForm08">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;Case4"/>
+                    <rdf:Description rdf:about="&WordEng;ClassifierForm"/>
+                    <rdf:Description rdf:about="&WordEng;WithQuantification2"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;Case4"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;ClassifierForm"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;WithQuantification2"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ClassifierStem -->
+
+    <owl:Class rdf:about="&WordEng;ClassifierStem">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;ClassifierCopy01"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;Regular"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;Stem"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;fill-with-stem_Stem"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;insert_Stem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ClassifierStem+ChangeYtoI+SuffixEs -->
+
+    <owl:Class rdf:about="&WordEng;ClassifierStem+ChangeYtoI+SuffixEs">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;ClassifierCopy03"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;EndingWith-y-ies"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;ClassifierCopy03"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;Stem+ChangeYtoI+SuffixEs"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;fill-with-stem_Stem"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;insert_Stem"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;insert_Suffix"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;lexify_Suffix_ES"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;modify_Stem_by-replacing-last-y-with-i"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;order_Stem_Suffix"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ClassifierStem+ChangeYtoI+SuffixEs&apos; -->
+
+    <owl:Class rdf:about="&WordEng;ClassifierStem+ChangeYtoI+SuffixEs&apos;">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;ClassifierCopy04"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;EndingWith-y-ies"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;ClassifierCopy04"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;Stem+ChangeYtoI+SuffixEs&apos;"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;fill-with-stem_Stem"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;insert_Stem"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;insert_Suffix"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;lexify_Suffix_ES&apos;"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;modify_Stem_by-replacing-last-y-with-i"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;order_Stem_Suffix"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ClassifierStem+Suffix&apos;S -->
+
+    <owl:Class rdf:about="&WordEng;ClassifierStem+Suffix&apos;S">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;ClassifierCopy02"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;Regular"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;Stem+Suffix&apos;S"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;fill-with-stem_Stem"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;insert_Stem"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;insert_Suffix"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;lexify_Suffix_&apos;S"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;order_Stem_Suffix"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ClassifierStem+SuffixEs -->
+
+    <owl:Class rdf:about="&WordEng;ClassifierStem+SuffixEs">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;ClassifierCopy03"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;EndingWith-ø-es"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;ClassifierCopy03"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;Stem+SuffixEs"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;fill-with-stem_Stem"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;insert_Stem"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;insert_Suffix"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;lexify_Suffix_ES"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;order_Stem_Suffix"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ClassifierStem+SuffixEs&apos; -->
+
+    <owl:Class rdf:about="&WordEng;ClassifierStem+SuffixEs&apos;">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;ClassifierCopy04"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;EndingWith-ø-es"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;ClassifierCopy04"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;Stem+SuffixEs&apos;"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;fill-with-stem_Stem"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;insert_Stem"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;insert_Suffix"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;lexify_Suffix_ES&apos;"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;order_Stem_Suffix"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ClassifierStem+SuffixS -->
+
+    <owl:Class rdf:about="&WordEng;ClassifierStem+SuffixS">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;ClassifierCopy03"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;EndingWith-ø-s"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;Stem+SuffixS"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;fill-with-stem_Stem"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;insert_Stem"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;insert_Suffix"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;lexify_Suffix_S"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;order_Stem_Suffix"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ClassifierStem+SuffixS&apos; -->
+
+    <owl:Class rdf:about="&WordEng;ClassifierStem+SuffixS&apos;">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;ClassifierCopy04"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;EndingWith-ø-s"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;Stem+SuffixS&apos;"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;fill-with-stem_Stem"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;insert_Stem"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;insert_Suffix"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;lexify_Suffix_S&apos;"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;order_Stem_Suffix"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#EndingWith-e-er-est -->
+
+    <owl:Class rdf:about="&WordEng;EndingWith-e-er-est">
+        <rdfs:subClassOf rdf:resource="&WordEng;Regular"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#EndingWith-e-es-ed-ing -->
+
+    <owl:Class rdf:about="&WordEng;EndingWith-e-es-ed-ing">
+        <rdfs:subClassOf rdf:resource="&WordEng;Regular"/>
+        <rdfs:comment>- decorate
+- decorates
+- decorated
+- decorating</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#EndingWith-r-rrer-rrest -->
+
+    <owl:Class rdf:about="&WordEng;EndingWith-r-rrer-rrest">
+        <rdfs:subClassOf rdf:resource="&WordEng;Regular"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#EndingWith-r-rs-rred-rring -->
+
+    <owl:Class rdf:about="&WordEng;EndingWith-r-rs-rred-rring">
+        <rdfs:subClassOf rdf:resource="&WordEng;Regular"/>
+        <rdfs:comment>- blur
+- blurs
+- blurred
+- blurring</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#EndingWith-y-ier-iest -->
+
+    <owl:Class rdf:about="&WordEng;EndingWith-y-ier-iest">
+        <rdfs:subClassOf rdf:resource="&WordEng;Regular"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#EndingWith-y-ies -->
+
+    <owl:Class rdf:about="&WordEng;EndingWith-y-ies">
+        <rdfs:subClassOf rdf:resource="&WordEng;Regular"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#EndingWith-y-ies-ied-ying -->
+
+    <owl:Class rdf:about="&WordEng;EndingWith-y-ies-ied-ying">
+        <rdfs:subClassOf rdf:resource="&WordEng;Regular"/>
+        <rdfs:comment>- try
+- tries
+- tried
+- trying</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#EndingWith-ø-er-est -->
+
+    <owl:Class rdf:about="&WordEng;EndingWith-ø-er-est">
+        <rdfs:subClassOf rdf:resource="&WordEng;Regular"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#EndingWith-ø-es -->
+
+    <owl:Class rdf:about="&WordEng;EndingWith-ø-es">
+        <rdfs:subClassOf rdf:resource="&WordEng;Regular"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#EndingWith-ø-es-ed-ing -->
+
+    <owl:Class rdf:about="&WordEng;EndingWith-ø-es-ed-ing">
+        <rdfs:subClassOf rdf:resource="&WordEng;Regular"/>
+        <rdfs:comment>- wish
+- wishes
+- wished
+- wishing</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#EndingWith-ø-s -->
+
+    <owl:Class rdf:about="&WordEng;EndingWith-ø-s">
+        <rdfs:subClassOf rdf:resource="&WordEng;Regular"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#EndingWith-ø-s-ed-ing -->
+
+    <owl:Class rdf:about="&WordEng;EndingWith-ø-s-ed-ing">
+        <rdfs:subClassOf rdf:resource="&WordEng;Regular"/>
+        <rdfs:comment>- play
+- plays
+- played
+- playing</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#Identifier -->
+
+    <owl:Class rdf:about="&WordEng;Identifier">
+        <rdfs:subClassOf rdf:resource="&Word;Word"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Word;hasForm"/>
+                <owl:someValuesFrom rdf:resource="&WordEng;IdentifierForm02"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Word;hasForm"/>
+                <owl:someValuesFrom rdf:resource="&WordEng;IdentifierForm03"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Word;hasForm"/>
+                <owl:someValuesFrom rdf:resource="&WordEng;IdentifierForm04"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Word;hasForm"/>
+                <owl:someValuesFrom rdf:resource="&WordEng;IdentifierForm01"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="&xsd;string">FormSet</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#IdentifierCopy01 -->
+
+    <owl:Class rdf:about="&WordEng;IdentifierCopy01">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&Word;Copy"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&Word;isCopyOf"/>
+                                <owl:someValuesFrom rdf:resource="&WordEng;IdentifierForm01"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&Word;isCopyOf"/>
+                                <owl:someValuesFrom rdf:resource="&WordEng;IdentifierForm02"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&Word;isCopyOf"/>
+                                <owl:someValuesFrom rdf:resource="&WordEng;IdentifierForm04"/>
+                            </owl:Restriction>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+        <rdfs:comment>- John</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#IdentifierCopy02 -->
+
+    <owl:Class rdf:about="&WordEng;IdentifierCopy02">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&Word;Copy"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;IdentifierForm03"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+        <rdfs:comment>- John&apos;s</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#IdentifierForm -->
+
+    <owl:Class rdf:about="&WordEng;IdentifierForm">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&Word;Form"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;Identifier"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&Word;Form"/>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="&WordEng;IdentifierForm01"/>
+            <rdf:Description rdf:about="&WordEng;IdentifierForm02"/>
+            <rdf:Description rdf:about="&WordEng;IdentifierForm03"/>
+            <rdf:Description rdf:about="&WordEng;IdentifierForm04"/>
+        </owl:disjointUnionOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#IdentifierForm01 -->
+
+    <owl:Class rdf:about="&WordEng;IdentifierForm01">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;Case1"/>
+                    <rdf:Description rdf:about="&WordEng;IdentifierForm"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;Case1"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;IdentifierForm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#IdentifierForm02 -->
+
+    <owl:Class rdf:about="&WordEng;IdentifierForm02">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;Case2"/>
+                    <rdf:Description rdf:about="&WordEng;IdentifierForm"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;Case2"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;IdentifierForm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#IdentifierForm03 -->
+
+    <owl:Class rdf:about="&WordEng;IdentifierForm03">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;Case3"/>
+                    <rdf:Description rdf:about="&WordEng;IdentifierForm"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;Case3"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;IdentifierForm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#IdentifierForm04 -->
+
+    <owl:Class rdf:about="&WordEng;IdentifierForm04">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;Case4"/>
+                    <rdf:Description rdf:about="&WordEng;IdentifierForm"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;Case4"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;IdentifierForm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#IdentifierStem -->
+
+    <owl:Class rdf:about="&WordEng;IdentifierStem">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;IdentifierCopy01"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;Regular"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;Stem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#IdentifierStem+Suffix&apos;S -->
+
+    <owl:Class rdf:about="&WordEng;IdentifierStem+Suffix&apos;S">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;IdentifierCopy02"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;Regular"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;Stem+Suffix&apos;S"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#Irregular -->
+
+    <owl:Class rdf:about="&WordEng;Irregular">
+        <rdfs:subClassOf rdf:resource="&Word;Word"/>
+        <owl:disjointWith rdf:resource="&WordEng;Regular"/>
+        <rdfs:comment rdf:datatype="&xsd;string">FormSet</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#Mentioner -->
+
+    <owl:Class rdf:about="&WordEng;Mentioner">
+        <rdfs:subClassOf rdf:resource="&Word;Word"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Word;hasForm"/>
+                <owl:someValuesFrom rdf:resource="&WordEng;MentionerForm04"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Word;hasForm"/>
+                <owl:someValuesFrom rdf:resource="&WordEng;MentionerForm03"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Word;hasForm"/>
+                <owl:someValuesFrom rdf:resource="&WordEng;MentionerForm02"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Word;hasForm"/>
+                <owl:someValuesFrom rdf:resource="&WordEng;MentionerForm01"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="&xsd;string">FormSet</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#MentionerCopy01 -->
+
+    <owl:Class rdf:about="&WordEng;MentionerCopy01">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&Word;Copy"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;MentionerForm01"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+        <rdfs:comment>- I</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#MentionerCopy02 -->
+
+    <owl:Class rdf:about="&WordEng;MentionerCopy02">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&Word;Copy"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;MentionerForm02"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+        <rdfs:comment>- me</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#MentionerCopy03 -->
+
+    <owl:Class rdf:about="&WordEng;MentionerCopy03">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&Word;Copy"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;MentionerForm03"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+        <rdfs:comment>- my</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#MentionerCopy04 -->
+
+    <owl:Class rdf:about="&WordEng;MentionerCopy04">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&Word;Copy"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;MentionerForm04"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+        <rdfs:comment>- mine</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#MentionerForm -->
+
+    <owl:Class rdf:about="&WordEng;MentionerForm">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&Word;Form"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;Mentioner"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&Word;Form"/>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="&WordEng;MentionerForm01"/>
+            <rdf:Description rdf:about="&WordEng;MentionerForm02"/>
+            <rdf:Description rdf:about="&WordEng;MentionerForm03"/>
+            <rdf:Description rdf:about="&WordEng;MentionerForm04"/>
+        </owl:disjointUnionOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#MentionerForm01 -->
+
+    <owl:Class rdf:about="&WordEng;MentionerForm01">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;Case1"/>
+                    <rdf:Description rdf:about="&WordEng;MentionerForm"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;Case1"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;MentionerForm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#MentionerForm02 -->
+
+    <owl:Class rdf:about="&WordEng;MentionerForm02">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;Case2"/>
+                    <rdf:Description rdf:about="&WordEng;MentionerForm"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;MentionerForm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#MentionerForm03 -->
+
+    <owl:Class rdf:about="&WordEng;MentionerForm03">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;Case3"/>
+                    <rdf:Description rdf:about="&WordEng;MentionerForm"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;Case3"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;MentionerForm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#MentionerForm04 -->
+
+    <owl:Class rdf:about="&WordEng;MentionerForm04">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;Case4"/>
+                    <rdf:Description rdf:about="&WordEng;MentionerForm"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;Case4"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;MentionerForm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#Mode -->
+
+    <owl:Class rdf:about="&WordEng;Mode">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&Word;Form"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;Process"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&Word;Form"/>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="&WordEng;Mode1"/>
+            <rdf:Description rdf:about="&WordEng;Mode2"/>
+            <rdf:Description rdf:about="&WordEng;Mode3"/>
+            <rdf:Description rdf:about="&WordEng;Mode4"/>
+            <rdf:Description rdf:about="&WordEng;Mode5"/>
+            <rdf:Description rdf:about="&WordEng;Mode6"/>
+        </owl:disjointUnionOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#Mode1 -->
+
+    <owl:Class rdf:about="&WordEng;Mode1">
+        <rdfs:subClassOf rdf:resource="&WordEng;Mode"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#Mode2 -->
+
+    <owl:Class rdf:about="&WordEng;Mode2">
+        <rdfs:subClassOf rdf:resource="&WordEng;Mode"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#Mode3 -->
+
+    <owl:Class rdf:about="&WordEng;Mode3">
+        <rdfs:subClassOf rdf:resource="&WordEng;Mode"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#Mode4 -->
+
+    <owl:Class rdf:about="&WordEng;Mode4">
+        <rdfs:subClassOf rdf:resource="&WordEng;Mode"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#Mode5 -->
+
+    <owl:Class rdf:about="&WordEng;Mode5">
+        <rdfs:subClassOf rdf:resource="&WordEng;Mode"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#Mode6 -->
+
+    <owl:Class rdf:about="&WordEng;Mode6">
+        <rdfs:subClassOf rdf:resource="&WordEng;Mode"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#Process -->
+
+    <owl:Class rdf:about="&WordEng;Process">
+        <rdfs:subClassOf rdf:resource="&Word;Word"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Word;hasForm"/>
+                <owl:someValuesFrom rdf:resource="&WordEng;ProcessForm05"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Word;hasForm"/>
+                <owl:someValuesFrom rdf:resource="&WordEng;ProcessForm08"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Word;hasForm"/>
+                <owl:someValuesFrom rdf:resource="&WordEng;ProcessForm04"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Word;hasForm"/>
+                <owl:someValuesFrom rdf:resource="&WordEng;ProcessForm06"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Word;hasForm"/>
+                <owl:someValuesFrom rdf:resource="&WordEng;ProcessForm03"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Word;hasForm"/>
+                <owl:someValuesFrom rdf:resource="&WordEng;ProcessForm02"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Word;hasForm"/>
+                <owl:someValuesFrom rdf:resource="&WordEng;ProcessForm10"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Word;hasForm"/>
+                <owl:someValuesFrom rdf:resource="&WordEng;ProcessForm07"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Word;hasForm"/>
+                <owl:someValuesFrom rdf:resource="&WordEng;ProcessForm09"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Word;hasForm"/>
+                <owl:someValuesFrom rdf:resource="&WordEng;ProcessForm01"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="&xsd;string">FormSet</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ProcessCopy-07Stem+SuffixEd -->
+
+    <owl:Class rdf:about="&WordEng;ProcessCopy-07Stem+SuffixEd">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;ProcessCopy07"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormCopyOf"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&WordEng;EndingWith-ø-es-ed-ing"/>
+                                    <rdf:Description rdf:about="&WordEng;EndingWith-ø-s-ed-ing"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;ProcessCopy07"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;Stem+SuffixEd"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ProcessCopy01 -->
+
+    <owl:Class rdf:about="&WordEng;ProcessCopy01">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&Word;Copy"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;ProcessForm01"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+        <rdfs:comment>- am
+- run
+- chase</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ProcessCopy01Stem -->
+
+    <owl:Class rdf:about="&WordEng;ProcessCopy01Stem">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;ProcessCopy01"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;Regular"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;ProcessCopy01"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;Stem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ProcessCopy01Stem01 -->
+
+    <owl:Class rdf:about="&WordEng;ProcessCopy01Stem01">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;ProcessCopy01"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;Irregular"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;ProcessCopy01"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;Stem01"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ProcessCopy02 -->
+
+    <owl:Class rdf:about="&WordEng;ProcessCopy02">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&Word;Copy"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;ProcessForm02"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+        <rdfs:comment>- is
+- runs
+- chases</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ProcessCopy02Stem+ChangeYtoI+SuffixES -->
+
+    <owl:Class rdf:about="&WordEng;ProcessCopy02Stem+ChangeYtoI+SuffixES">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;ProcessCopy02"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;EndingWith-y-ies-ied-ying"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;ProcessCopy02"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;Stem+ChangeYtoI+SuffixEs"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ProcessCopy02Stem+SuffixEs -->
+
+    <owl:Class rdf:about="&WordEng;ProcessCopy02Stem+SuffixEs">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;ProcessCopy02"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;EndingWith-ø-es-ed-ing"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;ProcessCopy02"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;Stem+SuffixEs"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ProcessCopy02Stem+SuffixS -->
+
+    <owl:Class rdf:about="&WordEng;ProcessCopy02Stem+SuffixS">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;ProcessCopy02"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormCopyOf"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&WordEng;EndingWith-e-es-ed-ing"/>
+                                    <rdf:Description rdf:about="&WordEng;EndingWith-r-rs-rred-rring"/>
+                                    <rdf:Description rdf:about="&WordEng;EndingWith-ø-s-ed-ing"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;ProcessCopy02"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;Stem+SuffixS"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ProcessCopy02Stem02 -->
+
+    <owl:Class rdf:about="&WordEng;ProcessCopy02Stem02">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;ProcessCopy02"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;Irregular"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;ProcessCopy02"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;Stem02"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ProcessCopy03 -->
+
+    <owl:Class rdf:about="&WordEng;ProcessCopy03">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&Word;Copy"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;ProcessForm03"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+        <rdfs:comment>- are
+- run
+- chase</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ProcessCopy03Stem -->
+
+    <owl:Class rdf:about="&WordEng;ProcessCopy03Stem">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;ProcessCopy03"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;Regular"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;ProcessCopy03"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;Stem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ProcessCopy03Stem03 -->
+
+    <owl:Class rdf:about="&WordEng;ProcessCopy03Stem03">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;ProcessCopy03"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;Irregular"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;ProcessCopy03"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;Stem03"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ProcessCopy04 -->
+
+    <owl:Class rdf:about="&WordEng;ProcessCopy04">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&Word;Copy"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&Word;isCopyOf"/>
+                                <owl:someValuesFrom rdf:resource="&WordEng;ProcessForm04"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&Word;isCopyOf"/>
+                                <owl:someValuesFrom rdf:resource="&WordEng;ProcessForm05"/>
+                            </owl:Restriction>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+        <rdfs:comment>- was
+- ran
+- chased</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ProcessCopy04Stem+ChangeYtoI+SuffixEd -->
+
+    <owl:Class rdf:about="&WordEng;ProcessCopy04Stem+ChangeYtoI+SuffixEd">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;ProcessCopy04"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;EndingWith-y-ies-ied-ying"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;ProcessCopy04"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;Stem+ChangeYtoI+SuffixEd"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ProcessCopy04Stem+Double+SuffixEd -->
+
+    <owl:Class rdf:about="&WordEng;ProcessCopy04Stem+Double+SuffixEd">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;ProcessCopy04"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;EndingWith-r-rs-rred-rring"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;ProcessCopy04"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;Stem+Double+SuffixEd"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ProcessCopy04Stem+SuffixD -->
+
+    <owl:Class rdf:about="&WordEng;ProcessCopy04Stem+SuffixD">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;ProcessCopy04"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;EndingWith-e-es-ed-ing"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;ProcessCopy04"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;Stem+SuffixD"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ProcessCopy04Stem+SuffixEd -->
+
+    <owl:Class rdf:about="&WordEng;ProcessCopy04Stem+SuffixEd">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;ProcessCopy04"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormCopyOf"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&WordEng;EndingWith-ø-es-ed-ing"/>
+                                    <rdf:Description rdf:about="&WordEng;EndingWith-ø-s-ed-ing"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;ProcessCopy04"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;Stem+SuffixEd"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ProcessCopy04Stem04 -->
+
+    <owl:Class rdf:about="&WordEng;ProcessCopy04Stem04">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;ProcessCopy04"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;Irregular"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;ProcessCopy04"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;Stem04"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ProcessCopy05 -->
+
+    <owl:Class rdf:about="&WordEng;ProcessCopy05">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&Word;Copy"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&Word;isCopyOf"/>
+                                <owl:someValuesFrom rdf:resource="&WordEng;ProcessForm06"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&Word;isCopyOf"/>
+                                <owl:someValuesFrom rdf:resource="&WordEng;ProcessForm07"/>
+                            </owl:Restriction>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+        <rdfs:comment>- were
+- ran
+- chased</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ProcessCopy05Stem+ChangeYtoI+SuffixEd -->
+
+    <owl:Class rdf:about="&WordEng;ProcessCopy05Stem+ChangeYtoI+SuffixEd">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;ProcessCopy05"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;EndingWith-y-ies-ied-ying"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;ProcessCopy05"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;Stem+ChangeYtoI+SuffixEd"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ProcessCopy05Stem+Double+SuffixEd -->
+
+    <owl:Class rdf:about="&WordEng;ProcessCopy05Stem+Double+SuffixEd">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;ProcessCopy05"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;EndingWith-r-rs-rred-rring"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;ProcessCopy05"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;Stem+Double+SuffixEd"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ProcessCopy05Stem+SuffixD -->
+
+    <owl:Class rdf:about="&WordEng;ProcessCopy05Stem+SuffixD">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;ProcessCopy05"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;EndingWith-e-es-ed-ing"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;ProcessCopy05"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;Stem+SuffixD"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ProcessCopy05Stem+SuffixEd -->
+
+    <owl:Class rdf:about="&WordEng;ProcessCopy05Stem+SuffixEd">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;ProcessCopy05"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormCopyOf"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&WordEng;EndingWith-ø-es-ed-ing"/>
+                                    <rdf:Description rdf:about="&WordEng;EndingWith-ø-s-ed-ing"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;ProcessCopy05"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;Stem+SuffixEd"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ProcessCopy05Stem05 -->
+
+    <owl:Class rdf:about="&WordEng;ProcessCopy05Stem05">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;ProcessCopy05"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;Irregular"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;ProcessCopy05"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;Stem05"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ProcessCopy06 -->
+
+    <owl:Class rdf:about="&WordEng;ProcessCopy06">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&Word;Copy"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;ProcessForm08"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+        <rdfs:comment>- be
+- run
+- chase</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ProcessCopy06Stem -->
+
+    <owl:Class rdf:about="&WordEng;ProcessCopy06Stem">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;ProcessCopy06"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;Regular"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;ProcessCopy06"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;Stem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ProcessCopy06Stem06 -->
+
+    <owl:Class rdf:about="&WordEng;ProcessCopy06Stem06">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;ProcessCopy06"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;Irregular"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;ProcessCopy06"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;Stem06"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ProcessCopy07 -->
+
+    <owl:Class rdf:about="&WordEng;ProcessCopy07">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&Word;Copy"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;ProcessForm09"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+        <rdfs:comment>- been
+- run
+- chased</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ProcessCopy07Stem+ChangeYtoI+SuffixEd -->
+
+    <owl:Class rdf:about="&WordEng;ProcessCopy07Stem+ChangeYtoI+SuffixEd">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;ProcessCopy07"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;EndingWith-y-ies-ied-ying"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;ProcessCopy07"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;Stem+ChangeYtoI+SuffixEd"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ProcessCopy07Stem+Double+SuffixEd -->
+
+    <owl:Class rdf:about="&WordEng;ProcessCopy07Stem+Double+SuffixEd">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;ProcessCopy07"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;EndingWith-r-rs-rred-rring"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;ProcessCopy07"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;Stem+Double+SuffixEd"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ProcessCopy07Stem+SuffixD -->
+
+    <owl:Class rdf:about="&WordEng;ProcessCopy07Stem+SuffixD">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;ProcessCopy07"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;EndingWith-e-es-ed-ing"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;ProcessCopy07"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;Stem+SuffixD"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ProcessCopy07Stem07 -->
+
+    <owl:Class rdf:about="&WordEng;ProcessCopy07Stem07">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;ProcessCopy07"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;Irregular"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;ProcessCopy07"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;Stem07"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ProcessCopy08 -->
+
+    <owl:Class rdf:about="&WordEng;ProcessCopy08">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&Word;Copy"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;ProcessForm10"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;Stem08"/>
+        <rdfs:comment>- being
+- running
+- chasing</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ProcessCopy08Stem+Chop+SuffixIng -->
+
+    <owl:Class rdf:about="&WordEng;ProcessCopy08Stem+Chop+SuffixIng">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;ProcessCopy08"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;EndingWith-e-es-ed-ing"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;ProcessCopy08"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;Stem+Chop+SuffixIng"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ProcessCopy08Stem+Double+SuffixIng -->
+
+    <owl:Class rdf:about="&WordEng;ProcessCopy08Stem+Double+SuffixIng">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;ProcessCopy08"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;EndingWith-r-rs-rred-rring"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;ProcessCopy08"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;Stem+Double+SuffixIng"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ProcessCopy08Stem+SuffixIng -->
+
+    <owl:Class rdf:about="&WordEng;ProcessCopy08Stem+SuffixIng">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;ProcessCopy08"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormCopyOf"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&WordEng;EndingWith-y-ies-ied-ying"/>
+                                    <rdf:Description rdf:about="&WordEng;EndingWith-ø-es-ed-ing"/>
+                                    <rdf:Description rdf:about="&WordEng;EndingWith-ø-s-ed-ing"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;ProcessCopy08"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;Stem+SuffixIng"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ProcessCopy08Stem08 -->
+
+    <owl:Class rdf:about="&WordEng;ProcessCopy08Stem08">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;ProcessCopy08"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;Irregular"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;ProcessCopy08"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ProcessForm -->
+
+    <owl:Class rdf:about="&WordEng;ProcessForm">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&Word;Form"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;Process"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&Word;Form"/>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="&WordEng;ProcessForm01"/>
+            <rdf:Description rdf:about="&WordEng;ProcessForm02"/>
+            <rdf:Description rdf:about="&WordEng;ProcessForm03"/>
+            <rdf:Description rdf:about="&WordEng;ProcessForm04"/>
+            <rdf:Description rdf:about="&WordEng;ProcessForm05"/>
+            <rdf:Description rdf:about="&WordEng;ProcessForm06"/>
+            <rdf:Description rdf:about="&WordEng;ProcessForm07"/>
+            <rdf:Description rdf:about="&WordEng;ProcessForm08"/>
+            <rdf:Description rdf:about="&WordEng;ProcessForm09"/>
+            <rdf:Description rdf:about="&WordEng;ProcessForm10"/>
+        </owl:disjointUnionOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ProcessForm01 -->
+
+    <owl:Class rdf:about="&WordEng;ProcessForm01">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;Mode1"/>
+                    <rdf:Description rdf:about="&WordEng;ProcessForm"/>
+                    <rdf:Description rdf:about="&WordEng;WithMention1"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;Mode1"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;ProcessForm"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;WithMention1"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ProcessForm02 -->
+
+    <owl:Class rdf:about="&WordEng;ProcessForm02">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;Mode1"/>
+                    <rdf:Description rdf:about="&WordEng;ProcessForm"/>
+                    <rdf:Description rdf:about="&WordEng;WithMention2"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;Mode1"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;ProcessForm"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;WithMention2"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ProcessForm03 -->
+
+    <owl:Class rdf:about="&WordEng;ProcessForm03">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;Mode1"/>
+                    <rdf:Description rdf:about="&WordEng;ProcessForm"/>
+                    <rdf:Description rdf:about="&WordEng;WithMention3"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;Mode1"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;ProcessForm"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;WithMention3"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ProcessForm04 -->
+
+    <owl:Class rdf:about="&WordEng;ProcessForm04">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;Mode2"/>
+                    <rdf:Description rdf:about="&WordEng;ProcessForm"/>
+                    <rdf:Description rdf:about="&WordEng;WithMention1"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;Mode2"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;ProcessForm"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;WithMention1"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ProcessForm05 -->
+
+    <owl:Class rdf:about="&WordEng;ProcessForm05">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;Mode2"/>
+                    <rdf:Description rdf:about="&WordEng;ProcessForm"/>
+                    <rdf:Description rdf:about="&WordEng;WithMention2"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;Mode2"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;ProcessForm"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;WithMention2"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ProcessForm06 -->
+
+    <owl:Class rdf:about="&WordEng;ProcessForm06">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;Mode2"/>
+                    <rdf:Description rdf:about="&WordEng;ProcessForm"/>
+                    <rdf:Description rdf:about="&WordEng;WithMention3"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;Mode2"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;ProcessForm"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;WithMention3"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ProcessForm07 -->
+
+    <owl:Class rdf:about="&WordEng;ProcessForm07">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;Mode3"/>
+                    <rdf:Description rdf:about="&WordEng;ProcessForm"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;Mode3"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;ProcessForm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ProcessForm08 -->
+
+    <owl:Class rdf:about="&WordEng;ProcessForm08">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;Mode4"/>
+                    <rdf:Description rdf:about="&WordEng;ProcessForm"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;Mode4"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;ProcessForm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ProcessForm09 -->
+
+    <owl:Class rdf:about="&WordEng;ProcessForm09">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;Mode5"/>
+                    <rdf:Description rdf:about="&WordEng;ProcessForm"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;Mode5"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;ProcessForm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ProcessForm10 -->
+
+    <owl:Class rdf:about="&WordEng;ProcessForm10">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;Mode6"/>
+                    <rdf:Description rdf:about="&WordEng;ProcessForm"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;Mode6"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;ProcessForm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#ProcessStem+ChangeYtoI+SuffixEs -->
+
+    <owl:Class rdf:about="&WordEng;ProcessStem+ChangeYtoI+SuffixEs">
+        <rdfs:subClassOf rdf:resource="&WordEng;Stem+ChangeYtoI+SuffixEs"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#Qualifier -->
+
+    <owl:Class rdf:about="&WordEng;Qualifier">
+        <rdfs:subClassOf rdf:resource="&Word;Word"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Word;hasForm"/>
+                <owl:someValuesFrom rdf:resource="&WordEng;QualifierForm01"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Word;hasForm"/>
+                <owl:someValuesFrom rdf:resource="&WordEng;QualifierForm02"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Word;hasForm"/>
+                <owl:someValuesFrom rdf:resource="&WordEng;QualifierForm03"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>FormSet
+
+&quot;fast&quot; in &quot;the rabit ran very fast&quot;
+&quot;fast&quot; in &quot;a very fast rabbit&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#QualifierCopy01 -->
+
+    <owl:Class rdf:about="&WordEng;QualifierCopy01">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&Word;Copy"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;QualifierForm01"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#QualifierCopy01Stem -->
+
+    <owl:Class rdf:about="&WordEng;QualifierCopy01Stem">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;QualifierCopy01"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;Regular"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;QualifierCopy01"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;Stem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#QualifierCopy02 -->
+
+    <owl:Class rdf:about="&WordEng;QualifierCopy02">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&Word;Copy"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;QualifierForm02"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#QualifierCopy02Stem+ChangeYtoI+SuffixEr -->
+
+    <owl:Class rdf:about="&WordEng;QualifierCopy02Stem+ChangeYtoI+SuffixEr">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;QualifierCopy02"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;EndingWith-y-ier-iest"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;QualifierCopy02"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;Stem+ChangeYtoI+SuffixEr"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;fill-with-stem_Stem"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;insert_Stem"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;insert_Suffix"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;lexify_Suffix_ER"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;modify_Stem_by-replacing-last-y-with-i"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;order_Stem_Suffix"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#QualifierCopy02Stem+Double+SuffixEr -->
+
+    <owl:Class rdf:about="&WordEng;QualifierCopy02Stem+Double+SuffixEr">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;QualifierCopy02"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;EndingWith-r-rrer-rrest"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;QualifierCopy02"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;Stem+Double+SuffixEr"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;fill-with-stem_Stem"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;insert_Stem"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;insert_Suffix"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;lexify_Suffix_ER"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;modify_Stem_by-doubling-last-letter"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;order_Stem_Suffix"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#QualifierCopy02Stem+PrefixMore -->
+
+    <owl:Class rdf:about="&WordEng;QualifierCopy02Stem+PrefixMore">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;QualifierCopy02"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;StartingWith-ø-more-most"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;QualifierCopy02"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;Stem+PrefixMore"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;fill-with-stem_Stem"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;insert_Prefix"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;insert_Stem"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;lexify_Prefix_MORE"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;order_Prefix_Stem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#QualifierCopy02Stem+SuffixEr -->
+
+    <owl:Class rdf:about="&WordEng;QualifierCopy02Stem+SuffixEr">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;QualifierCopy02"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;EndingWith-ø-er-est"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;QualifierCopy02"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;Stem+SuffixEr"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;fill-with-stem_Stem"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;insert_Stem"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;insert_Suffix"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;lexify_Suffix_ER"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;order_Stem_Suffix"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#QualifierCopy02Stem+SuffixR -->
+
+    <owl:Class rdf:about="&WordEng;QualifierCopy02Stem+SuffixR">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;QualifierCopy02"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;EndingWith-e-er-est"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;QualifierCopy02"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;Stem+SuffixR"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;fill-with-stem_Stem"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;insert_Stem"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;insert_Suffix"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;lexify_Suffix_R"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;order_Stem_Suffix"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#QualifierCopy03 -->
+
+    <owl:Class rdf:about="&WordEng;QualifierCopy03">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&Word;Copy"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;QualifierForm03"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#QualifierCopy03Stem+ChangeYtoI+SuffixEst -->
+
+    <owl:Class rdf:about="&WordEng;QualifierCopy03Stem+ChangeYtoI+SuffixEst">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;QualifierCopy03"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;EndingWith-y-ier-iest"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;QualifierCopy03"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;Stem+ChangeYtoI+SuffixEst"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;fill-with-stem_Stem"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;insert_Stem"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;insert_Suffix"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;lexify_Suffix_EST"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;modify_Stem_by-replacing-last-y-with-i"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;order_Stem_Suffix"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#QualifierCopy03Stem+Double+SuffixEst -->
+
+    <owl:Class rdf:about="&WordEng;QualifierCopy03Stem+Double+SuffixEst">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;QualifierCopy03"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;EndingWith-r-rrer-rrest"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;QualifierCopy03"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;Stem+Double+SuffixEst"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;fill-with-stem_Stem"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;insert_Stem"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;insert_Suffix"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;lexify_Suffix_EST"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;modify_Stem_by-doubling-last-letter"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;order_Stem_Suffix"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#QualifierCopy03Stem+PrefixMost -->
+
+    <owl:Class rdf:about="&WordEng;QualifierCopy03Stem+PrefixMost">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;QualifierCopy03"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;StartingWith-ø-more-most"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;QualifierCopy03"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;Stem+PrefixMost"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;fill-with-stem_Stem"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;insert_Prefix"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;insert_Stem"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;lexify_Prefix_MOST"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;order_Prefix_Stem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#QualifierCopy03Stem+SuffixEst -->
+
+    <owl:Class rdf:about="&WordEng;QualifierCopy03Stem+SuffixEst">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;QualifierCopy03"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;EndingWith-ø-er-est"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;QualifierCopy03"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;Stem+SuffixEst"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;fill-with-stem_Stem"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;insert_Stem"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;insert_Suffix"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;lexify_Suffix_EST"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;order_Stem_Suffix"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#QualifierCopy03Stem+SuffixSt -->
+
+    <owl:Class rdf:about="&WordEng;QualifierCopy03Stem+SuffixSt">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;QualifierCopy03"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormCopyOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;EndingWith-e-er-est"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;QualifierCopy03"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;Stem+SuffixSt"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;fill-with-stem_Stem"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;insert_Stem"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;insert_Suffix"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;lexify_Suffix_ST"/>
+        <rdfs:subClassOf rdf:resource="&WordEng;order_Stem_Suffix"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#QualifierForm -->
+
+    <owl:Class rdf:about="&WordEng;QualifierForm">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&Word;Form"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;Qualifier"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&Word;Form"/>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="&WordEng;QualifierForm01"/>
+            <rdf:Description rdf:about="&WordEng;QualifierForm02"/>
+            <rdf:Description rdf:about="&WordEng;QualifierForm03"/>
+        </owl:disjointUnionOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#QualifierForm01 -->
+
+    <owl:Class rdf:about="&WordEng;QualifierForm01">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;QualifierForm"/>
+                    <rdf:Description rdf:about="&WordEng;WithComparator1"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;QualifierForm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#QualifierForm02 -->
+
+    <owl:Class rdf:about="&WordEng;QualifierForm02">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;QualifierForm"/>
+                    <rdf:Description rdf:about="&WordEng;WithComparator2"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;QualifierForm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#QualifierForm03 -->
+
+    <owl:Class rdf:about="&WordEng;QualifierForm03">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&WordEng;QualifierForm"/>
+                    <rdf:Description rdf:about="&WordEng;WithComparator3"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&WordEng;QualifierForm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#Regular -->
+
+    <owl:Class rdf:about="&WordEng;Regular">
+        <rdfs:subClassOf rdf:resource="&Word;Word"/>
+        <rdfs:comment rdf:datatype="&xsd;string">FormSet</rdfs:comment>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="&WordEng;EndingWith-e-es-ed-ing"/>
+            <rdf:Description rdf:about="&WordEng;EndingWith-r-rs-rred-rring"/>
+            <rdf:Description rdf:about="&WordEng;EndingWith-y-ies"/>
+            <rdf:Description rdf:about="&WordEng;EndingWith-y-ies-ied-ying"/>
+            <rdf:Description rdf:about="&WordEng;EndingWith-ø-es"/>
+            <rdf:Description rdf:about="&WordEng;EndingWith-ø-es-ed-ing"/>
+            <rdf:Description rdf:about="&WordEng;EndingWith-ø-s"/>
+            <rdf:Description rdf:about="&WordEng;EndingWith-ø-s-ed-ing"/>
+        </owl:disjointUnionOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#StartingWith-ø-more-most -->
+
+    <owl:Class rdf:about="&WordEng;StartingWith-ø-more-most">
+        <rdfs:subClassOf rdf:resource="&WordEng;Regular"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#Stem -->
+
+    <owl:Class rdf:about="&WordEng;Stem">
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#Stem+ChangeYtoI+SuffixEd -->
+
+    <owl:Class rdf:about="&WordEng;Stem+ChangeYtoI+SuffixEd">
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#Stem+ChangeYtoI+SuffixEr -->
+
+    <owl:Class rdf:about="&WordEng;Stem+ChangeYtoI+SuffixEr">
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#Stem+ChangeYtoI+SuffixEs -->
+
+    <owl:Class rdf:about="&WordEng;Stem+ChangeYtoI+SuffixEs">
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#Stem+ChangeYtoI+SuffixEs&apos; -->
+
+    <owl:Class rdf:about="&WordEng;Stem+ChangeYtoI+SuffixEs&apos;">
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#Stem+ChangeYtoI+SuffixEst -->
+
+    <owl:Class rdf:about="&WordEng;Stem+ChangeYtoI+SuffixEst">
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#Stem+Chop+SuffixIng -->
+
+    <owl:Class rdf:about="&WordEng;Stem+Chop+SuffixIng">
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#Stem+Double+SuffixEd -->
+
+    <owl:Class rdf:about="&WordEng;Stem+Double+SuffixEd">
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#Stem+Double+SuffixEr -->
+
+    <owl:Class rdf:about="&WordEng;Stem+Double+SuffixEr">
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#Stem+Double+SuffixEst -->
+
+    <owl:Class rdf:about="&WordEng;Stem+Double+SuffixEst">
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#Stem+Double+SuffixIng -->
+
+    <owl:Class rdf:about="&WordEng;Stem+Double+SuffixIng">
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#Stem+PrefixMore -->
+
+    <owl:Class rdf:about="&WordEng;Stem+PrefixMore">
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#Stem+PrefixMost -->
+
+    <owl:Class rdf:about="&WordEng;Stem+PrefixMost">
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#Stem+Suffix&apos;S -->
+
+    <owl:Class rdf:about="&WordEng;Stem+Suffix&apos;S">
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#Stem+SuffixD -->
+
+    <owl:Class rdf:about="&WordEng;Stem+SuffixD">
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#Stem+SuffixEd -->
+
+    <owl:Class rdf:about="&WordEng;Stem+SuffixEd">
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#Stem+SuffixEr -->
+
+    <owl:Class rdf:about="&WordEng;Stem+SuffixEr">
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#Stem+SuffixEs -->
+
+    <owl:Class rdf:about="&WordEng;Stem+SuffixEs">
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#Stem+SuffixEs&apos; -->
+
+    <owl:Class rdf:about="&WordEng;Stem+SuffixEs&apos;">
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#Stem+SuffixEst -->
+
+    <owl:Class rdf:about="&WordEng;Stem+SuffixEst">
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#Stem+SuffixIng -->
+
+    <owl:Class rdf:about="&WordEng;Stem+SuffixIng">
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#Stem+SuffixR -->
+
+    <owl:Class rdf:about="&WordEng;Stem+SuffixR">
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#Stem+SuffixS -->
+
+    <owl:Class rdf:about="&WordEng;Stem+SuffixS">
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#Stem+SuffixS&apos; -->
+
+    <owl:Class rdf:about="&WordEng;Stem+SuffixS&apos;">
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#Stem+SuffixSt -->
+
+    <owl:Class rdf:about="&WordEng;Stem+SuffixSt">
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#Stem01 -->
+
+    <owl:Class rdf:about="&WordEng;Stem01">
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#Stem02 -->
+
+    <owl:Class rdf:about="&WordEng;Stem02">
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#Stem03 -->
+
+    <owl:Class rdf:about="&WordEng;Stem03">
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#Stem04 -->
+
+    <owl:Class rdf:about="&WordEng;Stem04">
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#Stem05 -->
+
+    <owl:Class rdf:about="&WordEng;Stem05">
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#Stem06 -->
+
+    <owl:Class rdf:about="&WordEng;Stem06">
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#Stem07 -->
+
+    <owl:Class rdf:about="&WordEng;Stem07">
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#Stem08 -->
+
+    <owl:Class rdf:about="&WordEng;Stem08">
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#WithComparator -->
+
+    <owl:Class rdf:about="&WordEng;WithComparator">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&Word;Form"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;Qualifier"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&Word;Form"/>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="&WordEng;WithComparator1"/>
+            <rdf:Description rdf:about="&WordEng;WithComparator2"/>
+            <rdf:Description rdf:about="&WordEng;WithComparator3"/>
+        </owl:disjointUnionOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#WithComparator1 -->
+
+    <owl:Class rdf:about="&WordEng;WithComparator1">
+        <rdfs:subClassOf rdf:resource="&WordEng;WithComparator"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#WithComparator2 -->
+
+    <owl:Class rdf:about="&WordEng;WithComparator2">
+        <rdfs:subClassOf rdf:resource="&WordEng;WithComparator"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#WithComparator3 -->
+
+    <owl:Class rdf:about="&WordEng;WithComparator3">
+        <rdfs:subClassOf rdf:resource="&WordEng;WithComparator"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#WithMention -->
+
+    <owl:Class rdf:about="&WordEng;WithMention">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&Word;Form"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;Process"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&Word;Form"/>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="&WordEng;WithMention1"/>
+            <rdf:Description rdf:about="&WordEng;WithMention2"/>
+            <rdf:Description rdf:about="&WordEng;WithMention3"/>
+        </owl:disjointUnionOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#WithMention1 -->
+
+    <owl:Class rdf:about="&WordEng;WithMention1">
+        <rdfs:subClassOf rdf:resource="&WordEng;WithMention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#WithMention2 -->
+
+    <owl:Class rdf:about="&WordEng;WithMention2">
+        <rdfs:subClassOf rdf:resource="&WordEng;WithMention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#WithMention3 -->
+
+    <owl:Class rdf:about="&WordEng;WithMention3">
+        <rdfs:subClassOf rdf:resource="&WordEng;WithMention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#WithQuantification -->
+
+    <owl:Class rdf:about="&WordEng;WithQuantification">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&Word;Form"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Word;isFormOf"/>
+                        <owl:someValuesFrom rdf:resource="&WordEng;Classifier"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&Word;Form"/>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="&WordEng;WithQuantification1"/>
+            <rdf:Description rdf:about="&WordEng;WithQuantification2"/>
+        </owl:disjointUnionOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#WithQuantification1 -->
+
+    <owl:Class rdf:about="&WordEng;WithQuantification1">
+        <rdfs:subClassOf rdf:resource="&WordEng;WithQuantification"/>
+        <owl:disjointWith rdf:resource="&WordEng;WithQuantification2"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#WithQuantification2 -->
+
+    <owl:Class rdf:about="&WordEng;WithQuantification2">
+        <rdfs:subClassOf rdf:resource="&WordEng;WithQuantification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#fill-with-stem_Stem -->
+
+    <owl:Class rdf:about="&WordEng;fill-with-stem_Stem">
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#insert_Prefix -->
+
+    <owl:Class rdf:about="&WordEng;insert_Prefix">
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#insert_Stem -->
+
+    <owl:Class rdf:about="&WordEng;insert_Stem">
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#insert_Suffix -->
+
+    <owl:Class rdf:about="&WordEng;insert_Suffix">
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#lexify_Prefix_MORE -->
+
+    <owl:Class rdf:about="&WordEng;lexify_Prefix_MORE">
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#lexify_Prefix_MOST -->
+
+    <owl:Class rdf:about="&WordEng;lexify_Prefix_MOST">
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#lexify_Suffix_&apos;S -->
+
+    <owl:Class rdf:about="&WordEng;lexify_Suffix_&apos;S">
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#lexify_Suffix_D -->
+
+    <owl:Class rdf:about="&WordEng;lexify_Suffix_D">
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#lexify_Suffix_ED -->
+
+    <owl:Class rdf:about="&WordEng;lexify_Suffix_ED">
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#lexify_Suffix_ER -->
+
+    <owl:Class rdf:about="&WordEng;lexify_Suffix_ER">
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#lexify_Suffix_ES -->
+
+    <owl:Class rdf:about="&WordEng;lexify_Suffix_ES">
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#lexify_Suffix_ES&apos; -->
+
+    <owl:Class rdf:about="&WordEng;lexify_Suffix_ES&apos;">
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#lexify_Suffix_EST -->
+
+    <owl:Class rdf:about="&WordEng;lexify_Suffix_EST">
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#lexify_Suffix_ING -->
+
+    <owl:Class rdf:about="&WordEng;lexify_Suffix_ING">
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#lexify_Suffix_R -->
+
+    <owl:Class rdf:about="&WordEng;lexify_Suffix_R">
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#lexify_Suffix_S -->
+
+    <owl:Class rdf:about="&WordEng;lexify_Suffix_S">
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#lexify_Suffix_S&apos; -->
+
+    <owl:Class rdf:about="&WordEng;lexify_Suffix_S&apos;">
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#lexify_Suffix_ST -->
+
+    <owl:Class rdf:about="&WordEng;lexify_Suffix_ST">
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#modify_Stem_by-chopping-off-last-letter -->
+
+    <owl:Class rdf:about="&WordEng;modify_Stem_by-chopping-off-last-letter">
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#modify_Stem_by-doubling-last-letter -->
+
+    <owl:Class rdf:about="&WordEng;modify_Stem_by-doubling-last-letter">
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#modify_Stem_by-replacing-last-y-with-i -->
+
+    <owl:Class rdf:about="&WordEng;modify_Stem_by-replacing-last-y-with-i">
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#order_Prefix_Stem -->
+
+    <owl:Class rdf:about="&WordEng;order_Prefix_Stem">
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/WordEng#order_Stem_Suffix -->
+
+    <owl:Class rdf:about="&WordEng;order_Stem_Suffix">
+        <rdfs:subClassOf rdf:resource="&Word;Copy"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&WordEng;ProcessForm01"/>
+            <rdf:Description rdf:about="&WordEng;ProcessForm02"/>
+            <rdf:Description rdf:about="&WordEng;ProcessForm03"/>
+            <rdf:Description rdf:about="&WordEng;ProcessForm04"/>
+            <rdf:Description rdf:about="&WordEng;ProcessForm05"/>
+            <rdf:Description rdf:about="&WordEng;ProcessForm06"/>
+            <rdf:Description rdf:about="&WordEng;ProcessForm07"/>
+            <rdf:Description rdf:about="&WordEng;ProcessForm08"/>
+            <rdf:Description rdf:about="&WordEng;ProcessForm09"/>
+            <rdf:Description rdf:about="&WordEng;ProcessForm10"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&WordEng;MentionerForm01"/>
+            <rdf:Description rdf:about="&WordEng;MentionerForm02"/>
+            <rdf:Description rdf:about="&WordEng;MentionerForm03"/>
+            <rdf:Description rdf:about="&WordEng;MentionerForm04"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&WordEng;IdentifierForm01"/>
+            <rdf:Description rdf:about="&WordEng;IdentifierForm02"/>
+            <rdf:Description rdf:about="&WordEng;IdentifierForm03"/>
+            <rdf:Description rdf:about="&WordEng;IdentifierForm04"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&WordEng;Mode1"/>
+            <rdf:Description rdf:about="&WordEng;Mode2"/>
+            <rdf:Description rdf:about="&WordEng;Mode3"/>
+            <rdf:Description rdf:about="&WordEng;Mode4"/>
+            <rdf:Description rdf:about="&WordEng;Mode5"/>
+            <rdf:Description rdf:about="&WordEng;Mode6"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&WordEng;WithComparator1"/>
+            <rdf:Description rdf:about="&WordEng;WithComparator2"/>
+            <rdf:Description rdf:about="&WordEng;WithComparator3"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&WordEng;ClassifierForm01"/>
+            <rdf:Description rdf:about="&WordEng;ClassifierForm02"/>
+            <rdf:Description rdf:about="&WordEng;ClassifierForm03"/>
+            <rdf:Description rdf:about="&WordEng;ClassifierForm04"/>
+            <rdf:Description rdf:about="&WordEng;ClassifierForm05"/>
+            <rdf:Description rdf:about="&WordEng;ClassifierForm06"/>
+            <rdf:Description rdf:about="&WordEng;ClassifierForm07"/>
+            <rdf:Description rdf:about="&WordEng;ClassifierForm08"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&WordEng;Case1"/>
+            <rdf:Description rdf:about="&WordEng;Case2"/>
+            <rdf:Description rdf:about="&WordEng;Case3"/>
+            <rdf:Description rdf:about="&WordEng;Case4"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&WordEng;Classifier"/>
+            <rdf:Description rdf:about="&WordEng;Identifier"/>
+            <rdf:Description rdf:about="&WordEng;Mentioner"/>
+            <rdf:Description rdf:about="&WordEng;Process"/>
+            <rdf:Description rdf:about="&WordEng;Qualifier"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&WordEng;EndingWith-e-es-ed-ing"/>
+            <rdf:Description rdf:about="&WordEng;EndingWith-r-rs-rred-rring"/>
+            <rdf:Description rdf:about="&WordEng;EndingWith-y-ies"/>
+            <rdf:Description rdf:about="&WordEng;EndingWith-y-ies-ied-ying"/>
+            <rdf:Description rdf:about="&WordEng;EndingWith-ø-es"/>
+            <rdf:Description rdf:about="&WordEng;EndingWith-ø-es-ed-ing"/>
+            <rdf:Description rdf:about="&WordEng;EndingWith-ø-s"/>
+            <rdf:Description rdf:about="&WordEng;EndingWith-ø-s-ed-ing"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&WordEng;WithMention1"/>
+            <rdf:Description rdf:about="&WordEng;WithMention2"/>
+            <rdf:Description rdf:about="&WordEng;WithMention3"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

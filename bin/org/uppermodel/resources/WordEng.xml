@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Words>
+   <Word id="Aunt">
+     <Sense name="Aunt"/>
+     <Class name="Classifier"/>
+     <Class name="EndingWith-ø-s"/>
+     <SampleMap>
+       <Sample name="stem" value="aunt"/>
+     </SampleMap>
+   </Word>
+   <Word id="Teapot">
+     <Sense name="Teapot"/>
+     <Class name="Classifier"/>
+     <Class name="EndingWith-ø-s"/>
+     <SampleMap>
+       <Sample name="stem" value="teapot"/>
+     </SampleMap>
+   </Word>
+   <Word id="Duke">
+     <Sense name="Duke"/>
+     <Class name="Classifier"/>
+     <Class name="EndingWith-ø-s"/>
+     <SampleMap>
+       <Sample name="stem" value="duke"/>
+     </SampleMap>
+   </Word>
+   <Word id="House">
+     <Sense name="House"/>
+     <Class name="Classifier"/>
+     <Class name="EndingWith-ø-s"/>
+     <SampleMap>
+       <Sample name="stem" value="house"/>
+     </SampleMap>
+   </Word>
+   <Word id="Cat">
+     <Sense name="Cat"/>
+     <Class name="Classifier"/>
+     <Class name="EndingWith-ø-s"/>
+     <SampleMap>
+       <Sample name="stem" value="cat"/>
+     </SampleMap>
+   </Word>
+   <Word id="Dog">
+     <Sense name="Dog"/>
+     <Class name="Classifier"/>
+     <Class name="EndingWith-ø-s"/>
+     <SampleMap>
+       <Sample name="stem" value="dog"/>
+     </SampleMap>
+   </Word>
+   <Word id="Nice">
+     <Sense name="Nice"/>
+     <Class name="Qualifier"/>
+     <Class name="EndingWith-e-er-est"/>
+     <SampleMap>
+       <Sample name="stem" value="nice"/>
+     </SampleMap>
+   </Word>
+   <Word id="Fuitful">
+     <Sense name="Fuitful"/>
+     <Class name="Qualifier"/>
+     <Class name="StartingWith-ø-more-most"/>
+     <SampleMap>
+       <Sample name="stem" value="fuitful"/>
+     </SampleMap>
+   </Word>
+   <Word id="Giving">
+     <Sense name="Giving"/>
+     <Class name="Irregular"/>
+     <Class name="Process"/>
+     <SampleMap>
+       <Sample name="stem01" value="give"/>
+       <Sample name="stem02" value="gives"/>
+       <Sample name="stem03" value="give"/>
+       <Sample name="stem04" value="gave"/>
+       <Sample name="stem05" value="gave"/>
+       <Sample name="stem06" value="give"/>
+       <Sample name="stem07" value="given"/>
+       <Sample name="stem08" value="giving"/>
+     </SampleMap>
+   </Word>
+   <Word id="Driving">
+     <Sense name="Driving"/>
+     <Class name="Irregular"/>
+     <Class name="Process"/>
+     <SampleMap>
+       <Sample name="stem01" value="drive"/>
+       <Sample name="stem02" value="drives"/>
+       <Sample name="stem03" value="drive"/>
+       <Sample name="stem04" value="drove"/>
+       <Sample name="stem05" value="drove"/>
+       <Sample name="stem06" value="drive"/>
+       <Sample name="stem07" value="driven"/>
+       <Sample name="stem08" value="driving"/>
+     </SampleMap>
+   </Word>
+   <Word id="Blurring">
+     <Sense name="Blurring"/>
+     <Class name="Process"/>
+     <Class name="EndingWith-r-rs-rred-rring"/>
+     <SampleMap>
+       <Sample name="stem" value="blur"/>
+     </SampleMap>
+   </Word>
+   <Word id="Playing">
+     <Sense name="Playing"/>
+     <Class name="Process"/>
+     <Class name="EndingWith-ø-s-ed-ing"/>
+     <SampleMap>
+       <Sample name="stem" value="play"/>
+     </SampleMap>
+   </Word>
+   <Word id="Being">
+     <Sense name="Being"/>
+     <Class name="Irregular"/>
+     <Class name="Process"/>
+     <SampleMap>
+       <Sample name="stem01" value="am"/>
+       <Sample name="stem02" value="is"/>
+       <Sample name="stem03" value="are"/>
+       <Sample name="stem04" value="was"/>
+       <Sample name="stem05" value="were"/>
+       <Sample name="stem06" value="be"/>
+       <Sample name="stem07" value="been"/>
+       <Sample name="stem08" value="being"/>
+     </SampleMap>
+   </Word>
+</Words>

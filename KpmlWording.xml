@@ -1,0 +1,779 @@
+<?xml version="1.0" encoding="UTF-8"?><Module>
+    <System id="WORD-TYPE-4" selector="WORD-TYPE-4-SELECTOR">
+        <Input>
+            <Class index="wordingasdevice"/>
+        </Input>
+        <Outputs>
+            <Class id="element" share="0.3333333333333333"/>
+            <Class id="sequence" share="0.3333333333333333"/>
+            <Class id="figure" share="0.3333333333333333"/>
+        </Outputs>
+    </System>
+    <AskOperator default-answer="element" id="WORD-TYPE-4-Q" java-method="" lisp-method="">
+        <Params>
+            <Slot index="WORD"/>
+        </Params>
+        <Answers>
+            <Class index="element"/>
+            <Class index="sequence"/>
+            <Class index="figure"/>
+        </Answers>
+        <AnswerMap/>
+    </AskOperator>
+    <Selector date="" id="WORD-TYPE-4-SELECTOR">
+        <Ask>
+            <Inquiry inquiry-index="WORD-TYPE-4-Q">
+                <Param index="Onus"/>
+            </Inquiry>
+            <Class index="element">
+                <Select param1="element"/>
+            </Class>
+            <Class index="figure">
+                <Select param1="figure"/>
+            </Class>
+            <Class index="sequence">
+                <Select param1="sequence"/>
+            </Class>
+        </Ask>
+    </Selector>
+    <System id="WORD-TYPE-5" selector="WORD-TYPE-5-SELECTOR">
+        <Input>
+            <Class index="element"/>
+        </Input>
+        <Outputs>
+            <Class id="circumstance" share="0.16666666666666666"/>
+            <Class id="sthing" share="0.16666666666666666"/>
+            <Class id="ray" share="0.16666666666666666"/>
+            <Class id="quantity" share="0.16666666666666666"/>
+            <Class id="quality" share="0.16666666666666666"/>
+            <Class id="process" share="0.16666666666666666"/>
+        </Outputs>
+    </System>
+    <AskOperator default-answer="circumstance" id="WORD-TYPE-5-Q" java-method="" lisp-method="">
+        <Params>
+            <Slot index="WORD"/>
+        </Params>
+        <Answers>
+            <Class index="circumstance"/>
+            <Class index="sthing"/>
+            <Class index="ray"/>
+            <Class index="quantity"/>
+            <Class index="quality"/>
+            <Class index="process"/>
+        </Answers>
+        <AnswerMap/>
+    </AskOperator>
+    <Selector date="" id="WORD-TYPE-5-SELECTOR">
+        <Ask>
+            <Inquiry inquiry-index="WORD-TYPE-5-Q">
+                <Param index="Onus"/>
+            </Inquiry>
+            <Class index="process">
+                <Select param1="process"/>
+            </Class>
+            <Class index="ray">
+                <Select param1="ray"/>
+            </Class>
+            <Class index="circumstance">
+                <Select param1="circumstance"/>
+            </Class>
+            <Class index="quality">
+                <Select param1="quality"/>
+            </Class>
+            <Class index="quantity">
+                <Select param1="quantity"/>
+            </Class>
+            <Class index="sthing">
+                <Select param1="sthing"/>
+            </Class>
+        </Ask>
+    </Selector>
+    <System id="WORD-TYPE-6" selector="WORD-TYPE-6-SELECTOR">
+        <Input>
+            <Class index="figure"/>
+        </Input>
+        <Outputs>
+            <Class id="simpletransfer" share="0.5"/>
+            <Class id="simpleaffectingaction" share="0.5"/>
+        </Outputs>
+    </System>
+    <AskOperator default-answer="simpletransfer" id="WORD-TYPE-6-Q" java-method="" lisp-method="">
+        <Params>
+            <Slot index="WORD"/>
+        </Params>
+        <Answers>
+            <Class index="simpletransfer"/>
+            <Class index="simpleaffectingaction"/>
+        </Answers>
+        <AnswerMap/>
+    </AskOperator>
+    <Selector date="" id="WORD-TYPE-6-SELECTOR">
+        <Ask>
+            <Inquiry inquiry-index="WORD-TYPE-6-Q">
+                <Param index="Onus"/>
+            </Inquiry>
+            <Class index="simpleaffectingaction">
+                <Select param1="simpleaffectingaction"/>
+            </Class>
+            <Class index="simpletransfer">
+                <Select param1="simpletransfer"/>
+            </Class>
+        </Ask>
+    </Selector>
+    <System id="COPY-GATE-207">
+        <Input>
+            <Union>
+                <Class index="figure"/>
+                <Class index="process"/>
+            </Union>
+        </Input>
+        <Outputs>
+            <Class id="mode" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="FORM-TYPE-6" selector="FORM-TYPE-6-SELECTOR">
+        <Input>
+            <Class index="mode"/>
+        </Input>
+        <Outputs>
+            <Class id="mode2" share="0.14285714285714285"/>
+            <Class id="mode3" share="0.14285714285714285"/>
+            <Class id="mode4" share="0.14285714285714285"/>
+            <Class id="mode5" share="0.14285714285714285"/>
+            <Class id="mode0" share="0.14285714285714285"/>
+            <Class id="mode1" share="0.14285714285714285"/>
+            <Class id="mode6" share="0.14285714285714285"/>
+        </Outputs>
+    </System>
+    <AskOperator default-answer="mode2" id="FORM-TYPE-6-Q" java-method="" lisp-method="">
+        <Params>
+            <Slot index="WORD"/>
+        </Params>
+        <Answers>
+            <Class index="mode2"/>
+            <Class index="mode3"/>
+            <Class index="mode4"/>
+            <Class index="mode5"/>
+            <Class index="mode0"/>
+            <Class index="mode1"/>
+            <Class index="mode6"/>
+        </Answers>
+        <AnswerMap>
+            <Answer index="mode4" value="mode4"/>
+            <Answer index="mode3" value="mode3"/>
+            <Answer index="mode6" value="mode6"/>
+            <Answer index="mode5" value="mode5"/>
+            <Answer index="mode0" value="mode0"/>
+            <Answer index="mode1" value="mode1"/>
+            <Answer index="mode2" value="mode2"/>
+        </AnswerMap>
+    </AskOperator>
+    <Selector date="" id="FORM-TYPE-6-SELECTOR">
+        <Ask>
+            <Inquiry inquiry-index="FORM-TYPE-6-Q">
+                <Param index="Onus"/>
+            </Inquiry>
+            <Class index="mode4">
+                <Select param1="mode4"/>
+            </Class>
+            <Class index="mode3">
+                <Select param1="mode3"/>
+            </Class>
+            <Class index="mode6">
+                <Select param1="mode6"/>
+            </Class>
+            <Class index="mode5">
+                <Select param1="mode5"/>
+            </Class>
+            <Class index="mode0">
+                <Select param1="mode0"/>
+            </Class>
+            <Class index="mode1">
+                <Select param1="mode1"/>
+            </Class>
+            <Class index="mode2">
+                <Select param1="mode2"/>
+            </Class>
+        </Ask>
+    </Selector>
+    <System id="COPY-GATE-208">
+        <Input>
+            <Intersection>
+                <Class index="wordingasbrick"/>
+                <Class index="element"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="group" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-209">
+        <Input>
+            <Intersection>
+                <Class index="group"/>
+                <Class index="sthing"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="mention" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-210">
+        <Input>
+            <Intersection>
+                <Class index="group"/>
+                <Class index="circumstance"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="phrase" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-211">
+        <Input>
+            <Intersection>
+                <Class index="group"/>
+                <Class index="ray"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="radiation" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-212">
+        <Input>
+            <Intersection>
+                <Class index="group"/>
+                <Class index="quality"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="qualification" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-213">
+        <Input>
+            <Intersection>
+                <Class index="group"/>
+                <Class index="process"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="framing" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-214">
+        <Input>
+            <Intersection>
+                <Class index="group"/>
+                <Class index="quantity"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="quantification" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-215">
+        <Input>
+            <Class index="sthing"/>
+        </Input>
+        <Outputs>
+            <Class id="case" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="FORM-TYPE-7" selector="FORM-TYPE-7-SELECTOR">
+        <Input>
+            <Class index="case"/>
+        </Input>
+        <Outputs>
+            <Class id="caseto" share="0.16666666666666666"/>
+            <Class id="case1" share="0.16666666666666666"/>
+            <Class id="case2" share="0.16666666666666666"/>
+            <Class id="caseby" share="0.16666666666666666"/>
+            <Class id="case3" share="0.16666666666666666"/>
+            <Class id="case4" share="0.16666666666666666"/>
+        </Outputs>
+    </System>
+    <AskOperator default-answer="caseto" id="FORM-TYPE-7-Q" java-method="" lisp-method="">
+        <Params>
+            <Slot index="WORD"/>
+        </Params>
+        <Answers>
+            <Class index="caseto"/>
+            <Class index="case1"/>
+            <Class index="case2"/>
+            <Class index="caseby"/>
+            <Class index="case3"/>
+            <Class index="case4"/>
+        </Answers>
+        <AnswerMap>
+            <Answer index="case3" value="case3"/>
+            <Answer index="caseby" value="caseby"/>
+            <Answer index="case2" value="case2"/>
+            <Answer index="case1" value="case1"/>
+            <Answer index="caseto" value="caseto"/>
+            <Answer index="case4" value="case4"/>
+        </AnswerMap>
+    </AskOperator>
+    <Selector date="" id="FORM-TYPE-7-SELECTOR">
+        <Ask>
+            <Inquiry inquiry-index="FORM-TYPE-7-Q">
+                <Param index="Onus"/>
+            </Inquiry>
+            <Class index="caseby">
+                <Select param1="caseby"/>
+            </Class>
+            <Class index="case3">
+                <Select param1="case3"/>
+            </Class>
+            <Class index="case2">
+                <Select param1="case2"/>
+            </Class>
+            <Class index="caseto">
+                <Select param1="caseto"/>
+            </Class>
+            <Class index="case1">
+                <Select param1="case1"/>
+            </Class>
+            <Class index="case4">
+                <Select param1="case4"/>
+            </Class>
+        </Ask>
+    </Selector>
+    <System id="COPY-GATE-216">
+        <Input>
+            <Intersection>
+                <Class index="wordingasbrick"/>
+                <Union>
+                    <Class index="figure"/>
+                    <Class index="sequence"/>
+                </Union>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="clause" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-217">
+        <Input>
+            <Intersection>
+                <Class index="clause"/>
+                <Class index="figure"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="clausesimplex" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-218">
+        <Input>
+            <Intersection>
+                <Class index="clause"/>
+                <Class index="sequence"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="clausecomplex" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="wordingaspattern"/>
+                <Class index="mention"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="mentionpattern" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="mentionpattern"/>
+                <Intersection>
+                    <Class index="caseto"/>
+                    <Class index="mention"/>
+                </Intersection>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="mentionincase-to" share="1.0">
+                <Pattern kind="lexify" param1="Case" param2="ToWord"/>
+                <Pattern kind="conflate" param1="CaseTail" param2="Deictic"/>
+                <Pattern kind="preselect" param1="CaseTail" param2="Case2"/>
+                <Pattern kind="insert" param1="Case"/>
+                <Pattern kind="insert" param1="CaseTail"/>
+                <Pattern kind="preselect" param1="DeicticTail" param2="SThing"/>
+                <Pattern kind="order" param1="Case" param2="CaseTail"/>
+            </Class>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="mentionpattern"/>
+                <Class index="identifiable"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="mentionofidentifiablething" share="1.0">
+                <Pattern kind="insert" param1="Deictic"/>
+                <Pattern kind="conflate" param1="DeicticTail" param2="Classifier"/>
+                <Pattern kind="insert" param1="DeiticTail"/>
+                <Pattern kind="agree" param1="Deictic" param2="DeicticTail"/>
+                <Pattern kind="preselect" param1="DeicticTail" param2="SThing"/>
+                <Pattern kind="order" param1="Deictic" param2="DeicticTail"/>
+                <Pattern kind="lexify" param1="Deictic" param2="TheWord"/>
+            </Class>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="mentionpattern"/>
+                <Class index="nonidentifiable"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="mentionofnonidentifiablething" share="1.0">
+                <Pattern kind="insert" param1="Deictic"/>
+                <Pattern kind="lexify" param1="Deictic" param2="AnWord"/>
+                <Pattern kind="conflate" param1="DeicticTail" param2="Classifier"/>
+                <Pattern kind="insert" param1="DeiticTail"/>
+                <Pattern kind="agree" param1="Deictic" param2="DeicticTail"/>
+                <Pattern kind="preselect" param1="DeicticTail" param2="SThing"/>
+                <Pattern kind="order" param1="Deictic" param2="DeicticTail"/>
+            </Class>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="mentionpattern"/>
+                <Intersection>
+                    <Class index="case1"/>
+                    <Class index="mention"/>
+                </Intersection>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="mentionincase-1" share="1.0">
+                <Pattern kind="preselect" param1="CaseTail" param2="Case1"/>
+                <Pattern kind="conflate" param1="CaseTail" param2="Deictic"/>
+                <Pattern kind="conflate" param1="Case" param2="CaseTail"/>
+                <Pattern kind="insert" param1="CaseTail"/>
+                <Pattern kind="insert" param1="Case"/>
+                <Pattern kind="preselect" param1="DeicticTail" param2="SThing"/>
+            </Class>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="mentionpattern"/>
+                <Intersection>
+                    <Class index="case2"/>
+                    <Class index="mention"/>
+                </Intersection>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="mentionincase-2" share="1.0">
+                <Pattern kind="conflate" param1="CaseTail" param2="Deictic"/>
+                <Pattern kind="conflate" param1="Case" param2="CaseTail"/>
+                <Pattern kind="preselect" param1="CaseTail" param2="Case2"/>
+                <Pattern kind="preselect" param1="DeicticTail" param2="SThing"/>
+                <Pattern kind="insert" param1="Case"/>
+                <Pattern kind="insert" param1="CaseTail"/>
+            </Class>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="mentionpattern"/>
+                <Intersection>
+                    <Class index="caseby"/>
+                    <Class index="mention"/>
+                </Intersection>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="mentionincase-by" share="1.0">
+                <Pattern kind="lexify" param1="Case" param2="ByWord"/>
+                <Pattern kind="conflate" param1="CaseTail" param2="Deictic"/>
+                <Pattern kind="preselect" param1="CaseTail" param2="Case2"/>
+                <Pattern kind="insert" param1="Case"/>
+                <Pattern kind="preselect" param1="DeicticTail" param2="SThing"/>
+                <Pattern kind="insert" param1="CaseTail"/>
+                <Pattern kind="order" param1="Case" param2="CaseTail"/>
+            </Class>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="wordingaspattern"/>
+                <Class index="clausesimplex"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="clausesimplexpattern" share="1.0"/>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="agentincluding"/>
+                <Class index="beneficiaryexcluding"/>
+                <Class index="mediumincluding"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="clausewithmediumagent" share="1.0">
+                <Pattern kind="insert" param1="Direct"/>
+                <Pattern kind="insert" param1="Frame"/>
+                <Pattern kind="insert" param1="Process"/>
+                <Pattern kind="preselect" param1="Process" param2="DiadicProcess"/>
+                <Pattern kind="preselect" param1="Subject" param2="SThing"/>
+                <Pattern kind="identify" param1="Process" param2="(ProcessId"/>
+                <Pattern kind="insert" param1="Subject"/>
+                <Pattern kind="preselect" param1="Direct" param2="SThing"/>
+            </Class>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="clausewithmediumagent"/>
+                <Class index="mediumreceptive"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="theteapotwasboughtbytheduke" share="1.0">
+                <Pattern kind="identify" param1="Direct" param2="(AgentId"/>
+                <Pattern kind="order" param1="Frame" param2="Process"/>
+                <Pattern kind="preselect" param1="Direct" param2="CaseBy"/>
+                <Pattern kind="preselect" param1="Subject" param2="Case1"/>
+                <Pattern kind="identify" param1="Subject" param2="(MediumId"/>
+                <Pattern kind="preselect" param1="Process" param2="Mode5"/>
+                <Pattern kind="lexify" param1="Frame" param2="BeWord"/>
+            </Class>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="clausewithmediumagent"/>
+                <Class index="agentreceptive"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="thedukeboughttheteapot" share="1.0">
+                <Pattern kind="identify" param1="Subject" param2="(AgentId"/>
+                <Pattern kind="preselect" param1="Direct" param2="Case2"/>
+                <Pattern kind="conflate" param1="Frame" param2="Process"/>
+                <Pattern kind="preselect" param1="Subject" param2="Case1"/>
+                <Pattern kind="identify" param1="Direct" param2="(MediumId"/>
+            </Class>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="agentexcluding"/>
+                <Class index="beneficiaryexcluding"/>
+                <Class index="mediumincluding"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="clausewithmedium" share="1.0">
+                <Pattern kind="insert" param1="Frame"/>
+                <Pattern kind="insert" param1="Process"/>
+                <Pattern kind="preselect" param1="Subject" param2="SThing"/>
+                <Pattern kind="preselect" param1="Process" param2="MonadicProcess"/>
+                <Pattern kind="identify" param1="Process" param2="(ProcessId"/>
+                <Pattern kind="insert" param1="Subject"/>
+            </Class>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="clausewithmedium"/>
+                <Class index="mediumreceptive"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="theteapotbroke" share="1.0">
+                <Pattern kind="conflate" param1="Frame" param2="Process"/>
+                <Pattern kind="preselect" param1="Subject" param2="Case1"/>
+                <Pattern kind="identify" param1="Subject" param2="(MediumId"/>
+            </Class>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="agentincluding"/>
+                <Class index="beneficiaryincluding"/>
+                <Class index="mediumincluding"/>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="clausewithmediumagentbeneficiary" share="1.0">
+                <Pattern kind="insert" param1="Direct"/>
+                <Pattern kind="insert" param1="Process"/>
+                <Pattern kind="insert" param1="Frame"/>
+                <Pattern kind="insert" param1="Indirect"/>
+                <Pattern kind="preselect" param1="Process" param2="TriadicProcess"/>
+                <Pattern kind="preselect" param1="Subject" param2="SThing"/>
+                <Pattern kind="preselect" param1="Indirect" param2="SThing"/>
+                <Pattern kind="identify" param1="Process" param2="(ProcessId"/>
+                <Pattern kind="insert" param1="Subject"/>
+                <Pattern kind="preselect" param1="Direct" param2="SThing"/>
+            </Class>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="clausewithmediumagentbeneficiary"/>
+                <Intersection>
+                    <Class index="beneficiaryreceptive"/>
+                    <Class index="mediumculminating"/>
+                </Intersection>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="myauntwasgiventheteapotbytheduke" share="1.0">
+                <Pattern kind="preselect" param1="Indirect" param2="CaseBy"/>
+                <Pattern kind="order" param1="Frame" param2="Process"/>
+                <Pattern kind="preselect" param1="Direct" param2="Case2"/>
+                <Pattern kind="preselect" param1="Subject" param2="Case1"/>
+                <Pattern kind="identify" param1="Indirect" param2="(BeneficiaryId"/>
+                <Pattern kind="preselect" param1="Process" param2="Mode5"/>
+                <Pattern kind="identify" param1="Subject" param2="(BeneficiaryId"/>
+                <Pattern kind="lexify" param1="Frame" param2="BeWord"/>
+                <Pattern kind="identify" param1="Direct" param2="(MediumId"/>
+            </Class>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="clausewithmediumagentbeneficiary"/>
+                <Intersection>
+                    <Class index="agentculminating"/>
+                    <Class index="mediumreceptive"/>
+                </Intersection>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="theteapotwasgivenbytheduketomyaunt" share="1.0">
+                <Pattern kind="identify" param1="Direct" param2="(AgentId"/>
+                <Pattern kind="order" param1="Frame" param2="Process"/>
+                <Pattern kind="preselect" param1="Direct" param2="CaseBy"/>
+                <Pattern kind="preselect" param1="Subject" param2="Case1"/>
+                <Pattern kind="identify" param1="Indirect" param2="(BeneficiaryId"/>
+                <Pattern kind="identify" param1="Subject" param2="(MediumId"/>
+                <Pattern kind="preselect" param1="Process" param2="Mode5"/>
+                <Pattern kind="lexify" param1="Frame" param2="BeWord"/>
+                <Pattern kind="preselect" param1="Indirect" param2="CaseTo"/>
+            </Class>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="clausewithmediumagentbeneficiary"/>
+                <Intersection>
+                    <Class index="agentculminating"/>
+                    <Class index="beneficiaryreceptive"/>
+                </Intersection>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="myauntwasgivenbytheduketheteapot" share="1.0">
+                <Pattern kind="identify" param1="Direct" param2="(AgentId"/>
+                <Pattern kind="preselect" param1="Indirect" param2="Case2"/>
+                <Pattern kind="identify" param1="Indirect" param2="(MediumId"/>
+                <Pattern kind="order" param1="Frame" param2="Process"/>
+                <Pattern kind="preselect" param1="Direct" param2="CaseBy"/>
+                <Pattern kind="preselect" param1="Subject" param2="Case1"/>
+                <Pattern kind="preselect" param1="Process" param2="Mode5"/>
+                <Pattern kind="identify" param1="Subject" param2="(BeneficiaryId"/>
+                <Pattern kind="lexify" param1="Frame" param2="BeWord"/>
+            </Class>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="clausewithmediumagentbeneficiary"/>
+                <Intersection>
+                    <Class index="beneficiaryculminating"/>
+                    <Class index="mediumreceptive"/>
+                </Intersection>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="theteapotwasgivenmyauntbytheduke" share="1.0">
+                <Pattern kind="order" param1="Frame" param2="Process"/>
+                <Pattern kind="preselect" param1="Indirect" param2="CaseBy"/>
+                <Pattern kind="identify" param1="Direct" param2="(BeneficiaryId"/>
+                <Pattern kind="preselect" param1="Direct" param2="Case2"/>
+                <Pattern kind="preselect" param1="Subject" param2="Case1"/>
+                <Pattern kind="identify" param1="Indirect" param2="(AgentId"/>
+                <Pattern kind="identify" param1="Subject" param2="(MediumId"/>
+                <Pattern kind="preselect" param1="Process" param2="Mode5"/>
+                <Pattern kind="lexify" param1="Frame" param2="BeWord"/>
+            </Class>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="clausewithmediumagentbeneficiary"/>
+                <Intersection>
+                    <Class index="agentreceptive"/>
+                    <Class index="mediumculminating"/>
+                </Intersection>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="thedukegavetheteapottomyaunt" share="1.0">
+                <Pattern kind="identify" param1="Subject" param2="(AgentId"/>
+                <Pattern kind="preselect" param1="Direct" param2="Case2"/>
+                <Pattern kind="conflate" param1="Frame" param2="Process"/>
+                <Pattern kind="preselect" param1="Subject" param2="Case1"/>
+                <Pattern kind="identify" param1="Indirect" param2="(BeneficiaryId"/>
+                <Pattern kind="preselect" param1="Indirect" param2="CaseTo"/>
+                <Pattern kind="identify" param1="Direct" param2="(MediumId"/>
+            </Class>
+        </Outputs>
+    </System>
+    <System id="COPY-GATE-1">
+        <Input>
+            <Intersection>
+                <Class index="clausewithmediumagentbeneficiary"/>
+                <Intersection>
+                    <Class index="agentreceptive"/>
+                    <Class index="beneficiaryculminating"/>
+                </Intersection>
+            </Intersection>
+        </Input>
+        <Outputs>
+            <Class id="thedukegavemyaunttheteapot" share="1.0">
+                <Pattern kind="preselect" param1="Indirect" param2="Case2"/>
+                <Pattern kind="identify" param1="Indirect" param2="(MediumId"/>
+                <Pattern kind="identify" param1="Subject" param2="(AgentId"/>
+                <Pattern kind="identify" param1="Direct" param2="(BeneficiaryId"/>
+                <Pattern kind="preselect" param1="Direct" param2="Case2"/>
+                <Pattern kind="conflate" param1="Frame" param2="Process"/>
+                <Pattern kind="preselect" param1="Subject" param2="Case1"/>
+            </Class>
+        </Outputs>
+    </System>
+</Module>

@@ -1,0 +1,868 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY paper-onto "http://www.uni-bremen.de/paper-onto#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY Transitivity "http://www.uppermodel.org/Transitivity.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/danielvale/ontologies/2014/1/untitled-ontology-448#"
+     xml:base="http://www.semanticweb.org/danielvale/ontologies/2014/1/untitled-ontology-448"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:Transitivity="http://www.uppermodel.org/Transitivity.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:paper-onto="http://www.uni-bremen.de/paper-onto#">
+    <owl:Ontology rdf:about="http://www.uppermodel.org/Transitivity.owl">
+        <rdfs:comment xml:lang="en">With this ontology, one can infer transitivity from ergativity and vice-versa. 
+
+TIP: Start the reasoner and navigate through the individuals to check which properties get inferred.</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#actorIn -->
+
+    <owl:ObjectProperty rdf:about="&Transitivity;actorIn">
+        <rdfs:subPropertyOf rdf:resource="&Transitivity;participantIn"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#agentIn -->
+
+    <owl:ObjectProperty rdf:about="&Transitivity;agentIn">
+        <owl:inverseOf rdf:resource="&Transitivity;hasAgent"/>
+        <rdfs:subPropertyOf rdf:resource="&Transitivity;participantIn"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#beneficiaryIn -->
+
+    <owl:ObjectProperty rdf:about="&Transitivity;beneficiaryIn">
+        <owl:inverseOf rdf:resource="&Transitivity;hasBeneficiary"/>
+        <rdfs:subPropertyOf rdf:resource="&Transitivity;participantIn"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#clientIn -->
+
+    <owl:ObjectProperty rdf:about="&Transitivity;clientIn">
+        <owl:inverseOf rdf:resource="&Transitivity;hasClient"/>
+        <rdfs:subPropertyOf rdf:resource="&Transitivity;participantIn"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#domainIn -->
+
+    <owl:ObjectProperty rdf:about="&Transitivity;domainIn">
+        <owl:inverseOf rdf:resource="&Transitivity;hasDomain"/>
+        <rdfs:subPropertyOf rdf:resource="&Transitivity;participantIn"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#goalIn -->
+
+    <owl:ObjectProperty rdf:about="&Transitivity;goalIn">
+        <rdfs:subPropertyOf rdf:resource="&Transitivity;participantIn"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#hasActor -->
+
+    <owl:ObjectProperty rdf:about="&Transitivity;hasActor">
+        <owl:inverseOf rdf:resource="&Transitivity;actorIn"/>
+        <rdfs:subPropertyOf rdf:resource="&Transitivity;hasParticipant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#hasAgent -->
+
+    <owl:ObjectProperty rdf:about="&Transitivity;hasAgent">
+        <rdfs:subPropertyOf rdf:resource="&Transitivity;hasParticipant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#hasBeneficiary -->
+
+    <owl:ObjectProperty rdf:about="&Transitivity;hasBeneficiary">
+        <rdfs:subPropertyOf rdf:resource="&Transitivity;hasParticipant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#hasClient -->
+
+    <owl:ObjectProperty rdf:about="&Transitivity;hasClient">
+        <rdfs:subPropertyOf rdf:resource="&Transitivity;hasParticipant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#hasDomain -->
+
+    <owl:ObjectProperty rdf:about="&Transitivity;hasDomain">
+        <rdfs:subPropertyOf rdf:resource="&Transitivity;hasParticipant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#hasGoal -->
+
+    <owl:ObjectProperty rdf:about="&Transitivity;hasGoal">
+        <owl:inverseOf rdf:resource="&Transitivity;goalIn"/>
+        <rdfs:subPropertyOf rdf:resource="&Transitivity;hasParticipant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#hasMedium -->
+
+    <owl:ObjectProperty rdf:about="&Transitivity;hasMedium">
+        <rdfs:subPropertyOf rdf:resource="&Transitivity;hasParticipant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#hasParticipant -->
+
+    <owl:ObjectProperty rdf:about="&Transitivity;hasParticipant">
+        <owl:inverseOf rdf:resource="&Transitivity;participantIn"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#hasProcess -->
+
+    <owl:ObjectProperty rdf:about="&Transitivity;hasProcess">
+        <owl:inverseOf rdf:resource="&Transitivity;processIn"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#hasRange -->
+
+    <owl:ObjectProperty rdf:about="&Transitivity;hasRange">
+        <rdfs:subPropertyOf rdf:resource="&Transitivity;hasParticipant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#hasRecipient -->
+
+    <owl:ObjectProperty rdf:about="&Transitivity;hasRecipient">
+        <rdfs:subPropertyOf rdf:resource="&Transitivity;hasParticipant"/>
+        <owl:inverseOf rdf:resource="&Transitivity;recipientIn"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#hasUpdate -->
+
+    <owl:ObjectProperty rdf:about="&Transitivity;hasUpdate">
+        <rdfs:subPropertyOf rdf:resource="&Transitivity;hasParticipant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#mediumIn -->
+
+    <owl:ObjectProperty rdf:about="&Transitivity;mediumIn">
+        <owl:inverseOf rdf:resource="&Transitivity;hasMedium"/>
+        <rdfs:subPropertyOf rdf:resource="&Transitivity;participantIn"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#participantIn -->
+
+    <owl:ObjectProperty rdf:about="&Transitivity;participantIn"/>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#processIn -->
+
+    <owl:ObjectProperty rdf:about="&Transitivity;processIn"/>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#rangeIn -->
+
+    <owl:ObjectProperty rdf:about="&Transitivity;rangeIn">
+        <owl:inverseOf rdf:resource="&Transitivity;hasRange"/>
+        <rdfs:subPropertyOf rdf:resource="&Transitivity;participantIn"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#recipientIn -->
+
+    <owl:ObjectProperty rdf:about="&Transitivity;recipientIn">
+        <rdfs:subPropertyOf rdf:resource="&Transitivity;participantIn"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#updateIn -->
+
+    <owl:ObjectProperty rdf:about="&Transitivity;updateIn">
+        <owl:inverseOf rdf:resource="&Transitivity;hasUpdate"/>
+        <rdfs:subPropertyOf rdf:resource="&Transitivity;participantIn"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#AffectingAction -->
+
+    <owl:Class rdf:about="&Transitivity;AffectingAction">
+        <rdfs:subClassOf rdf:resource="&Transitivity;Figure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#AsActor -->
+
+    <owl:Class rdf:about="&Transitivity;AsActor">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Transitivity;agentIn"/>
+                        <owl:someValuesFrom rdf:resource="&Transitivity;AffectingAction"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Transitivity;mediumIn"/>
+                        <owl:someValuesFrom rdf:resource="&Transitivity;NonAffectingAction"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&Transitivity;AsParticipant"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Transitivity;actorIn"/>
+                <owl:onClass rdf:resource="&Transitivity;Figure"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="&Transitivity;AsGoal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#AsAgent -->
+
+    <owl:Class rdf:about="&Transitivity;AsAgent">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Transitivity;actorIn"/>
+                <owl:someValuesFrom rdf:resource="&Transitivity;AffectingAction"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&Transitivity;AsParticipant"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Transitivity;agentIn"/>
+                <owl:onClass rdf:resource="&Transitivity;Figure"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#AsBeneficiary -->
+
+    <owl:Class rdf:about="&Transitivity;AsBeneficiary">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Transitivity;recipientIn"/>
+                <owl:someValuesFrom rdf:resource="&Transitivity;SimpleTransfer"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&Transitivity;AsParticipant"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Transitivity;beneficiaryIn"/>
+                <owl:onClass rdf:resource="&Transitivity;Figure"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#AsClient -->
+
+    <owl:Class rdf:about="&Transitivity;AsClient">
+        <rdfs:subClassOf rdf:resource="&Transitivity;AsParticipant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#AsDomain -->
+
+    <owl:Class rdf:about="&Transitivity;AsDomain">
+        <rdfs:subClassOf rdf:resource="&Transitivity;AsParticipant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#AsGoal -->
+
+    <owl:Class rdf:about="&Transitivity;AsGoal">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Transitivity;mediumIn"/>
+                <owl:someValuesFrom rdf:resource="&Transitivity;AffectingAction"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&Transitivity;AsParticipant"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Transitivity;goalIn"/>
+                <owl:onClass rdf:resource="&Transitivity;Figure"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#AsMedium -->
+
+    <owl:Class rdf:about="&Transitivity;AsMedium">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Transitivity;actorIn"/>
+                        <owl:someValuesFrom rdf:resource="&Transitivity;NonAffectingAction"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&Transitivity;goalIn"/>
+                        <owl:someValuesFrom rdf:resource="&Transitivity;AffectingAction"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&Transitivity;AsParticipant"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Transitivity;mediumIn"/>
+                <owl:onClass rdf:resource="&Transitivity;Figure"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#AsParticipant -->
+
+    <owl:Class rdf:about="&Transitivity;AsParticipant">
+        <rdfs:subClassOf rdf:resource="&Transitivity;Element"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Transitivity;participantIn"/>
+                <owl:onClass rdf:resource="&Transitivity;Figure"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="&Transitivity;AsAgent"/>
+            <rdf:Description rdf:about="&Transitivity;AsBeneficiary"/>
+            <rdf:Description rdf:about="&Transitivity;AsDomain"/>
+            <rdf:Description rdf:about="&Transitivity;AsMedium"/>
+            <rdf:Description rdf:about="&Transitivity;AsRange"/>
+            <rdf:Description rdf:about="&Transitivity;AsUpdate"/>
+        </owl:disjointUnionOf>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="&Transitivity;AsActor"/>
+            <rdf:Description rdf:about="&Transitivity;AsClient"/>
+            <rdf:Description rdf:about="&Transitivity;AsGoal"/>
+            <rdf:Description rdf:about="&Transitivity;AsRecipient"/>
+        </owl:disjointUnionOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#AsRange -->
+
+    <owl:Class rdf:about="&Transitivity;AsRange">
+        <rdfs:subClassOf rdf:resource="&Transitivity;AsParticipant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#AsRecipient -->
+
+    <owl:Class rdf:about="&Transitivity;AsRecipient">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Transitivity;beneficiaryIn"/>
+                <owl:someValuesFrom rdf:resource="&Transitivity;SimpleTransfer"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&Transitivity;AsParticipant"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Transitivity;recipientIn"/>
+                <owl:onClass rdf:resource="&Transitivity;Figure"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#AsUpdate -->
+
+    <owl:Class rdf:about="&Transitivity;AsUpdate">
+        <rdfs:subClassOf rdf:resource="&Transitivity;AsParticipant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#Element -->
+
+    <owl:Class rdf:about="&Transitivity;Element"/>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#Figure -->
+
+    <owl:Class rdf:about="&Transitivity;Figure"/>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#Giving -->
+
+    <owl:Class rdf:about="&Transitivity;Giving">
+        <rdfs:subClassOf rdf:resource="&Transitivity;InSimpleTransfer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#InSimpleAction -->
+
+    <owl:Class rdf:about="&Transitivity;InSimpleAction">
+        <rdfs:subClassOf rdf:resource="&Transitivity;Process"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Transitivity;processIn"/>
+                <owl:allValuesFrom rdf:resource="&Transitivity;SimpleNonAffectingAction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#InSimpleAffectingAction -->
+
+    <owl:Class rdf:about="&Transitivity;InSimpleAffectingAction">
+        <rdfs:subClassOf rdf:resource="&Transitivity;Process"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Transitivity;processIn"/>
+                <owl:allValuesFrom rdf:resource="&Transitivity;SimpleAffectingAction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#InSimpleTransfer -->
+
+    <owl:Class rdf:about="&Transitivity;InSimpleTransfer">
+        <rdfs:subClassOf rdf:resource="&Transitivity;Process"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Transitivity;processIn"/>
+                <owl:allValuesFrom rdf:resource="&Transitivity;SimpleTransfer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#NonAffectingAction -->
+
+    <owl:Class rdf:about="&Transitivity;NonAffectingAction">
+        <rdfs:subClassOf rdf:resource="&Transitivity;Figure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#Process -->
+
+    <owl:Class rdf:about="&Transitivity;Process">
+        <rdfs:subClassOf rdf:resource="&Transitivity;Element"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#Running -->
+
+    <owl:Class rdf:about="&Transitivity;Running">
+        <rdfs:subClassOf rdf:resource="&Transitivity;InSimpleAction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#SimpleAffectingAction -->
+
+    <owl:Class rdf:about="&Transitivity;SimpleAffectingAction">
+        <rdfs:subClassOf rdf:resource="&Transitivity;AffectingAction"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Transitivity;hasGoal"/>
+                <owl:onClass rdf:resource="&Transitivity;AsGoal"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Transitivity;hasActor"/>
+                <owl:onClass rdf:resource="&Transitivity;AsActor"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#SimpleNonAffectingAction -->
+
+    <owl:Class rdf:about="&Transitivity;SimpleNonAffectingAction">
+        <rdfs:subClassOf rdf:resource="&Transitivity;NonAffectingAction"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Transitivity;hasActor"/>
+                <owl:onClass rdf:resource="&Transitivity;AsActor"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#SimpleTransfer -->
+
+    <owl:Class rdf:about="&Transitivity;SimpleTransfer">
+        <rdfs:subClassOf rdf:resource="&Transitivity;AffectingAction"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Transitivity;hasGoal"/>
+                <owl:onClass rdf:resource="&Transitivity;AsGoal"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Transitivity;hasActor"/>
+                <owl:onClass rdf:resource="&Transitivity;AsActor"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&Transitivity;hasRecipient"/>
+                <owl:onClass rdf:resource="&Transitivity;AsRecipient"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#Touching -->
+
+    <owl:Class rdf:about="&Transitivity;Touching">
+        <rdfs:subClassOf rdf:resource="&Transitivity;InSimpleAffectingAction"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#F1 -->
+
+    <owl:NamedIndividual rdf:about="&Transitivity;F1">
+        <rdf:type rdf:resource="&Transitivity;Figure"/>
+        <Transitivity:hasMedium rdf:resource="&Transitivity;F1Medium"/>
+        <Transitivity:hasProcess rdf:resource="&Transitivity;F1Process"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#F1Medium -->
+
+    <owl:NamedIndividual rdf:about="&Transitivity;F1Medium">
+        <rdf:type rdf:resource="&Transitivity;Element"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#F1Process -->
+
+    <owl:NamedIndividual rdf:about="&Transitivity;F1Process">
+        <rdf:type rdf:resource="&Transitivity;Running"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#F2 -->
+
+    <owl:NamedIndividual rdf:about="&Transitivity;F2">
+        <rdf:type rdf:resource="&Transitivity;Figure"/>
+        <Transitivity:hasAgent rdf:resource="&Transitivity;F2Agent"/>
+        <Transitivity:hasMedium rdf:resource="&Transitivity;F2Medium"/>
+        <Transitivity:hasProcess rdf:resource="&Transitivity;F2Process"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#F2Agent -->
+
+    <owl:NamedIndividual rdf:about="&Transitivity;F2Agent">
+        <rdf:type rdf:resource="&Transitivity;Element"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#F2Medium -->
+
+    <owl:NamedIndividual rdf:about="&Transitivity;F2Medium">
+        <rdf:type rdf:resource="&Transitivity;Element"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#F2Process -->
+
+    <owl:NamedIndividual rdf:about="&Transitivity;F2Process">
+        <rdf:type rdf:resource="&Transitivity;Touching"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#F3 -->
+
+    <owl:NamedIndividual rdf:about="&Transitivity;F3">
+        <rdf:type rdf:resource="&Transitivity;Figure"/>
+        <Transitivity:hasActor rdf:resource="&Transitivity;F3Actor"/>
+        <Transitivity:hasProcess rdf:resource="&Transitivity;F3Process"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#F3Actor -->
+
+    <owl:NamedIndividual rdf:about="&Transitivity;F3Actor">
+        <rdf:type rdf:resource="&Transitivity;Element"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#F3Process -->
+
+    <owl:NamedIndividual rdf:about="&Transitivity;F3Process">
+        <rdf:type rdf:resource="&Transitivity;Running"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#F4 -->
+
+    <owl:NamedIndividual rdf:about="&Transitivity;F4">
+        <rdf:type rdf:resource="&Transitivity;Figure"/>
+        <Transitivity:hasActor rdf:resource="&Transitivity;F4Actor"/>
+        <Transitivity:hasGoal rdf:resource="&Transitivity;F4Goal"/>
+        <Transitivity:hasProcess rdf:resource="&Transitivity;F4Process"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#F4Actor -->
+
+    <owl:NamedIndividual rdf:about="&Transitivity;F4Actor">
+        <rdf:type rdf:resource="&Transitivity;Element"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#F4Goal -->
+
+    <owl:NamedIndividual rdf:about="&Transitivity;F4Goal">
+        <rdf:type rdf:resource="&Transitivity;Element"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#F4Process -->
+
+    <owl:NamedIndividual rdf:about="&Transitivity;F4Process">
+        <rdf:type rdf:resource="&Transitivity;Touching"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#F5 -->
+
+    <owl:NamedIndividual rdf:about="&Transitivity;F5">
+        <rdf:type rdf:resource="&Transitivity;Figure"/>
+        <Transitivity:hasAgent rdf:resource="&Transitivity;F5Agent"/>
+        <Transitivity:hasBeneficiary rdf:resource="&Transitivity;F5Beneficiary"/>
+        <Transitivity:hasMedium rdf:resource="&Transitivity;F5Medium"/>
+        <Transitivity:hasProcess rdf:resource="&Transitivity;F5Process"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#F5Agent -->
+
+    <owl:NamedIndividual rdf:about="&Transitivity;F5Agent">
+        <rdf:type rdf:resource="&Transitivity;Element"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#F5Beneficiary -->
+
+    <owl:NamedIndividual rdf:about="&Transitivity;F5Beneficiary">
+        <rdf:type rdf:resource="&Transitivity;Element"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#F5Medium -->
+
+    <owl:NamedIndividual rdf:about="&Transitivity;F5Medium">
+        <rdf:type rdf:resource="&Transitivity;Element"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#F5Process -->
+
+    <owl:NamedIndividual rdf:about="&Transitivity;F5Process">
+        <rdf:type rdf:resource="&Transitivity;Giving"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#F6 -->
+
+    <owl:NamedIndividual rdf:about="&Transitivity;F6">
+        <rdf:type rdf:resource="&Transitivity;Figure"/>
+        <Transitivity:hasActor rdf:resource="&Transitivity;F6Actor"/>
+        <Transitivity:hasGoal rdf:resource="&Transitivity;F6Goal"/>
+        <Transitivity:hasProcess rdf:resource="&Transitivity;F6Process"/>
+        <Transitivity:hasRecipient rdf:resource="&Transitivity;F6Recipient"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#F6Actor -->
+
+    <owl:NamedIndividual rdf:about="&Transitivity;F6Actor">
+        <rdf:type rdf:resource="&Transitivity;Element"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#F6Goal -->
+
+    <owl:NamedIndividual rdf:about="&Transitivity;F6Goal">
+        <rdf:type rdf:resource="&Transitivity;Element"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#F6Process -->
+
+    <owl:NamedIndividual rdf:about="&Transitivity;F6Process">
+        <rdf:type rdf:resource="&Transitivity;Giving"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uppermodel.org/Transitivity.owl#F6Recipient -->
+
+    <owl:NamedIndividual rdf:about="&Transitivity;F6Recipient">
+        <rdf:type rdf:resource="&Transitivity;Element"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&Transitivity;AsAgent"/>
+            <rdf:Description rdf:about="&Transitivity;AsBeneficiary"/>
+            <rdf:Description rdf:about="&Transitivity;AsDomain"/>
+            <rdf:Description rdf:about="&Transitivity;AsMedium"/>
+            <rdf:Description rdf:about="&Transitivity;AsRange"/>
+            <rdf:Description rdf:about="&Transitivity;AsUpdate"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

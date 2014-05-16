@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="UTF-8"?><ccg-lexicon xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="English" xsi:noNamespaceSchemaLocation="../lexicon.xsd">
+    <family closed="false" name="ProcessForm" pos="ProcessForm">
+        <entry name="LexicalWord">
+            <atomcat type="Process">
+                <fs id="1">
+                    <feat attr="index">
+                        <lf>
+                            <nomvar name="Current"/>
+                        </lf>
+                    </feat>
+                </fs>
+                <lf>
+                    <satop nomvar="Current:Process">
+                        <prop name="[*DEFAULT*]"/>
+                    </satop>
+                </lf>
+            </atomcat>
+        </entry>
+    </family>
+    <family closed="false" name="MentionerForm" pos="MentionerForm">
+        <entry name="LexicalWord">
+            <atomcat type="Mention">
+                <fs id="1">
+                    <feat attr="index">
+                        <lf>
+                            <nomvar name="Current"/>
+                        </lf>
+                    </feat>
+                </fs>
+                <lf>
+                    <satop nomvar="Current:SThing">
+                        <prop name="[*DEFAULT*]"/>
+                    </satop>
+                </lf>
+            </atomcat>
+        </entry>
+    </family>
+    <family closed="false" name="ClassifierForm" pos="ClassifierForm">
+        <entry name="LexicalWord">
+            <atomcat type="Classifier">
+                <fs id="1">
+                    <feat attr="index">
+                        <lf>
+                            <nomvar name="Current"/>
+                        </lf>
+                    </feat>
+                </fs>
+                <lf>
+                    <satop nomvar="Current:SThing">
+                        <prop name="[*DEFAULT*]"/>
+                    </satop>
+                </lf>
+            </atomcat>
+        </entry>
+    </family>
+    <family closed="false" name="IdentifierForm" pos="IdentifierForm">
+        <entry name="LexicalWord">
+            <atomcat type="Identifier">
+                <fs id="1">
+                    <feat attr="index">
+                        <lf>
+                            <nomvar name="Current"/>
+                        </lf>
+                    </feat>
+                </fs>
+                <lf>
+                    <satop nomvar="Current:Name">
+                        <prop name="[*DEFAULT*]"/>
+                    </satop>
+                </lf>
+            </atomcat>
+        </entry>
+    </family>
+    <family closed="false" name="QualifierForm" pos="QualifierForm">
+        <entry name="LexicalWord">
+            <atomcat type="Qualifier">
+                <fs id="1">
+                    <feat attr="index">
+                        <lf>
+                            <nomvar name="Current"/>
+                        </lf>
+                    </feat>
+                </fs>
+                <lf>
+                    <satop nomvar="Current:Quality">
+                        <prop name="[*DEFAULT*]"/>
+                    </satop>
+                </lf>
+            </atomcat>
+        </entry>
+    </family>
+    <family closed="false" name="TheTeapotWasBoughtByTheDuke" pos="BeWord">
+        <entry>
+            <complexcat>
+                <atomcat type="Clause">
+                    <fs id="1">
+                        <feat attr="index">
+                            <lf>
+                                <nomvar name="Onus"/>
+                            </lf>
+                        </feat>
+                    </fs>
+                </atomcat>
+                <slash dir="\" mode="."/>
+                <atomcat type="Mention">
+                    <fs id="2">
+                        <feat attr="index">
+                            <lf>
+                                <nomvar name="Subject:SThing"/>
+                            </lf>
+                        </feat>
+                        <feat attr="Case" val="Case1"/>
+                    </fs>
+                </atomcat>
+                <slash dir="/" mode="."/>
+                <atomcat type="Mention">
+                    <fs id="3">
+                        <feat attr="index">
+                            <lf>
+                                <nomvar name="Direct:SThing"/>
+                            </lf>
+                        </feat>
+                        <feat attr="Case" val="CaseBy"/>
+                    </fs>
+                </atomcat>
+                <slash dir="/" mode="."/>
+                <atomcat type="Process">
+                    <fs id="4">
+                        <feat attr="index">
+                            <lf>
+                                <nomvar name="Process:DiadicProcess"/>
+                            </lf>
+                        </feat>
+                        <feat attr="Mode" val="Mode5"/>
+                    </fs>
+                </atomcat>
+                <lf>
+                    <satop nomvar="Onus">
+                        <diamond mode="hasMedium">
+                            <nomvar name="Subject"/>
+                        </diamond>
+                        <diamond mode="hasAgent">
+                            <nomvar name="Direct"/>
+                        </diamond>
+                        <diamond mode="hasProcess">
+                            <nomvar name="Process"/>
+                        </diamond>
+                    </satop>
+                </lf>
+            </complexcat>
+        </entry>
+    </family>
+    <family closed="false" name="MyAuntWasGivenTheTeapotByTheDuke" pos="BeWord">
+        <entry>
+            <complexcat>
+                <atomcat type="Clause">
+                    <fs id="1">
+                        <feat attr="index">
+                            <lf>
+                                <nomvar name="Onus"/>
+                            </lf>
+                        </feat>
+                    </fs>
+                </atomcat>
+                <slash dir="\" mode="."/>
+                <atomcat type="Mention">
+                    <fs id="2">
+                        <feat attr="index">
+                            <lf>
+                                <nomvar name="Subject:SThing"/>
+                            </lf>
+                        </feat>
+                        <feat attr="Case" val="Case1"/>
+                    </fs>
+                </atomcat>
+                <slash dir="/" mode="."/>
+                <atomcat type="Mention">
+                    <fs id="3">
+                        <feat attr="index">
+                            <lf>
+                                <nomvar name="Indirect:SThing"/>
+                            </lf>
+                        </feat>
+                        <feat attr="Case" val="CaseBy"/>
+                    </fs>
+                </atomcat>
+                <slash dir="/" mode="."/>
+                <atomcat type="Mention">
+                    <fs id="4">
+                        <feat attr="index">
+                            <lf>
+                                <nomvar name="Direct:SThing"/>
+                            </lf>
+                        </feat>
+                        <feat attr="Case" val="Case2"/>
+                    </fs>
+                </atomcat>
+                <slash dir="/" mode="."/>
+                <atomcat type="Process">
+                    <fs id="5">
+                        <feat attr="index">
+                            <lf>
+                                <nomvar name="Process:TriadicProcess"/>
+                            </lf>
+                        </feat>
+                        <feat attr="Mode" val="Mode5"/>
+                    </fs>
+                </atomcat>
+                <lf>
+                    <satop nomvar="Onus">
+                        <diamond mode="hasBeneficiary">
+                            <nomvar name="Subject"/>
+                        </diamond>
+                        <diamond mode="hasBeneficiary">
+                            <nomvar name="Indirect"/>
+                        </diamond>
+                        <diamond mode="hasMedium">
+                            <nomvar name="Direct"/>
+                        </diamond>
+                        <diamond mode="hasProcess">
+                            <nomvar name="Process"/>
+                        </diamond>
+                    </satop>
+                </lf>
+            </complexcat>
+        </entry>
+    </family>
+    <family closed="false" name="MyAuntWasGivenByTheDukeTheTeapot" pos="BeWord">
+        <entry>
+            <complexcat>
+                <atomcat type="Clause">
+                    <fs id="1">
+                        <feat attr="index">
+                            <lf>
+                                <nomvar name="Onus"/>
+                            </lf>
+                        </feat>
+                    </fs>
+                </atomcat>
+                <slash dir="\" mode="."/>
+                <atomcat type="Mention">
+                    <fs id="2">
+                        <feat attr="index">
+                            <lf>
+                                <nomvar name="Subject:SThing"/>
+                            </lf>
+                        </feat>
+                        <feat attr="Case" val="Case1"/>
+                    </fs>
+                </atomcat>
+                <slash dir="/" mode="."/>
+                <atomcat type="Mention">
+                    <fs id="3">
+                        <feat attr="index">
+                            <lf>
+                                <nomvar name="Indirect:SThing"/>
+                            </lf>
+                        </feat>
+                        <feat attr="Case" val="Case2"/>
+                    </fs>
+                </atomcat>
+                <slash dir="/" mode="."/>
+                <atomcat type="Mention">
+                    <fs id="4">
+                        <feat attr="index">
+                            <lf>
+                                <nomvar name="Direct:SThing"/>
+                            </lf>
+                        </feat>
+                        <feat attr="Case" val="CaseBy"/>
+                    </fs>
+                </atomcat>
+                <slash dir="/" mode="."/>
+                <atomcat type="Process">
+                    <fs id="5">
+                        <feat attr="index">
+                            <lf>
+                                <nomvar name="Process:TriadicProcess"/>
+                            </lf>
+                        </feat>
+                        <feat attr="Mode" val="Mode5"/>
+                    </fs>
+                </atomcat>
+                <lf>
+                    <satop nomvar="Onus">
+                        <diamond mode="hasBeneficiary">
+                            <nomvar name="Subject"/>
+                        </diamond>
+                        <diamond mode="hasMedium">
+                            <nomvar name="Indirect"/>
+                        </diamond>
+                        <diamond mode="hasAgent">
+                            <nomvar name="Direct"/>
+                        </diamond>
+                        <diamond mode="hasProcess">
+                            <nomvar name="Process"/>
+                        </diamond>
+                    </satop>
+                </lf>
+            </complexcat>
+        </entry>
+    </family>
+    <family closed="false" name="TheTeapotWasGivenByTheDukeToMyAunt" pos="BeWord">
+        <entry>
+            <complexcat>
+                <atomcat type="Clause">
+                    <fs id="1">
+                        <feat attr="index">
+                            <lf>
+                                <nomvar name="Onus"/>
+                            </lf>
+                        </feat>
+                    </fs>
+                </atomcat>
+                <slash dir="\" mode="."/>
+                <atomcat type="Mention">
+                    <fs id="2">
+                        <feat attr="index">
+                            <lf>
+                                <nomvar name="Subject:SThing"/>
+                            </lf>
+                        </feat>
+                        <feat attr="Case" val="Case1"/>
+                    </fs>
+                </atomcat>
+                <slash dir="/" mode="."/>
+                <atomcat type="Mention">
+                    <fs id="3">
+                        <feat attr="index">
+                            <lf>
+                                <nomvar name="Indirect:SThing"/>
+                            </lf>
+                        </feat>
+                        <feat attr="Case" val="CaseTo"/>
+                    </fs>
+                </atomcat>
+                <slash dir="/" mode="."/>
+                <atomcat type="Mention">
+                    <fs id="4">
+                        <feat attr="index">
+                            <lf>
+                                <nomvar name="Direct:SThing"/>
+                            </lf>
+                        </feat>
+                        <feat attr="Case" val="CaseBy"/>
+                    </fs>
+                </atomcat>
+                <slash dir="/" mode="."/>
+                <atomcat type="Process">
+                    <fs id="5">
+                        <feat attr="index">
+                            <lf>
+                                <nomvar name="Process:TriadicProcess"/>
+                            </lf>
+                        </feat>
+                        <feat attr="Mode" val="Mode5"/>
+                    </fs>
+                </atomcat>
+                <lf>
+                    <satop nomvar="Onus">
+                        <diamond mode="hasMedium">
+                            <nomvar name="Subject"/>
+                        </diamond>
+                        <diamond mode="hasBeneficiary">
+                            <nomvar name="Indirect"/>
+                        </diamond>
+                        <diamond mode="hasAgent">
+                            <nomvar name="Direct"/>
+                        </diamond>
+                        <diamond mode="hasProcess">
+                            <nomvar name="Process"/>
+                        </diamond>
+                    </satop>
+                </lf>
+            </complexcat>
+        </entry>
+    </family>
+    <family closed="false" name="TheTeapotWasGivenMyAuntByTheDuke" pos="BeWord">
+        <entry>
+            <complexcat>
+                <atomcat type="Clause">
+                    <fs id="1">
+                        <feat attr="index">
+                            <lf>
+                                <nomvar name="Onus"/>
+                            </lf>
+                        </feat>
+                    </fs>
+                </atomcat>
+                <slash dir="\" mode="."/>
+                <atomcat type="Mention">
+                    <fs id="2">
+                        <feat attr="index">
+                            <lf>
+                                <nomvar name="Subject:SThing"/>
+                            </lf>
+                        </feat>
+                        <feat attr="Case" val="Case1"/>
+                    </fs>
+                </atomcat>
+                <slash dir="/" mode="."/>
+                <atomcat type="Mention">
+                    <fs id="3">
+                        <feat attr="index">
+                            <lf>
+                                <nomvar name="Indirect:SThing"/>
+                            </lf>
+                        </feat>
+                        <feat attr="Case" val="CaseBy"/>
+                    </fs>
+                </atomcat>
+                <slash dir="/" mode="."/>
+                <atomcat type="Mention">
+                    <fs id="4">
+                        <feat attr="index">
+                            <lf>
+                                <nomvar name="Direct:SThing"/>
+                            </lf>
+                        </feat>
+                        <feat attr="Case" val="Case2"/>
+                    </fs>
+                </atomcat>
+                <slash dir="/" mode="."/>
+                <atomcat type="Process">
+                    <fs id="5">
+                        <feat attr="index">
+                            <lf>
+                                <nomvar name="Process:TriadicProcess"/>
+                            </lf>
+                        </feat>
+                        <feat attr="Mode" val="Mode5"/>
+                    </fs>
+                </atomcat>
+                <lf>
+                    <satop nomvar="Onus">
+                        <diamond mode="hasMedium">
+                            <nomvar name="Subject"/>
+                        </diamond>
+                        <diamond mode="hasAgent">
+                            <nomvar name="Indirect"/>
+                        </diamond>
+                        <diamond mode="hasBeneficiary">
+                            <nomvar name="Direct"/>
+                        </diamond>
+                        <diamond mode="hasProcess">
+                            <nomvar name="Process"/>
+                        </diamond>
+                    </satop>
+                </lf>
+            </complexcat>
+        </entry>
+    </family>
+    <family closed="false" name="MentionInCase-To" pos="ToWord">
+        <entry>
+            <complexcat>
+                <atomcat type="Mention">
+                    <fs id="1">
+                        <feat attr="index">
+                            <lf>
+                                <nomvar name="Onus"/>
+                            </lf>
+                        </feat>
+                        <feat attr="Case" val="CaseTo"/>
+                    </fs>
+                </atomcat>
+                <slash dir="/" mode="."/>
+                <atomcat type="Deictic">
+                    <fs id="2">
+                        <feat attr="index">
+                            <lf>
+                                <nomvar name="Onus"/>
+                            </lf>
+                        </feat>
+                        <feat attr="Case" val="Case2"/>
+                    </fs>
+                </atomcat>
+            </complexcat>
+        </entry>
+    </family>
+    <family closed="false" name="MentionOfIdentifiableThing" pos="TheWord">
+        <entry>
+            <complexcat>
+                <atomcat type="Deictic">
+                    <fs id="1">
+                        <feat attr="index">
+                            <lf>
+                                <nomvar name="Onus"/>
+                            </lf>
+                        </feat>
+                        <feat attr="Case">
+                            <featvar name="Case"/>
+                        </feat>
+                    </fs>
+                </atomcat>
+                <slash dir="/" mode="."/>
+                <atomcat type="Classifier">
+                    <fs id="2">
+                        <feat attr="index">
+                            <lf>
+                                <nomvar name="Onus:SThing"/>
+                            </lf>
+                        </feat>
+                        <feat attr="Case">
+                            <featvar name="Case"/>
+                        </feat>
+                    </fs>
+                </atomcat>
+            </complexcat>
+        </entry>
+    </family>
+    <family closed="false" name="MentionOfNonIdentifiableThing" pos="AnWord">
+        <entry>
+            <complexcat>
+                <atomcat type="Deictic">
+                    <fs id="1">
+                        <feat attr="index">
+                            <lf>
+                                <nomvar name="Onus"/>
+                            </lf>
+                        </feat>
+                        <feat attr="Case">
+                            <featvar name="Case"/>
+                        </feat>
+                    </fs>
+                </atomcat>
+                <slash dir="/" mode="."/>
+                <atomcat type="Classifier">
+                    <fs id="2">
+                        <feat attr="index">
+                            <lf>
+                                <nomvar name="Onus:SThing"/>
+                            </lf>
+                        </feat>
+                        <feat attr="Case">
+                            <featvar name="Case"/>
+                        </feat>
+                    </fs>
+                </atomcat>
+            </complexcat>
+        </entry>
+    </family>
+    <family closed="false" name="MentionInCase-By" pos="ByWord">
+        <entry>
+            <complexcat>
+                <atomcat type="Mention">
+                    <fs id="1">
+                        <feat attr="index">
+                            <lf>
+                                <nomvar name="Onus"/>
+                            </lf>
+                        </feat>
+                        <feat attr="Case" val="CaseBy"/>
+                    </fs>
+                </atomcat>
+                <slash dir="/" mode="."/>
+                <atomcat type="Deictic">
+                    <fs id="2">
+                        <feat attr="index">
+                            <lf>
+                                <nomvar name="Onus"/>
+                            </lf>
+                        </feat>
+                        <feat attr="Case" val="Case2"/>
+                    </fs>
+                </atomcat>
+            </complexcat>
+        </entry>
+    </family>
+</ccg-lexicon>
